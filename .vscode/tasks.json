@@ -1,0 +1,51 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "build",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"icon": {
+				"id": "tools",
+				"color": "terminal.ansiGreen"
+			},
+			"problemMatcher": [
+				"$tsc"
+			],
+			"label": "Build",
+			"detail": "Builds the project for production"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [
+				"$tsc-watch"
+			],
+			"icon": {
+				"id": "eye-watch",
+				"color": "terminal.ansiCyan"
+			},
+			"group": "build",
+			"label": "Watch using Vite dev mode",
+			"detail": "vite"
+		},
+		{
+			"type": "npm",
+			"script": "deploy",
+			"problemMatcher": [],
+			"label": "npm: deploy",
+			"detail": "node tools/deploy.mjs",
+			"presentation": {
+				"echo": true,
+				"reveal": "always",
+				"focus": false,
+				"panel": "dedicated",
+				"showReuseMessage": true,
+				"clear": true
+			}
+		}
+	]
+}

@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "prettier": "prettier .",
     "lint:eslint": "eslint . --ext .ts --fix",
-    "lint:spell": "cspell lint ."
+    "lint:spell": "cspell lint .",
+    "predeploy": "tsc --project tools/tsconfig.json",
+    "deploy": "node tools/deploy.mjs"
   },
   "author": "Put your name here",
   "contributors": [
@@ -19,11 +21,16 @@
   "license": "Unlicense",
   "devDependencies": {
     "@arcgis/core": "^4.26.5",
+    "@tsconfig/esm": "^1.0.2",
+    "@tsconfig/node-lts": "^18.12.1",
+    "@types/gh-pages": "^3.2.1",
+    "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1",
     "cspell": "^6.31.1",
     "eslint": "^8.37.0",
     "eslint-config-prettier": "^8.8.0",
+    "gh-pages": "^5.0.0",
     "prettier": "^2.8.7",
     "typescript": "^5.0.3",
     "vite": "^4.2.3"
