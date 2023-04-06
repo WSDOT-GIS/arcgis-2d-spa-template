@@ -21,8 +21,10 @@
   "license": "Unlicense",
   "devDependencies": {
     "@arcgis/core": "^4.26.5",
+    "@esri/arcgis-rest-request": "^4.1.2",
     "@tsconfig/esm": "^1.0.2",
     "@tsconfig/node-lts": "^18.12.1",
+    "@types/arcgis-rest-api": "^10.4.5",
     "@types/gh-pages": "^3.2.1",
     "@types/node": "^18.15.11",
     "@typescript-eslint/eslint-plugin": "^5.57.1",

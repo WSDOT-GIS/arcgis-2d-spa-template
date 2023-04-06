@@ -1,7 +1,10 @@
 
 // import ghPages from "gh-pages";
 
-import { getGitRepo } from "./github-utils.mjs";
+import { getGithubRepoInfo } from "./github-utils.mjs";
 
-const repoTuples = await getGitRepo();
-console.log(repoTuples);
+let repoInfo = await getGithubRepoInfo();
+if (Array.isArray(repoInfo)) {
+    repoInfo = repoInfo[0];
+}
+console.log(repoInfo);

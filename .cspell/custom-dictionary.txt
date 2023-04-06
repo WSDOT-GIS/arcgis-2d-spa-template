@@ -1,8 +1,11 @@
 # Custom Dictionary Words
 arcgis
+EPSG
 topo
+uval
+wkid
 WSDOT
-xmin
-ymin
 xmax
+xmin
 ymax
+ymin
