@@ -50,6 +50,20 @@
 				"showReuseMessage": true,
 				"clear": true
 			}
+		},
+		{
+			"type": "npm",
+			"script": "preview",
+			"group": "build",
+			"icon": {
+				"id": "preview",
+				"color": "terminal.ansiGreen"
+			},
+			"problemMatcher": [
+				"$tsc"
+			],
+			"label": "Preview production",
+			"detail": "Perform Vite production build and then preview it."
 		}
 	]
 }

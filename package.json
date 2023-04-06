@@ -6,16 +6,24 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "prepreview": "npm run build",
     "preview": "vite preview",
     "prettier": "prettier .",
     "lint:eslint": "eslint . --ext .ts --fix",
     "lint:spell": "cspell lint . --relative --no-progress --no-summary --fail-fast",
-    "predeploy": "tsc --project tools/tsconfig.json",
+    "predeploy": "npm run build && tsc --project tools/tsconfig.json",
     "deploy": "node tools/deploy.mjs"
   },
-  "author": "Put your name here",
+  "author": {
+    "name": "Put your name here. If you only want to include your name you can replace this JSON object with just your name as a string.",
+    "email": "YourGithubUserName@users.noreply.github.com",
+    "url": "https://example.com/you/can/omit/the/url/if/you/dont/have/a/website"
+  },
   "contributors": [
-    "Jeff Jacobson"
+    {
+      "name": "Jeff Jacobson",
+      "email": "JeffJacobson@users.noreply.github.com"
+    }
   ],
   "private": true,
   "license": "Unlicense",
