@@ -104,11 +104,11 @@ export function createGeoUriString(options: GeoUrlOptions) {
  * An object representing a GeoURI
  */
 export class GeoUrl extends URL {
-  x: number;
-  y: number;
-  altitude?: number;
-  crs?: CrsLabel;
-  uncertainty?: number;
+  public readonly x: number;
+  public readonly y: number;
+  public readonly altitude?: number;
+  public readonly crs?: CrsLabel;
+  public readonly uncertainty?: number;
 
   constructor(options: GeoUrlOptions) {
     super(createGeoUriString(options));
