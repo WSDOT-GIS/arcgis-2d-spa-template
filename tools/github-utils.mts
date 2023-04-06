@@ -17,20 +17,24 @@ interface RemoteMatch extends RegExpMatchArray {
  * {@link RegExpMatchArray.groups|groups property} 
  * has the properties defined by {@link RemoteMatchGroups}
  * @param match 
- * @returns 
+ * @returns Returns true if {@link match} is a
+ * {@link RemoteMatch}, false otherwise.
  */
 function hasExpectedGroups(
   match: RegExpMatchArray
 ): match is RemoteMatch {
   const { groups } = match;
+  // If the match doesn't have groups defined then it
+  // is not a RemoteMatch.
   if (!groups) {
     return false;
   }
-  return (
-    Object.hasOwn(groups, "remote") &&
-    Object.hasOwn(groups, "url") &&
-    Object.hasOwn(groups, "direction")
-  );
+  for (const propertyName of ["remote", "url", "direction"]) {
+    if (!Object.hasOwn(groups, propertyName)) {
+      return false;
+    }
+  }
+  return true;
 }
 
 export interface RepoInfo {

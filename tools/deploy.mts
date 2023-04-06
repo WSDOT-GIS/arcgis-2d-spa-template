@@ -1,10 +1,21 @@
+/**
+ * This script publishes the page built with Vite to GitHub Pages
+ * via the [gh-pages package](https://www.npmjs.com/package/gh-pages).
+ */
 
-// import ghPages from "gh-pages";
+import {publish} from "gh-pages";
 
-import { getGithubRepoInfo } from "./github-utils.mjs";
+/**
+ * @see https://www.npmjs.com/package/gh-pages
+ */
+publish("dist", {
+    // This needs to be specified so that the .nojekyll file is included.
+    dotfiles: true
+}, (error) => {
+    if (error) {
+        const message = error instanceof Error ? error.message : null ?? "An error occurred while attempting to publish to Github Pages";
+        console.error(message, error);
+    }
+});
 
-let repoInfo = await getGithubRepoInfo();
-if (Array.isArray(repoInfo)) {
-    repoInfo = repoInfo[0];
-}
-console.log(repoInfo);
+

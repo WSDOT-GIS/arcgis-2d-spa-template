@@ -35,9 +35,13 @@
 		{
 			"type": "npm",
 			"script": "deploy",
+			"label": "Deploy",
+			"detail": "Deploys the page to GitHub Pages of this repository.",
+			"icon": {
+				"id": "github-inverted",
+				"color": "terminal.ansiRed"
+			},
 			"problemMatcher": [],
-			"label": "npm: deploy",
-			"detail": "node tools/deploy.mjs",
 			"presentation": {
 				"echo": true,
 				"reveal": "always",
