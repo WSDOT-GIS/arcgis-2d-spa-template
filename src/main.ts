@@ -14,7 +14,7 @@ import("@arcgis/core/Map").then(({ default: EsriMap }) => {
       extent: waExtent,
     });
 
-    import("./setupSearch").then(({ setupSearch }) => {
+    import("./widgets/setupSearch").then(({ setupSearch }) => {
       setupSearch(view).then((search) => {
         search.view.ui.add(search, "top-right");
       });
