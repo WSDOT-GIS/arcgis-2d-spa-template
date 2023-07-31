@@ -12,7 +12,7 @@ export type CoordinateReferenceSystem = CrsLabel | `${Authority}:${number}`;
 export const crsRe = /^(?<authority>\w{4}):(?<wkid>\d+)$/i;
 
 export function isCrs(input: string): input is CoordinateReferenceSystem {
-  return !!input && (input === CrsLabel.wgs84 || crsRe.test(input));
+  return !!input && (input === CrsLabel.wgs84.valueOf() || crsRe.test(input));
 }
 
 export type GeoUrlSearchParameters = Record<string, string> & {

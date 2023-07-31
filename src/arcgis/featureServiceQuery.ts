@@ -133,6 +133,7 @@ export function* enumerateQueryResponseAttributes(
           if (fieldsToOmitRegex && fieldsToOmitRegex.test(name)) {
             continue;
           }
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
           const value = feature.attributes[name] as AttributeValue;
           // The output of aliasMap.get should always be
           // string rather than undefined, but just in case,

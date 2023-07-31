@@ -218,7 +218,7 @@ export async function setupWidgets(
       }),
     ]);
   
-    setupExpandGroup(view, viewAddOptions, expandOptions, gallery, layerList);
+    void setupExpandGroup(view, viewAddOptions, expandOptions, gallery, layerList);
   } finally {
     console.groupEnd();
   }

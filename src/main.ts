@@ -13,21 +13,21 @@ async function createLayers() {
   return [mpLayer];
 }
 
-import("@arcgis/core/Map").then(async ({ default: EsriMap }) => {
+void import("@arcgis/core/Map").then(async ({ default: EsriMap }) => {
   const map = new EsriMap({
     basemap: "hybrid",
     layers: await createLayers(),
   });
 
-  import("@arcgis/core/views/MapView").then(({ default: MapView }) => {
+  void import("@arcgis/core/views/MapView").then(({ default: MapView }) => {
     const view = new MapView({
       container: "viewDiv",
       map,
       extent: waExtent,
     });
 
-    import("./widgets/setupSearch").then(({ setupSearch }) => {
-      setupSearch(view).then((search) => {
+    void import("./widgets/setupSearch").then(({ setupSearch }) => {
+      void setupSearch(view).then((search) => {
         search.view.ui.add(search, {
           index: 0,
           position: "top-trailing",
@@ -35,8 +35,8 @@ import("@arcgis/core/Map").then(async ({ default: EsriMap }) => {
       });
     });
 
-    import("./widgets/expandGroups").then(({ setupWidgets }) => {
-      setupWidgets(view, "top-trailing", {
+    void import("./widgets/expandGroups").then(({ setupWidgets }) => {
+      void setupWidgets(view, "top-trailing", {
          group: "top-trailing"
       });
     });

@@ -9,7 +9,7 @@
     "prepreview": "npm run build",
     "preview": "vite preview",
     "prettier": "prettier .",
-    "lint:eslint": "eslint . --ext .ts --fix",
+    "lint:eslint": "eslint . --fix",
     "lint:spell": "cspell lint . --relative --no-progress --no-summary --fail-fast",
     "predeploy": "npm run build && tsc --project tools/tsconfig.json",
     "deploy": "node tools/deploy.mjs"

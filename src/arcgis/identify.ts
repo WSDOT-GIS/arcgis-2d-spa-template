@@ -151,6 +151,7 @@ export async function identify(
     url = url.toString();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
   const response: IdentifyResponse = await request(url, {
     params: idParams,
   });
