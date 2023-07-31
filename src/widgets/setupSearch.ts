@@ -2,13 +2,9 @@ import type MapView from "@arcgis/core/views/MapView";
 import type SceneView from "@arcgis/core/views/SceneView";
 
 async function getSearchSources() {
-  const LocatorSearchSourceImportPromise = import(
+  const { default: LocatorSearchSource } = await import(
     "@arcgis/core/widgets/Search/LocatorSearchSource"
   );
-
-  const [LocatorSearchSource] = await Promise.all([
-    LocatorSearchSourceImportPromise,
-  ]).then((imports) => imports.map((i) => i.default));
 
   const waLocationSearchSource = new LocatorSearchSource({
     // Use the WSDOT Customized view of the Geocoder
