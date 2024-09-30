@@ -1,16 +1,21 @@
 <!doctype html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <link rel="shortcut icon" href="./favicon.svg" type="text/xml+svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg" />
     <title>👷‍♂️Add your title here!👷‍♀️</title>
   </head>
-  <body>
-    <div id="viewDiv"></div>
+  <body class="calcite-mode-auto">
+    <arcgis-map basemap="hybrid">
+      <arcgis-zoom position="top-left"> </arcgis-zoom>
+      <arcgis-expand position="top-right">
+        <arcgis-layer-list></arcgis-layer-list>
+      </arcgis-expand>
+      <arcgis-expand position="top-right">
+        <arcgis-legend />
+      </arcgis-expand>
+    </arcgis-map>
     <script type="module" src="/src/main.ts"></script>
   </body>
 </html>

@@ -3,9 +3,6 @@ import type SceneView from "@arcgis/core/views/SceneView";
 import type View from "@arcgis/core/views/View";
 import type BasemapGallery from "@arcgis/core/widgets/BasemapGallery";
 import type Expand from "@arcgis/core/widgets/Expand";
-import type LayerList from "@arcgis/core/widgets/LayerList";
-import type ListItem from "@arcgis/core/widgets/LayerList/ListItem";
-import type ListItemPanel from "@arcgis/core/widgets/LayerList/ListItemPanel";
 import type Widget from "@arcgis/core/widgets/Widget";
 
 /**
@@ -139,47 +136,6 @@ export async function setupExpandGroup(
   }
 }
 
-type LayerListItemCreateEvent = {
-  item: ListItem;
-};
-
-function hasListItem(event: unknown): event is LayerListItemCreateEvent {
-  return !!event && Object.hasOwn(event, "item");
-}
-
-/**
- * Performs further setup tasks on a layer list item, such as adding a legend.
- * @param param0 - Layer list item creation event object,
- * which contains an "item" ListItem property.
- */
-const setupLayerListItems: __esri.LayerListListItemCreatedHandler = (event) => {
-  if (!hasListItem(event)) {
-    throw new TypeError(
-      `Expected event object to have an item property with a ListItem value`,
-    );
-  }
-  // Add a legend to the list item panel
-  event.item.panel = {
-    content: "legend",
-  } as ListItemPanel;
-};
-
-type LayerListOptions = NonNullable<ConstructorParameters<typeof LayerList>[0]>;
-
-async function setupLayerList(
-  properties: LayerListOptions & Required<Pick<LayerListOptions, "view">>,
-) {
-  const LayerList = (await import("@arcgis/core/widgets/LayerList")).default;
-
-  properties.listItemCreatedFunction = setupLayerListItems;
-  properties.visibleElements = {
-    errors: true,
-    statusIndicators: true,
-  };
-
-  const layerList = new LayerList(properties);
-  return layerList;
-}
 
 async function setupBasemapGallery(
   ...[properties]: ConstructorParameters<typeof BasemapGallery>
@@ -205,7 +161,7 @@ export async function setupWidgets(
     expandOptions,
   });
   try {
-    const [gallery, layerList] = await Promise.all([
+    const [gallery] = await Promise.all([
       setupBasemapGallery({
         view,
         source: {
@@ -214,9 +170,7 @@ export async function setupWidgets(
           },
         },
       }),
-      setupLayerList({
-        view,
-      }),
+
     ]);
 
     void setupExpandGroup(
@@ -224,7 +178,6 @@ export async function setupWidgets(
       viewAddOptions,
       expandOptions,
       gallery,
-      layerList,
     );
   } finally {
     console.groupEnd();
