@@ -1,5 +1,5 @@
 [
-    ["LDNM", "Township Subdivision"],
-    ["JURLBL", "County"],
-    ["CityName", "City"]
+  ["LDNM", "Township Subdivision"],
+  ["JURLBL", "County"],
+  ["CityName", "City"]
 ]

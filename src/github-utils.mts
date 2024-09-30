@@ -1,28 +1,26 @@
-import { promisify } from "node:util";
 import { exec } from "node:child_process";
+import { promisify } from "node:util";
 
 interface RemoteMatchGroups {
   [key: string]: string;
   remote: string;
   url: string;
   direction: string;
-};
+}
 
 interface RemoteMatch extends RegExpMatchArray {
-    groups: RemoteMatchGroups
+  groups: RemoteMatchGroups;
 }
 
 /**
  * Detects if a {@link RegExpMatchArray}'s
- * {@link RegExpMatchArray.groups|groups property} 
+ * {@link RegExpMatchArray.groups|groups property}
  * has the properties defined by {@link RemoteMatchGroups}
- * @param match 
+ * @param match
  * @returns Returns true if {@link match} is a
  * {@link RemoteMatch}, false otherwise.
  */
-function hasExpectedGroups(
-  match: RegExpMatchArray
-): match is RemoteMatch {
+function hasExpectedGroups(match: RegExpMatchArray): match is RemoteMatch {
   const { groups } = match;
   // If the match doesn't have groups defined then it
   // is not a RemoteMatch.
@@ -44,13 +42,13 @@ export interface RepoInfo {
 
 /**
  * Parses the owner and repo name from a GitHub URL.
- * @param url 
- * @returns 
+ * @param url
+ * @returns
  */
 function parseGitHubUrl(url: string): RepoInfo {
-  const githubUrlRe = /https:\/\/github\.com/i
+  const githubUrlRe = /https:\/\/github\.com/i;
   if (!githubUrlRe.test(url)) {
-    throw new Error(`Not a GitHub URL: ${url}`)
+    throw new Error(`Not a GitHub URL: ${url}`);
   }
   const parts = url
     .split(/[/]+/)
@@ -73,10 +71,11 @@ export async function getGithubRepoInfo() {
   });
   const matches = result.stdout.matchAll(re);
 
-  const groups = [...matches].filter(hasExpectedGroups).map((m) => (m as RemoteMatch).groups);
+  const groups = [...matches]
+    .filter(hasExpectedGroups)
+    .map((m) => (m as RemoteMatch).groups);
   // Remove duplicate URLs.
   const urls = [...new Set(groups.map((g) => g.url))].map(parseGitHubUrl);
   console.groupEnd();
   return urls.length === 1 ? urls[0] : urls;
 }
-

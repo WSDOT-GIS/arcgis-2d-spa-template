@@ -16,15 +16,15 @@ export type GithubPagesUrl = `https://${string}.github.io/${string}`;
  */
 export function getGithubUrlFromGithubPages(
   throwErrorOnMismatch: true,
-  githubPagesUrl?: GithubPagesUrl
+  githubPagesUrl?: GithubPagesUrl,
 ): GithubRepoUrl;
 export function getGithubUrlFromGithubPages(
   throwErrorOnMismatch?: false,
-  githubPagesUrl?: GithubPagesUrl
+  githubPagesUrl?: GithubPagesUrl,
 ): GithubRepoUrl | null;
 export function getGithubUrlFromGithubPages(
   throwErrorOnMismatch?: boolean,
-  githubPagesUrl?: GithubPagesUrl
+  githubPagesUrl?: GithubPagesUrl,
 ) {
   const currentUrl = githubPagesUrl ?? location.href;
   const match = currentUrl.match(githubPagesUrlRe);
@@ -35,7 +35,7 @@ export function getGithubUrlFromGithubPages(
       return null;
     }
   }
-  const [org, repo] = [...match].slice(1).map(s => s.toLowerCase());
+  const [org, repo] = [...match].slice(1).map((s) => s.toLowerCase());
   return `https://github.com/${org}/${repo}` as GithubRepoUrl;
 }
 
@@ -46,7 +46,7 @@ export function getGithubUrlFromGithubPages(
  * @returns An HTML anchor linking to app source code.
  */
 export function createGithubLink(
-  fallbackUrl = "https://github.com/wsdot-gis/wsdot-mp-map"
+  fallbackUrl = "https://github.com/wsdot-gis/wsdot-mp-map",
 ) {
   // const githubSvg = convertSimpleIconToSvgElement(siGithub);
   const a = document.createElement("a");

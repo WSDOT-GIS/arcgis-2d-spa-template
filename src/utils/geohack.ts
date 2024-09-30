@@ -1,7 +1,6 @@
 /**
  * Used for working with [GeoHack](https://www.mediawiki.org/wiki/GeoHack) URLs.
  */
-
 import type { LatLngExpression, LatLngTuple } from "./LatLng";
 
 // import type { LatLngExpression, LatLngTuple } from "leaflet";
@@ -30,7 +29,7 @@ function isLatLngTuple(latLng: LatLngExpression): latLng is LatLngTuple {
  */
 export function createGeoHackUrl(
   latLng: LatLngExpression,
-  geohackUrl = "https://geohack.toolforge.org/geohack.php"
+  geohackUrl = "https://geohack.toolforge.org/geohack.php",
 ) {
   let lat: number;
   let lng: number;

@@ -74,8 +74,8 @@ export async function setupExpandGroup(
     view,
     viewAddOptions,
     expandOptions,
-    widgets
-  })
+    widgets,
+  });
   try {
     // Throw error if no widgets were specified.
     if (widgets.length < 1) {
@@ -87,9 +87,11 @@ export async function setupExpandGroup(
 
     // Create expand options if not already specified.
     if (!expandOptions) {
-      console.debug("expandOptions was null or undefined. Creating new object.");
+      console.debug(
+        "expandOptions was null or undefined. Creating new object.",
+      );
       expandOptions = {};
-      console.debug({expandOptions})
+      console.debug({ expandOptions });
     }
 
     // If view add options is just the UIPosition, convert to object
@@ -104,11 +106,10 @@ export async function setupExpandGroup(
       expandOptions.group = viewAddOptions.position as string;
     }
     if (!expandOptions.group) {
-      const message = "There was no group specified. Expands will not be grouped";
+      const message =
+        "There was no group specified. Expands will not be grouped";
       console.error(message);
-      throw new TypeError(
-        message
-      );
+      throw new TypeError(message);
     }
 
     // Create an Expand for each of the widgets.
@@ -118,7 +119,7 @@ export async function setupExpandGroup(
         : {};
 
       currentOptions.content = widget;
-      console.debug(`Expand constructor options`, currentOptions)
+      console.debug(`Expand constructor options`, currentOptions);
       const expand = new Expand(currentOptions);
       return {
         component: expand,
@@ -127,7 +128,7 @@ export async function setupExpandGroup(
       } as __esri.UIAddComponent;
     });
 
-    console.debug("expand objects", expands)
+    console.debug("expand objects", expands);
 
     // Add the newly-created Expands to the view.
     view.ui.add(expands, viewAddOptions);
@@ -154,7 +155,7 @@ function hasListItem(event: unknown): event is LayerListItemCreateEvent {
 const setupLayerListItems: __esri.LayerListListItemCreatedHandler = (event) => {
   if (!hasListItem(event)) {
     throw new TypeError(
-      `Expected event object to have an item property with a ListItem value`
+      `Expected event object to have an item property with a ListItem value`,
     );
   }
   // Add a legend to the list item panel
@@ -166,7 +167,7 @@ const setupLayerListItems: __esri.LayerListListItemCreatedHandler = (event) => {
 type LayerListOptions = NonNullable<ConstructorParameters<typeof LayerList>[0]>;
 
 async function setupLayerList(
-  properties: LayerListOptions & Required<Pick<LayerListOptions, "view">>
+  properties: LayerListOptions & Required<Pick<LayerListOptions, "view">>,
 ) {
   const LayerList = (await import("@arcgis/core/widgets/LayerList")).default;
 
@@ -195,14 +196,14 @@ type ExpandGroupSetupParams = Parameters<typeof setupExpandGroup>;
 export async function setupWidgets(
   view: MapView | SceneView,
   viewAddOptions: ExpandGroupSetupParams[1],
-  expandOptions: ExpandGroupSetupParams[2]
+  expandOptions: ExpandGroupSetupParams[2],
 ) {
   console.group(setupWidgets.name);
   console.debug(`${setupWidgets.name} constructor`, {
     view,
     viewAddOptions,
-    expandOptions
-  })
+    expandOptions,
+  });
   try {
     const [gallery, layerList] = await Promise.all([
       setupBasemapGallery({
@@ -217,8 +218,14 @@ export async function setupWidgets(
         view,
       }),
     ]);
-  
-    void setupExpandGroup(view, viewAddOptions, expandOptions, gallery, layerList);
+
+    void setupExpandGroup(
+      view,
+      viewAddOptions,
+      expandOptions,
+      gallery,
+      layerList,
+    );
   } finally {
     console.groupEnd();
   }

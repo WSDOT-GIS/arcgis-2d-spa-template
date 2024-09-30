@@ -2,9 +2,9 @@
 
 This is a starter application for creating a single page map application using the [ArcGIS Maps SDK for JavaScript], which is built using [Vite] and [TypeScript].
 
-[Vite]:https://vitejs.dev/
-[TypeScript]:https://www.typescriptlang.org/
-[ArcGIS Maps SDK for JavaScript]:https://developers.arcgis.com/javascript/latest/
+[Vite]: https://vitejs.dev/
+[TypeScript]: https://www.typescriptlang.org/
+[ArcGIS Maps SDK for JavaScript]: https://developers.arcgis.com/javascript/latest/
 
 ## Use
 
@@ -19,9 +19,9 @@ More information about templates can be found in this [GitHub blog: Generate new
 1. Clone this repository to your computer's hard drive.
 2. Remove the remote repository
 
-    ```cmd
-    git remote remove origin
-    ```
+   ```cmd
+   git remote remove origin
+   ```
 
 3. Update the information in the `package.json` file with your own project's information.
 4. Add your remote using the `git remote` command.

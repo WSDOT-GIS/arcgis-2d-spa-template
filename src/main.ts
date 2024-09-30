@@ -37,7 +37,7 @@ void import("@arcgis/core/Map").then(async ({ default: EsriMap }) => {
 
     void import("./widgets/expandGroups").then(({ setupWidgets }) => {
       void setupWidgets(view, "top-trailing", {
-         group: "top-trailing"
+        group: "top-trailing",
       });
     });
   });

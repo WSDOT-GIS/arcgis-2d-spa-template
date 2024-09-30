@@ -1,10 +1,13 @@
 /**
  * @see https://developers.arcgis.com/rest/services-reference/enterprise/identify-map-service-.htm
  */
-
-import type { Point, Geometry, esriGeometryType, Position2D } from "arcgis-rest-api";
-
 import { request } from "@esri/arcgis-rest-request";
+import type {
+  Point,
+  Geometry,
+  esriGeometryType,
+  Position2D,
+} from "arcgis-rest-api";
 
 export const enum LayerSpecifier {
   all = "all",
@@ -70,7 +73,7 @@ export interface IdentifyParametersConstruction
 }
 
 function createIdentifyParameters(
-  options: IdentifyParametersConstruction
+  options: IdentifyParametersConstruction,
 ): IdentifyParameters {
   const output: IdentifyParameters = {
     geometry: options.geometry.join(",") as XYString,
@@ -143,7 +146,7 @@ const idUrl =
 
 export async function identify(
   idOptions: IdentifyParametersConstruction,
-  url: string | URL = idUrl
+  url: string | URL = idUrl,
 ) {
   const idParams = createIdentifyParameters(idOptions);
 
@@ -155,7 +158,6 @@ export async function identify(
   const response: IdentifyResponse = await request(url, {
     params: idParams,
   });
-
 
   return response;
 }

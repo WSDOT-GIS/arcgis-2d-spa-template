@@ -1,14 +1,14 @@
-import { IRequestOptions, request } from "@esri/arcgis-rest-request";
+// aliasArrays will be an array where each element in the array
+// will be an array of two strings.
+import aliasArrays from "./field-aliases.json";
+// Layer definitions for the query are defined in this JSON file.
+import layerDefObject from "./layer-defs.json";
 import type {
   AttributeValue,
   FeatureServiceQueryResponse,
   QueryResponseLayer,
 } from "./typesAndInterfaces";
-// Layer definitions for the query are defined in this JSON file.
-import layerDefObject from "./layer-defs.json";
-// aliasArrays will be an array where each element in the array
-// will be an array of two strings.
-import aliasArrays from "./field-aliases.json";
+import { IRequestOptions, request } from "@esri/arcgis-rest-request";
 
 export const defaultUrl =
   "https://data.wsdot.wa.gov/arcgis/rest/services/DataLibrary/DataLibrary/FeatureServer/";
@@ -18,7 +18,9 @@ const layerDefs = JSON.stringify(layerDefObject);
 
 export type FieldAliasMap = Map<string, string>;
 
-const aliasMap = Array.isArray(aliasArrays) ? new Map(aliasArrays as [string, string][]) : undefined;
+const aliasMap = Array.isArray(aliasArrays)
+  ? new Map(aliasArrays as [string, string][])
+  : undefined;
 
 /**
  * Query a feature service for features that intersect with
@@ -29,7 +31,7 @@ const aliasMap = Array.isArray(aliasArrays) ? new Map(aliasArrays as [string, st
  */
 export async function query(
   xy: [number, number],
-  featureServiceUrl: string = defaultUrl
+  featureServiceUrl: string = defaultUrl,
 ) {
   const queryUrl = new URL("query", featureServiceUrl);
   const queryParams: IRequestOptions = {
@@ -46,19 +48,18 @@ export async function query(
   console.debug("query params", queryParams);
   const response = (await request(
     queryUrl.toString(),
-    queryParams
+    queryParams,
   )) as FeatureServiceQueryResponse;
 
   return response;
 }
-
 
 /**
  * Enumerates all of the fields and returns field name and alias
  * pairs. The output can be used to construct a Map.
  * @param layer - An element of the query response "layers" array.
  * @param aliasOverrides - If the feature service's aliases are not to your liking,
- * you can override them with this mapping, with your desired aliases mapped to 
+ * you can override them with this mapping, with your desired aliases mapped to
  * the corresponding field names.
  * @yields Two-element arrays containing fields' name and alias,
  * respectively. If there is no alias then both elements in the
@@ -66,7 +67,10 @@ export async function query(
  * @example
  * const aliasMap = new Map(enumerateFieldAliases(layer));
  */
-function* enumerateFieldAliases(layer: QueryResponseLayer, aliasOverrides?: FieldAliasMap) {
+function* enumerateFieldAliases(
+  layer: QueryResponseLayer,
+  aliasOverrides?: FieldAliasMap,
+) {
   if (layer.fields) {
     for (const field of layer.fields) {
       const { name } = field;
@@ -115,7 +119,7 @@ function createRegex(...items: string[]) {
 export function* enumerateQueryResponseAttributes(
   response: FeatureServiceQueryResponse,
   fieldsToOmit: string[] = ["OBJECTID"],
-  aliasOverrides = aliasMap
+  aliasOverrides = aliasMap,
 ) {
   // Create a regular expression that will match the names of fields
   // that will be omitted from being yielded.

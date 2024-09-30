@@ -32,7 +32,7 @@ async function getSearchSources() {
  */
 export async function setupSearch(view: MapView | SceneView) {
   const Search = await import("@arcgis/core/widgets/Search").then(
-    (i) => i.default
+    (i) => i.default,
   );
 
   const search = new Search({
