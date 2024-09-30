@@ -1,9 +1,0 @@
-{
-  "buildOptions": {
-    "incremental": true
-  },
-  "extends": [
-    "@tsconfig/node-lts/tsconfig.json",
-    "@tsconfig/esm/tsconfig.json"
-  ]
-}

@@ -63,7 +63,7 @@ function parseGitHubUrl(url: string): RepoInfo {
 /**
  * Retrieves GitHub repo information by executing
  * `git remote --verbose` and parsing the response.
- * @returns
+ * @returns Github repo information
  */
 export async function getGithubRepoInfo() {
   // Execute `git remote --verbose`, then parse
@@ -73,7 +73,7 @@ export async function getGithubRepoInfo() {
   });
   const matches = result.stdout.matchAll(re);
 
-  const groups = [...matches].filter(hasExpectedGroups).map((m) => m.groups);
+  const groups = [...matches].filter(hasExpectedGroups).map((m) => (m as RemoteMatch).groups);
   // Remove duplicate URLs.
   const urls = [...new Set(groups.map((g) => g.url))].map(parseGitHubUrl);
   console.groupEnd();

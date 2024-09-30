@@ -1,5 +1,5 @@
 import { defineConfig } from "vite";
-import { getGithubRepoInfo } from "./tools/github-utils.mjs"
+import { getGithubRepoInfo } from "./src/github-utils.mjs"
 
 /**
  * Gets the name of the repository.
