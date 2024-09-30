@@ -193,3 +193,5 @@ $RECYCLE.BIN/
 
 deleteme*
 *.mjs
+
+.gitattributes.new
