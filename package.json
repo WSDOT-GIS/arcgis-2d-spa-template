@@ -53,6 +53,8 @@
     "single-page-app"
   ],
   "dependencies": {
+    "@arcgis/map-components": "^4.30.7",
+    "@esri/calcite-components": "^2.12.2",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "eslint-config-flat-gitignore": "^0.3.0",
     "eslint-plugin-jsdoc": "^50.3.0",
