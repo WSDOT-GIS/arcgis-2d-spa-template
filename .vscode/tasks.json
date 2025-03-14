@@ -58,13 +58,6 @@
       "problemMatcher": ["$tsc"],
       "label": "Preview production",
       "detail": "Perform Vite production build and then preview it."
-    },
-    {
-      "type": "npm",
-      "script": "lint:eslint",
-      "problemMatcher": ["$eslint-compact"],
-      "label": "npm: lint:eslint",
-      "detail": "eslint . --fix"
     }
   ]
 }
