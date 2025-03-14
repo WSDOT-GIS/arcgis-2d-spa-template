@@ -27,13 +27,17 @@
     },
   },
   "packages": {
-    "@arcgis/components-controllers": ["@arcgis/components-controllers@4.30.7", "", { "dependencies": { "@arcgis/components-utils": "4.30.7", "estraverse": "^5.3.0", "magic-string": "^0.30.0" }, "peerDependencies": { "@arcgis/core": "~4.30.9", "@arcgis/core-adapter": "4.30.7" }, "optionalPeers": ["@arcgis/core", "@arcgis/core-adapter"] }, "sha512-5n9kOt7IjWNWtCLkBcMXlRawq6afrr//qZ2p+PFqoo0kn87zfOSI3Gp11AATsRTI/qGjqhjKePY+X9HmE4SDhA=="],
+    "@arcgis/components-controllers": ["@arcgis/components-controllers@4.32.11", "", { "dependencies": { "@arcgis/components-utils": "4.32.11", "tslib": "^2.7.0" } }, "sha512-GsK4KO/nn73AAQyo4UaNweMv0Wv1rsB6Ru1J9No005qnf+hjdAIdSikep1eM9V5iZwOzwZkAf0cFJXQ+Xz+lBA=="],
 
-    "@arcgis/components-utils": ["@arcgis/components-utils@4.30.7", "", {}, "sha512-VfrXLgCGZMFguItXzfXDpREsMHFtQPzmMQegs2mb7aIui9YJG1j0YJgpZe7a2W4mj0ZGhIr1p59NQ0I/AL49vQ=="],
+    "@arcgis/components-utils": ["@arcgis/components-utils@4.32.11", "", { "dependencies": { "tslib": "^2.7.0" } }, "sha512-ynx/msRzC2Yc7xuoGcJ0eT2WGtKqVLCxCG68DwBAQXG4lP8d7DBxnp/AFEyfFXrIChYU13SPG/lcXpzqx4+5uA=="],
 
-    "@arcgis/core": ["@arcgis/core@4.30.9", "", { "dependencies": { "@esri/arcgis-html-sanitizer": "~4.0.3", "@esri/calcite-colors": "~6.1.0", "@esri/calcite-components": "^2.8.5", "@vaadin/grid": "~24.3.13", "@zip.js/zip.js": "~2.7.44", "luxon": "~3.4.4", "marked": "~12.0.2", "sortablejs": "~1.15.2" } }, "sha512-tOM6QmXRikmD26uqIsFk2yxBwUpmAYJjp4vd9tl+VEfAXaLyArjHC8/op/OvyJZtfHNiL5zcSR7/YsiUddHPXA=="],
+    "@arcgis/core": ["@arcgis/core@4.32.8", "", { "dependencies": { "@esri/arcgis-html-sanitizer": "~4.1.0", "@esri/calcite-components": "^3.0.3", "@vaadin/grid": "~24.6.4", "@zip.js/zip.js": "~2.7.57", "luxon": "~3.5.0", "marked": "~15.0.6" } }, "sha512-TyDh2FFWLUfyDf1h3DsHQjvNdXMzmtnstRM3hkMdKl0yKOVsiQEc9ErkC2YllQf3wgoY76O5bz8vDvqzzc5Zcg=="],
 
-    "@arcgis/map-components": ["@arcgis/map-components@4.30.7", "", { "dependencies": { "@arcgis/components-controllers": "4.30.7", "@arcgis/components-utils": "4.30.7", "@stencil/core": "4.17.1" }, "peerDependencies": { "@arcgis/core": "~4.30.9", "@esri/calcite-components": "^2.8.0" } }, "sha512-hi+0k06J2HdXCPmgesroQYHvfitADworMG1+NhsrJjYGv6MYGoQsf/xYJwBPDs73L4vL7bGIsg3jRB4d04N6sg=="],
+    "@arcgis/core-adapter": ["@arcgis/core-adapter@4.32.11", "", { "dependencies": { "tslib": "^2.7.0" }, "peerDependencies": { "@arcgis/core": "~4.32.0" } }, "sha512-miY+hvkWNxm9+iXLhhQrKhoeqVUNTqaPCxLPfWsOrqMmG+yVwmP3rKaEcqqaw1PjhNbV/5YtfUxYd/aL9D9/iA=="],
+
+    "@arcgis/lumina": ["@arcgis/lumina@4.32.11", "", { "dependencies": { "@arcgis/components-controllers": "4.32.11", "@arcgis/components-utils": "4.32.11", "@lit-labs/ssr": "^3.2.2", "@lit-labs/ssr-client": "^1.1.7", "@lit/context": "^1.1.3", "csstype": "^3.1.3", "lit": "^3.2.0", "tslib": "^2.7.0" } }, "sha512-K5XaWZdJQTL1NAOKow/HFUVB/EN636eaHO1zC4itM0/ey8X4Cn22XeGrYhcecRaOYX5s/0fJQdSgNgGTnzq/6g=="],
+
+    "@arcgis/map-components": ["@arcgis/map-components@4.32.11", "", { "dependencies": { "@arcgis/components-controllers": "4.32.11", "@arcgis/components-utils": "4.32.11", "@arcgis/core-adapter": "4.32.11", "@arcgis/lumina": "4.32.11", "tslib": "^2.7.0" }, "peerDependencies": { "@arcgis/core": "~4.32.0", "@esri/calcite-components": "^3.0.3" } }, "sha512-vP0QDV5NdwA/0221I7Zg8hPwiclr+chb/PIXosd45tkbz3aRPZyUrhHS1b3Jon6zTifR1yqmR7/0XNBZ8eMPVg=="],
 
     "@babel/code-frame": ["@babel/code-frame@7.24.7", "", { "dependencies": { "@babel/highlight": "^7.24.7", "picocolors": "^1.0.0" } }, "sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA=="],
 
@@ -79,135 +83,143 @@
 
     "@biomejs/cli-win32-x64": ["@biomejs/cli-win32-x64@1.9.4", "", { "os": "win32", "cpu": "x64" }, "sha512-8Y5wMhVIPaWe6jw2H+KlEm4wP/f7EW3810ZLmDlrEEy5KvBsb9ECEfu/kMWD484ijfQ8+nIi0giMgu9g1UAuuA=="],
 
-    "@cspell/cspell-bundled-dicts": ["@cspell/cspell-bundled-dicts@8.14.4", "", { "dependencies": { "@cspell/dict-ada": "^4.0.2", "@cspell/dict-aws": "^4.0.4", "@cspell/dict-bash": "^4.1.4", "@cspell/dict-companies": "^3.1.4", "@cspell/dict-cpp": "^5.1.16", "@cspell/dict-cryptocurrencies": "^5.0.0", "@cspell/dict-csharp": "^4.0.2", "@cspell/dict-css": "^4.0.13", "@cspell/dict-dart": "^2.2.1", "@cspell/dict-django": "^4.1.0", "@cspell/dict-docker": "^1.1.7", "@cspell/dict-dotnet": "^5.0.5", "@cspell/dict-elixir": "^4.0.3", "@cspell/dict-en-common-misspellings": "^2.0.4", "@cspell/dict-en-gb": "1.1.33", "@cspell/dict-en_us": "^4.3.23", "@cspell/dict-filetypes": "^3.0.4", "@cspell/dict-flutter": "^1.0.0", "@cspell/dict-fonts": "^4.0.0", "@cspell/dict-fsharp": "^1.0.1", "@cspell/dict-fullstack": "^3.2.0", "@cspell/dict-gaming-terms": "^1.0.5", "@cspell/dict-git": "^3.0.0", "@cspell/dict-golang": "^6.0.12", "@cspell/dict-google": "^1.0.1", "@cspell/dict-haskell": "^4.0.1", "@cspell/dict-html": "^4.0.5", "@cspell/dict-html-symbol-entities": "^4.0.0", "@cspell/dict-java": "^5.0.7", "@cspell/dict-julia": "^1.0.1", "@cspell/dict-k8s": "^1.0.6", "@cspell/dict-latex": "^4.0.0", "@cspell/dict-lorem-ipsum": "^4.0.0", "@cspell/dict-lua": "^4.0.3", "@cspell/dict-makefile": "^1.0.0", "@cspell/dict-monkeyc": "^1.0.6", "@cspell/dict-node": "^5.0.1", "@cspell/dict-npm": "^5.1.4", "@cspell/dict-php": "^4.0.10", "@cspell/dict-powershell": "^5.0.8", "@cspell/dict-public-licenses": "^2.0.8", "@cspell/dict-python": "^4.2.6", "@cspell/dict-r": "^2.0.1", "@cspell/dict-ruby": "^5.0.3", "@cspell/dict-rust": "^4.0.5", "@cspell/dict-scala": "^5.0.3", "@cspell/dict-software-terms": "^4.1.3", "@cspell/dict-sql": "^2.1.5", "@cspell/dict-svelte": "^1.0.2", "@cspell/dict-swift": "^2.0.1", "@cspell/dict-terraform": "^1.0.1", "@cspell/dict-typescript": "^3.1.6", "@cspell/dict-vue": "^3.0.0" } }, "sha512-JHZOpCJzN6fPBapBOvoeMxZbr0ZA11ZAkwcqM4w0lKoacbi6TwK8GIYf66hHvwLmMeav75TNXWE6aPTvBLMMqA=="],
+    "@cspell/cspell-bundled-dicts": ["@cspell/cspell-bundled-dicts@8.17.5", "", { "dependencies": { "@cspell/dict-ada": "^4.1.0", "@cspell/dict-al": "^1.1.0", "@cspell/dict-aws": "^4.0.9", "@cspell/dict-bash": "^4.2.0", "@cspell/dict-companies": "^3.1.14", "@cspell/dict-cpp": "^6.0.4", "@cspell/dict-cryptocurrencies": "^5.0.4", "@cspell/dict-csharp": "^4.0.6", "@cspell/dict-css": "^4.0.17", "@cspell/dict-dart": "^2.3.0", "@cspell/dict-data-science": "^2.0.7", "@cspell/dict-django": "^4.1.4", "@cspell/dict-docker": "^1.1.12", "@cspell/dict-dotnet": "^5.0.9", "@cspell/dict-elixir": "^4.0.7", "@cspell/dict-en-common-misspellings": "^2.0.9", "@cspell/dict-en-gb": "1.1.33", "@cspell/dict-en_us": "^4.3.33", "@cspell/dict-filetypes": "^3.0.11", "@cspell/dict-flutter": "^1.1.0", "@cspell/dict-fonts": "^4.0.4", "@cspell/dict-fsharp": "^1.1.0", "@cspell/dict-fullstack": "^3.2.5", "@cspell/dict-gaming-terms": "^1.1.0", "@cspell/dict-git": "^3.0.4", "@cspell/dict-golang": "^6.0.18", "@cspell/dict-google": "^1.0.8", "@cspell/dict-haskell": "^4.0.5", "@cspell/dict-html": "^4.0.11", "@cspell/dict-html-symbol-entities": "^4.0.3", "@cspell/dict-java": "^5.0.11", "@cspell/dict-julia": "^1.1.0", "@cspell/dict-k8s": "^1.0.10", "@cspell/dict-kotlin": "^1.1.0", "@cspell/dict-latex": "^4.0.3", "@cspell/dict-lorem-ipsum": "^4.0.4", "@cspell/dict-lua": "^4.0.7", "@cspell/dict-makefile": "^1.0.4", "@cspell/dict-markdown": "^2.0.9", "@cspell/dict-monkeyc": "^1.0.10", "@cspell/dict-node": "^5.0.6", "@cspell/dict-npm": "^5.1.27", "@cspell/dict-php": "^4.0.14", "@cspell/dict-powershell": "^5.0.14", "@cspell/dict-public-licenses": "^2.0.13", "@cspell/dict-python": "^4.2.15", "@cspell/dict-r": "^2.1.0", "@cspell/dict-ruby": "^5.0.7", "@cspell/dict-rust": "^4.0.11", "@cspell/dict-scala": "^5.0.7", "@cspell/dict-shell": "^1.1.0", "@cspell/dict-software-terms": "^4.2.5", "@cspell/dict-sql": "^2.2.0", "@cspell/dict-svelte": "^1.0.6", "@cspell/dict-swift": "^2.0.5", "@cspell/dict-terraform": "^1.1.0", "@cspell/dict-typescript": "^3.2.0", "@cspell/dict-vue": "^3.0.4" } }, "sha512-b/Ntabar+g4gsRNwOct909cvatO/auHhNvBzJZfyFQzryI1nqHMaSFuDsrrtzbhQkGJ4GiMAKCXZC2EOdHMgmw=="],
 
-    "@cspell/cspell-json-reporter": ["@cspell/cspell-json-reporter@8.14.4", "", { "dependencies": { "@cspell/cspell-types": "8.14.4" } }, "sha512-gJ6tQbGCNLyHS2iIimMg77as5MMAFv3sxU7W6tjLlZp8htiNZS7fS976g24WbT/hscsTT9Dd0sNHkpo8K3nvVw=="],
+    "@cspell/cspell-json-reporter": ["@cspell/cspell-json-reporter@8.17.5", "", { "dependencies": { "@cspell/cspell-types": "8.17.5" } }, "sha512-+eVFCdnda74Frv8hguHYwDtxvqDuJJ/luFRl4dC5oknPMRab0JCHM1DDYjp3NzsehTex0HmcxplxqVW6QoDosg=="],
 
-    "@cspell/cspell-pipe": ["@cspell/cspell-pipe@8.14.4", "", {}, "sha512-CLLdouqfrQ4rqdQdPu0Oo+HHCU/oLYoEsK1nNPb28cZTFxnn0cuSPKB6AMPBJmMwdfJ6fMD0BCKNbEe1UNLHcw=="],
+    "@cspell/cspell-pipe": ["@cspell/cspell-pipe@8.17.5", "", {}, "sha512-VOIfFdIo3FYQFcSpIyGkqHupOx0LgfBrWs79IKnTT1II27VUHPF+0oGq0WWf4c2Zpd8tzdHvS3IUhGarWZq69g=="],
 
-    "@cspell/cspell-resolver": ["@cspell/cspell-resolver@8.14.4", "", { "dependencies": { "global-directory": "^4.0.1" } }, "sha512-s3uZyymJ04yn8+zlTp7Pt1WRSlAel6XVo+iZRxls3LSvIP819KK64DoyjCD2Uon0Vg9P/K7aAPt8GcxDcnJtgA=="],
+    "@cspell/cspell-resolver": ["@cspell/cspell-resolver@8.17.5", "", { "dependencies": { "global-directory": "^4.0.1" } }, "sha512-5MhYInligPbGctWxoklAKxtg+sxvtJCuRKGSQHHA0JlCOLSsducypl780P6zvpjLK59XmdfC+wtFONxSmRbsuA=="],
 
-    "@cspell/cspell-service-bus": ["@cspell/cspell-service-bus@8.14.4", "", {}, "sha512-i3UG+ep63akNsDXZrtGgICNF3MLBHtvKe/VOIH6+L+NYaAaVHqqQvOY9MdUwt1HXh8ElzfwfoRp36wc5aAvt6g=="],
+    "@cspell/cspell-service-bus": ["@cspell/cspell-service-bus@8.17.5", "", {}, "sha512-Ur3IK0R92G/2J6roopG9cU/EhoYAMOx2um7KYlq93cdrly8RBAK2NCcGCL7DbjQB6C9RYEAV60ueMUnQ45RrCQ=="],
 
-    "@cspell/cspell-types": ["@cspell/cspell-types@8.14.4", "", {}, "sha512-VXwikqdHgjOVperVVCn2DOe8W3rPIswwZtMHfRYnagpzZo/TOntIjkXPJSfTtl/cFyx5DnCBsDH8ytKGlMeHkw=="],
+    "@cspell/cspell-types": ["@cspell/cspell-types@8.17.5", "", {}, "sha512-91y2+0teunRSRZj940ORDA3kdjyenrUiM+4j6nQQH24sAIAJdRmQl2LG3eUTmeaSReJGkZIpnToQ6DyU5cC88Q=="],
 
-    "@cspell/dict-ada": ["@cspell/dict-ada@4.0.2", "", {}, "sha512-0kENOWQeHjUlfyId/aCM/mKXtkEgV0Zu2RhUXCBr4hHo9F9vph+Uu8Ww2b0i5a4ZixoIkudGA+eJvyxrG1jUpA=="],
+    "@cspell/dict-ada": ["@cspell/dict-ada@4.1.0", "", {}, "sha512-7SvmhmX170gyPd+uHXrfmqJBY5qLcCX8kTGURPVeGxmt8XNXT75uu9rnZO+jwrfuU2EimNoArdVy5GZRGljGNg=="],
 
-    "@cspell/dict-aws": ["@cspell/dict-aws@4.0.4", "", {}, "sha512-6AWI/Kkf+RcX/J81VX8+GKLeTgHWEr/OMhGk3dHQzWK66RaqDJCGDqi7494ghZKcBB7dGa3U5jcKw2FZHL/u3w=="],
+    "@cspell/dict-al": ["@cspell/dict-al@1.1.0", "", {}, "sha512-PtNI1KLmYkELYltbzuoztBxfi11jcE9HXBHCpID2lou/J4VMYKJPNqe4ZjVzSI9NYbMnMnyG3gkbhIdx66VSXg=="],
 
-    "@cspell/dict-bash": ["@cspell/dict-bash@4.1.4", "", {}, "sha512-W/AHoQcJYn3Vn/tUiXX2+6D/bhfzdDshwcbQWv9TdiNlXP9P6UJjDKWbxyA5ogJCsR2D0X9Kx11oV8E58siGKQ=="],
+    "@cspell/dict-aws": ["@cspell/dict-aws@4.0.9", "", {}, "sha512-bDYdnnJGwSkIZ4gzrauu7qzOs/ZAY/FnU4k11LgdMI8BhwMfsbsy2EI1iS+sD/BI5ZnNT9kU5YR3WADeNOmhRg=="],
 
-    "@cspell/dict-companies": ["@cspell/dict-companies@3.1.4", "", {}, "sha512-y9e0amzEK36EiiKx3VAA+SHQJPpf2Qv5cCt5eTUSggpTkiFkCh6gRKQ97rVlrKh5GJrqinDwYIJtTsxuh2vy2Q=="],
+    "@cspell/dict-bash": ["@cspell/dict-bash@4.2.0", "", { "dependencies": { "@cspell/dict-shell": "1.1.0" } }, "sha512-HOyOS+4AbCArZHs/wMxX/apRkjxg6NDWdt0jF9i9XkvJQUltMwEhyA2TWYjQ0kssBsnof+9amax2lhiZnh3kCg=="],
 
-    "@cspell/dict-cpp": ["@cspell/dict-cpp@5.1.16", "", {}, "sha512-32fU5RkuOM55IRcxjByiSoKbjr+C4danDfYjHaQNRWdvjzJzci3fLDGA2wTXiclkgDODxGiV8LCTUwCz+3TNWA=="],
+    "@cspell/dict-companies": ["@cspell/dict-companies@3.1.14", "", {}, "sha512-iqo1Ce4L7h0l0GFSicm2wCLtfuymwkvgFGhmu9UHyuIcTbdFkDErH+m6lH3Ed+QuskJlpQ9dM7puMIGqUlVERw=="],
 
-    "@cspell/dict-cryptocurrencies": ["@cspell/dict-cryptocurrencies@5.0.0", "", {}, "sha512-Z4ARIw5+bvmShL+4ZrhDzGhnc9znaAGHOEMaB/GURdS/jdoreEDY34wdN0NtdLHDO5KO7GduZnZyqGdRoiSmYA=="],
+    "@cspell/dict-cpp": ["@cspell/dict-cpp@6.0.6", "", {}, "sha512-HMV1chsExuZt5IL9rYBW7GmhNZDVdQJEd1WtFgOO6jqiNxbpTG3Is3Pkldl7FpusBQQZr4BdjMit5bnPpVRy3A=="],
 
-    "@cspell/dict-csharp": ["@cspell/dict-csharp@4.0.2", "", {}, "sha512-1JMofhLK+4p4KairF75D3A924m5ERMgd1GvzhwK2geuYgd2ZKuGW72gvXpIV7aGf52E3Uu1kDXxxGAiZ5uVG7g=="],
+    "@cspell/dict-cryptocurrencies": ["@cspell/dict-cryptocurrencies@5.0.4", "", {}, "sha512-6iFu7Abu+4Mgqq08YhTKHfH59mpMpGTwdzDB2Y8bbgiwnGFCeoiSkVkgLn1Kel2++hYcZ8vsAW/MJS9oXxuMag=="],
 
-    "@cspell/dict-css": ["@cspell/dict-css@4.0.13", "", {}, "sha512-WfOQkqlAJTo8eIQeztaH0N0P+iF5hsJVKFuhy4jmARPISy8Efcv8QXk2/IVbmjJH0/ZV7dKRdnY5JFVXuVz37g=="],
+    "@cspell/dict-csharp": ["@cspell/dict-csharp@4.0.6", "", {}, "sha512-w/+YsqOknjQXmIlWDRmkW+BHBPJZ/XDrfJhZRQnp0wzpPOGml7W0q1iae65P2AFRtTdPKYmvSz7AL5ZRkCnSIw=="],
 
-    "@cspell/dict-dart": ["@cspell/dict-dart@2.2.1", "", {}, "sha512-yriKm7QkoPx3JPSSOcw6iX9gOb2N50bOo/wqWviqPYbhpMRh9Xiv6dkUy3+ot+21GuShZazO8X6U5+Vw67XEwg=="],
+    "@cspell/dict-css": ["@cspell/dict-css@4.0.17", "", {}, "sha512-2EisRLHk6X/PdicybwlajLGKF5aJf4xnX2uuG5lexuYKt05xV/J/OiBADmi8q9obhxf1nesrMQbqAt+6CsHo/w=="],
 
-    "@cspell/dict-data-science": ["@cspell/dict-data-science@2.0.1", "", {}, "sha512-xeutkzK0eBe+LFXOFU2kJeAYO6IuFUc1g7iRLr7HeCmlC4rsdGclwGHh61KmttL3+YHQytYStxaRBdGAXWC8Lw=="],
+    "@cspell/dict-dart": ["@cspell/dict-dart@2.3.0", "", {}, "sha512-1aY90lAicek8vYczGPDKr70pQSTQHwMFLbmWKTAI6iavmb1fisJBS1oTmMOKE4ximDf86MvVN6Ucwx3u/8HqLg=="],
 
-    "@cspell/dict-django": ["@cspell/dict-django@4.1.0", "", {}, "sha512-bKJ4gPyrf+1c78Z0Oc4trEB9MuhcB+Yg+uTTWsvhY6O2ncFYbB/LbEZfqhfmmuK/XJJixXfI1laF2zicyf+l0w=="],
+    "@cspell/dict-data-science": ["@cspell/dict-data-science@2.0.7", "", {}, "sha512-XhAkK+nSW6zmrnWzusmZ1BpYLc62AWYHZc2p17u4nE2Z9XG5DleG55PCZxXQTKz90pmwlhFM9AfpkJsYaBWATA=="],
 
-    "@cspell/dict-docker": ["@cspell/dict-docker@1.1.7", "", {}, "sha512-XlXHAr822euV36GGsl2J1CkBIVg3fZ6879ZOg5dxTIssuhUOCiV2BuzKZmt6aIFmcdPmR14+9i9Xq+3zuxeX0A=="],
+    "@cspell/dict-django": ["@cspell/dict-django@4.1.4", "", {}, "sha512-fX38eUoPvytZ/2GA+g4bbdUtCMGNFSLbdJJPKX2vbewIQGfgSFJKY56vvcHJKAvw7FopjvgyS/98Ta9WN1gckg=="],
 
-    "@cspell/dict-dotnet": ["@cspell/dict-dotnet@5.0.5", "", {}, "sha512-gjg0L97ee146wX47dnA698cHm85e7EOpf9mVrJD8DmEaqoo/k1oPy2g7c7LgKxK9XnqwoXxhLNnngPrwXOoEtQ=="],
+    "@cspell/dict-docker": ["@cspell/dict-docker@1.1.12", "", {}, "sha512-6d25ZPBnYZaT9D9An/x6g/4mk542R8bR3ipnby3QFCxnfdd6xaWiTcwDPsCgwN2aQZIQ1jX/fil9KmBEqIK/qA=="],
 
-    "@cspell/dict-elixir": ["@cspell/dict-elixir@4.0.3", "", {}, "sha512-g+uKLWvOp9IEZvrIvBPTr/oaO6619uH/wyqypqvwpmnmpjcfi8+/hqZH8YNKt15oviK8k4CkINIqNhyndG9d9Q=="],
+    "@cspell/dict-dotnet": ["@cspell/dict-dotnet@5.0.9", "", {}, "sha512-JGD6RJW5sHtO5lfiJl11a5DpPN6eKSz5M1YBa1I76j4dDOIqgZB6rQexlDlK1DH9B06X4GdDQwdBfnpAB0r2uQ=="],
 
-    "@cspell/dict-en-common-misspellings": ["@cspell/dict-en-common-misspellings@2.0.4", "", {}, "sha512-lvOiRjV/FG4pAGZL3PN2GCVHSTCE92cwhfLGGkOsQtxSmef6WCHfHwp9auafkBlX0yFQSKDfq6/TlpQbjbJBtQ=="],
+    "@cspell/dict-elixir": ["@cspell/dict-elixir@4.0.7", "", {}, "sha512-MAUqlMw73mgtSdxvbAvyRlvc3bYnrDqXQrx5K9SwW8F7fRYf9V4vWYFULh+UWwwkqkhX9w03ZqFYRTdkFku6uA=="],
+
+    "@cspell/dict-en-common-misspellings": ["@cspell/dict-en-common-misspellings@2.0.10", "", {}, "sha512-80mXJLtr0tVEtzowrI7ycVae/ULAYImZUlr0kUTpa8i57AUk7Zy3pYBs44EYIKW7ZC9AHu4Qjjfq4vriAtyTDQ=="],
 
     "@cspell/dict-en-gb": ["@cspell/dict-en-gb@1.1.33", "", {}, "sha512-tKSSUf9BJEV+GJQAYGw5e+ouhEe2ZXE620S7BLKe3ZmpnjlNG9JqlnaBhkIMxKnNFkLY2BP/EARzw31AZnOv4g=="],
 
-    "@cspell/dict-en_us": ["@cspell/dict-en_us@4.3.23", "", {}, "sha512-l0SoEQBsi3zDSl3OuL4/apBkxjuj4hLIg/oy6+gZ7LWh03rKdF6VNtSZNXWAmMY+pmb1cGA3ouleTiJIglbsIg=="],
+    "@cspell/dict-en_us": ["@cspell/dict-en_us@4.3.34", "", {}, "sha512-ewJXNV7Nk5vxbGvHvxYLDGoXN0Lq5sfSgX8SAlcYL+2bZ7r25nNOLHou5hdFlNgvviGTx/SFPlVKjdjVJlblgA=="],
 
-    "@cspell/dict-filetypes": ["@cspell/dict-filetypes@3.0.4", "", {}, "sha512-IBi8eIVdykoGgIv5wQhOURi5lmCNJq0we6DvqKoPQJHthXbgsuO1qrHSiUVydMiQl/XvcnUWTMeAlVUlUClnVg=="],
+    "@cspell/dict-filetypes": ["@cspell/dict-filetypes@3.0.11", "", {}, "sha512-bBtCHZLo7MiSRUqx5KEiPdGOmXIlDGY+L7SJEtRWZENpAKE+96rT7hj+TUUYWBbCzheqHr0OXZJFEKDgsG/uZg=="],
 
-    "@cspell/dict-flutter": ["@cspell/dict-flutter@1.0.0", "", {}, "sha512-W7k1VIc4KeV8BjEBxpA3cqpzbDWjfb7oXkEb0LecBCBp5Z7kcfnjT1YVotTx/U9PGyAOBhDaEdgZACVGNQhayw=="],
+    "@cspell/dict-flutter": ["@cspell/dict-flutter@1.1.0", "", {}, "sha512-3zDeS7zc2p8tr9YH9tfbOEYfopKY/srNsAa+kE3rfBTtQERAZeOhe5yxrnTPoufctXLyuUtcGMUTpxr3dO0iaA=="],
 
-    "@cspell/dict-fonts": ["@cspell/dict-fonts@4.0.0", "", {}, "sha512-t9V4GeN/m517UZn63kZPUYP3OQg5f0OBLSd3Md5CU3eH1IFogSvTzHHnz4Wqqbv8NNRiBZ3HfdY/pqREZ6br3Q=="],
+    "@cspell/dict-fonts": ["@cspell/dict-fonts@4.0.4", "", {}, "sha512-cHFho4hjojBcHl6qxidl9CvUb492IuSk7xIf2G2wJzcHwGaCFa2o3gRcxmIg1j62guetAeDDFELizDaJlVRIOg=="],
 
-    "@cspell/dict-fsharp": ["@cspell/dict-fsharp@1.0.1", "", {}, "sha512-23xyPcD+j+NnqOjRHgW3IU7Li912SX9wmeefcY0QxukbAxJ/vAN4rBpjSwwYZeQPAn3fxdfdNZs03fg+UM+4yQ=="],
+    "@cspell/dict-fsharp": ["@cspell/dict-fsharp@1.1.0", "", {}, "sha512-oguWmHhGzgbgbEIBKtgKPrFSVAFtvGHaQS0oj+vacZqMObwkapcTGu7iwf4V3Bc2T3caf0QE6f6rQfIJFIAVsw=="],
 
-    "@cspell/dict-fullstack": ["@cspell/dict-fullstack@3.2.0", "", {}, "sha512-sIGQwU6G3rLTo+nx0GKyirR5dQSFeTIzFTOrURw51ISf+jKG9a3OmvsVtc2OANfvEAOLOC9Wfd8WYhmsO8KRDQ=="],
+    "@cspell/dict-fullstack": ["@cspell/dict-fullstack@3.2.6", "", {}, "sha512-cSaq9rz5RIU9j+0jcF2vnKPTQjxGXclntmoNp4XB7yFX2621PxJcekGjwf/lN5heJwVxGLL9toR0CBlGKwQBgA=="],
 
-    "@cspell/dict-gaming-terms": ["@cspell/dict-gaming-terms@1.0.5", "", {}, "sha512-C3riccZDD3d9caJQQs1+MPfrUrQ+0KHdlj9iUR1QD92FgTOF6UxoBpvHUUZ9YSezslcmpFQK4xQQ5FUGS7uWfw=="],
+    "@cspell/dict-gaming-terms": ["@cspell/dict-gaming-terms@1.1.0", "", {}, "sha512-46AnDs9XkgJ2f1Sqol1WgfJ8gOqp60fojpc9Wxch7x+BA63g4JfMV5/M5x0sI0TLlLY8EBSglcr8wQF/7C80AQ=="],
 
-    "@cspell/dict-git": ["@cspell/dict-git@3.0.0", "", {}, "sha512-simGS/lIiXbEaqJu9E2VPoYW1OTC2xrwPPXNXFMa2uo/50av56qOuaxDrZ5eH1LidFXwoc8HROCHYeKoNrDLSw=="],
+    "@cspell/dict-git": ["@cspell/dict-git@3.0.4", "", {}, "sha512-C44M+m56rYn6QCsLbiKiedyPTMZxlDdEYAsPwwlL5bhMDDzXZ3Ic8OCQIhMbiunhCOJJT+er4URmOmM+sllnjg=="],
 
-    "@cspell/dict-golang": ["@cspell/dict-golang@6.0.12", "", {}, "sha512-LEPeoqd+4O+vceHF73S7D7+LYfrAjOvp4Dqzh4MT30ruzlQ77yHRSuYOJtrFN1GK5ntAt/ILSVOKg9sgsz1Llg=="],
+    "@cspell/dict-golang": ["@cspell/dict-golang@6.0.19", "", {}, "sha512-VS+oinB2/CbgmHE06kMJlj52OVMZM0S2EEXph3oaroNTgTuclSwdFylQmOEjquZi55kW+n3FM9MyWXiitB7Dtg=="],
 
-    "@cspell/dict-google": ["@cspell/dict-google@1.0.1", "", {}, "sha512-dQr4M3n95uOhtloNSgB9tYYGXGGEGEykkFyRtfcp5pFuEecYUa0BSgtlGKx9RXVtJtKgR+yFT/a5uQSlt8WjqQ=="],
+    "@cspell/dict-google": ["@cspell/dict-google@1.0.8", "", {}, "sha512-BnMHgcEeaLyloPmBs8phCqprI+4r2Jb8rni011A8hE+7FNk7FmLE3kiwxLFrcZnnb7eqM0agW4zUaNoB0P+z8A=="],
 
-    "@cspell/dict-haskell": ["@cspell/dict-haskell@4.0.1", "", {}, "sha512-uRrl65mGrOmwT7NxspB4xKXFUenNC7IikmpRZW8Uzqbqcu7ZRCUfstuVH7T1rmjRgRkjcIjE4PC11luDou4wEQ=="],
+    "@cspell/dict-haskell": ["@cspell/dict-haskell@4.0.5", "", {}, "sha512-s4BG/4tlj2pPM9Ha7IZYMhUujXDnI0Eq1+38UTTCpatYLbQqDwRFf2KNPLRqkroU+a44yTUAe0rkkKbwy4yRtQ=="],
 
-    "@cspell/dict-html": ["@cspell/dict-html@4.0.6", "", {}, "sha512-cLWHfuOhE4wqwC12up6Doxo2u1xxVhX1A8zriR4CUD+osFQzUIcBK1ykNXppga+rt1WyypaJdTU2eV6OpzYrgQ=="],
+    "@cspell/dict-html": ["@cspell/dict-html@4.0.11", "", {}, "sha512-QR3b/PB972SRQ2xICR1Nw/M44IJ6rjypwzA4jn+GH8ydjAX9acFNfc+hLZVyNe0FqsE90Gw3evLCOIF0vy1vQw=="],
 
-    "@cspell/dict-html-symbol-entities": ["@cspell/dict-html-symbol-entities@4.0.0", "", {}, "sha512-HGRu+48ErJjoweR5IbcixxETRewrBb0uxQBd6xFGcxbEYCX8CnQFTAmKI5xNaIt2PKaZiJH3ijodGSqbKdsxhw=="],
+    "@cspell/dict-html-symbol-entities": ["@cspell/dict-html-symbol-entities@4.0.3", "", {}, "sha512-aABXX7dMLNFdSE8aY844X4+hvfK7977sOWgZXo4MTGAmOzR8524fjbJPswIBK7GaD3+SgFZ2yP2o0CFvXDGF+A=="],
 
-    "@cspell/dict-java": ["@cspell/dict-java@5.0.7", "", {}, "sha512-ejQ9iJXYIq7R09BScU2y5OUGrSqwcD+J5mHFOKbduuQ5s/Eh/duz45KOzykeMLI6KHPVxhBKpUPBWIsfewECpQ=="],
+    "@cspell/dict-java": ["@cspell/dict-java@5.0.11", "", {}, "sha512-T4t/1JqeH33Raa/QK/eQe26FE17eUCtWu+JsYcTLkQTci2dk1DfcIKo8YVHvZXBnuM43ATns9Xs0s+AlqDeH7w=="],
 
-    "@cspell/dict-julia": ["@cspell/dict-julia@1.0.1", "", {}, "sha512-4JsCLCRhhLMLiaHpmR7zHFjj1qOauzDI5ZzCNQS31TUMfsOo26jAKDfo0jljFAKgw5M2fEG7sKr8IlPpQAYrmQ=="],
+    "@cspell/dict-julia": ["@cspell/dict-julia@1.1.0", "", {}, "sha512-CPUiesiXwy3HRoBR3joUseTZ9giFPCydSKu2rkh6I2nVjXnl5vFHzOMLXpbF4HQ1tH2CNfnDbUndxD+I+7eL9w=="],
 
-    "@cspell/dict-k8s": ["@cspell/dict-k8s@1.0.6", "", {}, "sha512-srhVDtwrd799uxMpsPOQqeDJY+gEocgZpoK06EFrb4GRYGhv7lXo9Fb+xQMyQytzOW9dw4DNOEck++nacDuymg=="],
+    "@cspell/dict-k8s": ["@cspell/dict-k8s@1.0.10", "", {}, "sha512-313haTrX9prep1yWO7N6Xw4D6tvUJ0Xsx+YhCP+5YrrcIKoEw5Rtlg8R4PPzLqe6zibw6aJ+Eqq+y76Vx5BZkw=="],
 
-    "@cspell/dict-latex": ["@cspell/dict-latex@4.0.0", "", {}, "sha512-LPY4y6D5oI7D3d+5JMJHK/wxYTQa2lJMSNxps2JtuF8hbAnBQb3igoWEjEbIbRRH1XBM0X8dQqemnjQNCiAtxQ=="],
+    "@cspell/dict-kotlin": ["@cspell/dict-kotlin@1.1.0", "", {}, "sha512-vySaVw6atY7LdwvstQowSbdxjXG6jDhjkWVWSjg1XsUckyzH1JRHXe9VahZz1i7dpoFEUOWQrhIe5B9482UyJQ=="],
 
-    "@cspell/dict-lorem-ipsum": ["@cspell/dict-lorem-ipsum@4.0.0", "", {}, "sha512-1l3yjfNvMzZPibW8A7mQU4kTozwVZVw0AvFEdy+NcqtbxH+TvbSkNMqROOFWrkD2PjnKG0+Ea0tHI2Pi6Gchnw=="],
+    "@cspell/dict-latex": ["@cspell/dict-latex@4.0.3", "", {}, "sha512-2KXBt9fSpymYHxHfvhUpjUFyzrmN4c4P8mwIzweLyvqntBT3k0YGZJSriOdjfUjwSygrfEwiuPI1EMrvgrOMJw=="],
 
-    "@cspell/dict-lua": ["@cspell/dict-lua@4.0.3", "", {}, "sha512-lDHKjsrrbqPaea13+G9s0rtXjMO06gPXPYRjRYawbNmo4E/e3XFfVzeci3OQDQNDmf2cPOwt9Ef5lu2lDmwfJg=="],
+    "@cspell/dict-lorem-ipsum": ["@cspell/dict-lorem-ipsum@4.0.4", "", {}, "sha512-+4f7vtY4dp2b9N5fn0za/UR0kwFq2zDtA62JCbWHbpjvO9wukkbl4rZg4YudHbBgkl73HRnXFgCiwNhdIA1JPw=="],
 
-    "@cspell/dict-makefile": ["@cspell/dict-makefile@1.0.0", "", {}, "sha512-3W9tHPcSbJa6s0bcqWo6VisEDTSN5zOtDbnPabF7rbyjRpNo0uHXHRJQF8gAbFzoTzBBhgkTmrfSiuyQm7vBUQ=="],
+    "@cspell/dict-lua": ["@cspell/dict-lua@4.0.7", "", {}, "sha512-Wbr7YSQw+cLHhTYTKV6cAljgMgcY+EUAxVIZW3ljKswEe4OLxnVJ7lPqZF5JKjlXdgCjbPSimsHqyAbC5pQN/Q=="],
 
-    "@cspell/dict-monkeyc": ["@cspell/dict-monkeyc@1.0.6", "", {}, "sha512-oO8ZDu/FtZ55aq9Mb67HtaCnsLn59xvhO/t2mLLTHAp667hJFxpp7bCtr2zOrR1NELzFXmKln/2lw/PvxMSvrA=="],
+    "@cspell/dict-makefile": ["@cspell/dict-makefile@1.0.4", "", {}, "sha512-E4hG/c0ekPqUBvlkrVvzSoAA+SsDA9bLi4xSV3AXHTVru7Y2bVVGMPtpfF+fI3zTkww/jwinprcU1LSohI3ylw=="],
 
-    "@cspell/dict-node": ["@cspell/dict-node@5.0.1", "", {}, "sha512-lax/jGz9h3Dv83v8LHa5G0bf6wm8YVRMzbjJPG/9rp7cAGPtdrga+XANFq+B7bY5+jiSA3zvj10LUFCFjnnCCg=="],
+    "@cspell/dict-markdown": ["@cspell/dict-markdown@2.0.9", "", { "peerDependencies": { "@cspell/dict-css": "^4.0.17", "@cspell/dict-html": "^4.0.11", "@cspell/dict-html-symbol-entities": "^4.0.3", "@cspell/dict-typescript": "^3.2.0" } }, "sha512-j2e6Eg18BlTb1mMP1DkyRFMM/FLS7qiZjltpURzDckB57zDZbUyskOFdl4VX7jItZZEeY0fe22bSPOycgS1Z5A=="],
 
-    "@cspell/dict-npm": ["@cspell/dict-npm@5.1.5", "", {}, "sha512-oAOGWuJYU3DlO+cAsStKMWN8YEkBue25cRC9EwdiL5Z84nchU20UIoYrLfIQejMlZca+1GyrNeyxRAgn4KiivA=="],
+    "@cspell/dict-monkeyc": ["@cspell/dict-monkeyc@1.0.10", "", {}, "sha512-7RTGyKsTIIVqzbvOtAu6Z/lwwxjGRtY5RkKPlXKHEoEAgIXwfDxb5EkVwzGQwQr8hF/D3HrdYbRT8MFBfsueZw=="],
 
-    "@cspell/dict-php": ["@cspell/dict-php@4.0.10", "", {}, "sha512-NfTZdp6kcZDF1PvgQ6cY0zE4FUO5rSwNmBH/iwCBuaLfJAFQ97rgjxo+D2bic4CFwNjyHutnHPtjJBRANO5XQw=="],
+    "@cspell/dict-node": ["@cspell/dict-node@5.0.6", "", {}, "sha512-CEbhPCpxGvRNByGolSBTrXXW2rJA4bGqZuTx1KKO85mwR6aadeOmUE7xf/8jiCkXSy+qvr9aJeh+jlfXcsrziQ=="],
 
-    "@cspell/dict-powershell": ["@cspell/dict-powershell@5.0.9", "", {}, "sha512-Vi0h0rlxS39tgTyUtxI6L3BPHH7MLPkLWCYkNfb/buQuNJYNFdHiF4bqoqVdJ/7ZrfIfNg4i6rzocnwGRn2ruw=="],
+    "@cspell/dict-npm": ["@cspell/dict-npm@5.1.30", "", {}, "sha512-qRMJZFz4FBPECH5rGQN9p2Ld6nfpSaPFQvlG6V2RowWcrJQqF4RFmLUNuRQpvndpSeIUo32yX1hxb7AT45ARCQ=="],
 
-    "@cspell/dict-public-licenses": ["@cspell/dict-public-licenses@2.0.8", "", {}, "sha512-Sup+tFS7cDV0fgpoKtUqEZ6+fA/H+XUgBiqQ/Fbs6vUE3WCjJHOIVsP+udHuyMH7iBfJ4UFYOYeORcY4EaKdMg=="],
+    "@cspell/dict-php": ["@cspell/dict-php@4.0.14", "", {}, "sha512-7zur8pyncYZglxNmqsRycOZ6inpDoVd4yFfz1pQRe5xaRWMiK3Km4n0/X/1YMWhh3e3Sl/fQg5Axb2hlN68t1g=="],
 
-    "@cspell/dict-python": ["@cspell/dict-python@4.2.6", "", { "dependencies": { "@cspell/dict-data-science": "^2.0.1" } }, "sha512-Hkz399qDGEbfXi9GYa2hDl7GahglI86JmS2F1KP8sfjLXofUgtnknyC5NWc86nzHcP38pZiPqPbTigyDYw5y8A=="],
+    "@cspell/dict-powershell": ["@cspell/dict-powershell@5.0.14", "", {}, "sha512-ktjjvtkIUIYmj/SoGBYbr3/+CsRGNXGpvVANrY0wlm/IoGlGywhoTUDYN0IsGwI2b8Vktx3DZmQkfb3Wo38jBA=="],
 
-    "@cspell/dict-r": ["@cspell/dict-r@2.0.1", "", {}, "sha512-KCmKaeYMLm2Ip79mlYPc8p+B2uzwBp4KMkzeLd5E6jUlCL93Y5Nvq68wV5fRLDRTf7N1LvofkVFWfDcednFOgA=="],
+    "@cspell/dict-public-licenses": ["@cspell/dict-public-licenses@2.0.13", "", {}, "sha512-1Wdp/XH1ieim7CadXYE7YLnUlW0pULEjVl9WEeziZw3EKCAw8ZI8Ih44m4bEa5VNBLnuP5TfqC4iDautAleQzQ=="],
 
-    "@cspell/dict-ruby": ["@cspell/dict-ruby@5.0.3", "", {}, "sha512-V1xzv9hN6u8r6SM4CkYdsxs4ov8gjXXo0Twfx5kWhLXbEVxTXDMt7ohLTqpy2XlF5mutixZdbHMeFiAww8v+Ug=="],
+    "@cspell/dict-python": ["@cspell/dict-python@4.2.16", "", { "dependencies": { "@cspell/dict-data-science": "^2.0.7" } }, "sha512-LkQssFt1hPOWXIQiD8ScTkz/41RL7Ti0V/2ytUzEW82dc0atIEksrBg8MuOjWXktp0Dk5tDwRLgmIvhV3CFFOA=="],
 
-    "@cspell/dict-rust": ["@cspell/dict-rust@4.0.5", "", {}, "sha512-DIvlPRDemjKQy8rCqftAgGNZxY5Bg+Ps7qAIJjxkSjmMETyDgl0KTVuaJPt7EK4jJt6uCZ4ILy96npsHDPwoXA=="],
+    "@cspell/dict-r": ["@cspell/dict-r@2.1.0", "", {}, "sha512-k2512wgGG0lTpTYH9w5Wwco+lAMf3Vz7mhqV8+OnalIE7muA0RSuD9tWBjiqLcX8zPvEJr4LdgxVju8Gk3OKyA=="],
 
-    "@cspell/dict-scala": ["@cspell/dict-scala@5.0.3", "", {}, "sha512-4yGb4AInT99rqprxVNT9TYb1YSpq58Owzq7zi3ZS5T0u899Y4VsxsBiOgHnQ/4W+ygi+sp+oqef8w8nABR2lkg=="],
+    "@cspell/dict-ruby": ["@cspell/dict-ruby@5.0.8", "", {}, "sha512-ixuTneU0aH1cPQRbWJvtvOntMFfeQR2KxT8LuAv5jBKqQWIHSxzGlp+zX3SVyoeR0kOWiu64/O5Yn836A5yMcQ=="],
 
-    "@cspell/dict-software-terms": ["@cspell/dict-software-terms@4.1.4", "", {}, "sha512-AHS25sYEzWze/aFglp9ODKSu+phjkuGx+OLwIcmOnvyn8axtSq5GCn9UqS4XG1/Qn0UG2Lgb4i5PJbZ0QNPNXQ=="],
+    "@cspell/dict-rust": ["@cspell/dict-rust@4.0.11", "", {}, "sha512-OGWDEEzm8HlkSmtD8fV3pEcO2XBpzG2XYjgMCJCRwb2gRKvR+XIm6Dlhs04N/K2kU+iH8bvrqNpM8fS/BFl0uw=="],
 
-    "@cspell/dict-sql": ["@cspell/dict-sql@2.1.5", "", {}, "sha512-FmxanytHXss7GAWAXmgaxl3icTCW7YxlimyOSPNfm+njqeUDjw3kEv4mFNDDObBJv8Ec5AWCbUDkWIpkE3IpKg=="],
+    "@cspell/dict-scala": ["@cspell/dict-scala@5.0.7", "", {}, "sha512-yatpSDW/GwulzO3t7hB5peoWwzo+Y3qTc0pO24Jf6f88jsEeKmDeKkfgPbYuCgbE4jisGR4vs4+jfQZDIYmXPA=="],
 
-    "@cspell/dict-svelte": ["@cspell/dict-svelte@1.0.2", "", {}, "sha512-rPJmnn/GsDs0btNvrRBciOhngKV98yZ9SHmg8qI6HLS8hZKvcXc0LMsf9LLuMK1TmS2+WQFAan6qeqg6bBxL2Q=="],
+    "@cspell/dict-shell": ["@cspell/dict-shell@1.1.0", "", {}, "sha512-D/xHXX7T37BJxNRf5JJHsvziFDvh23IF/KvkZXNSh8VqcRdod3BAz9VGHZf6VDqcZXr1VRqIYR3mQ8DSvs3AVQ=="],
 
-    "@cspell/dict-swift": ["@cspell/dict-swift@2.0.1", "", {}, "sha512-gxrCMUOndOk7xZFmXNtkCEeroZRnS2VbeaIPiymGRHj5H+qfTAzAKxtv7jJbVA3YYvEzWcVE2oKDP4wcbhIERw=="],
+    "@cspell/dict-software-terms": ["@cspell/dict-software-terms@4.2.5", "", {}, "sha512-CaRzkWti3AgcXoxuRcMijaNG7YUk/MH1rHjB8VX34v3UdCxXXeqvRyElRKnxhFeVLB/robb2UdShqh/CpskxRg=="],
 
-    "@cspell/dict-terraform": ["@cspell/dict-terraform@1.0.1", "", {}, "sha512-29lmUUnZgPh+ieZ5hunick8hzNIpNRtiJh9vAusNskPCrig3RTW6u7F+GG1a8uyslbzSw+Irjf40PTOan1OJJA=="],
+    "@cspell/dict-sql": ["@cspell/dict-sql@2.2.0", "", {}, "sha512-MUop+d1AHSzXpBvQgQkCiok8Ejzb+nrzyG16E8TvKL2MQeDwnIvMe3bv90eukP6E1HWb+V/MA/4pnq0pcJWKqQ=="],
 
-    "@cspell/dict-typescript": ["@cspell/dict-typescript@3.1.6", "", {}, "sha512-1beC6O4P/j23VuxX+i0+F7XqPVc3hhiAzGJHEKqnWf5cWAXQtg0xz3xQJ5MvYx2a7iLaSa+lu7+05vG9UHyu9Q=="],
+    "@cspell/dict-svelte": ["@cspell/dict-svelte@1.0.6", "", {}, "sha512-8LAJHSBdwHCoKCSy72PXXzz7ulGROD0rP1CQ0StOqXOOlTUeSFaJJlxNYjlONgd2c62XBQiN2wgLhtPN+1Zv7Q=="],
 
-    "@cspell/dict-vue": ["@cspell/dict-vue@3.0.0", "", {}, "sha512-niiEMPWPV9IeRBRzZ0TBZmNnkK3olkOPYxC1Ny2AX4TGlYRajcW0WUtoSHmvvjZNfWLSg2L6ruiBeuPSbjnG6A=="],
+    "@cspell/dict-swift": ["@cspell/dict-swift@2.0.5", "", {}, "sha512-3lGzDCwUmnrfckv3Q4eVSW3sK3cHqqHlPprFJZD4nAqt23ot7fic5ALR7J4joHpvDz36nHX34TgcbZNNZOC/JA=="],
 
-    "@cspell/dynamic-import": ["@cspell/dynamic-import@8.14.4", "", { "dependencies": { "import-meta-resolve": "^4.1.0" } }, "sha512-GjKsBJvPXp4dYRqsMn7n1zpnKbnpfJnlKLOVeoFBh8fi4n06G50xYr+G25CWX1WT3WFaALAavvVICEUPrVsuqg=="],
+    "@cspell/dict-terraform": ["@cspell/dict-terraform@1.1.1", "", {}, "sha512-07KFDwCU7EnKl4hOZLsLKlj6Zceq/IsQ3LRWUyIjvGFfZHdoGtFdCp3ZPVgnFaAcd/DKv+WVkrOzUBSYqHopQQ=="],
 
-    "@cspell/filetypes": ["@cspell/filetypes@8.14.4", "", {}, "sha512-qd68dD7xTA4Mnf/wjIKYz2SkiTBshIM+yszOUtLa06YJm0aocoNQ25FHXyYEQYm9NQXCYnRWWA02sFMGs8Sv/w=="],
+    "@cspell/dict-typescript": ["@cspell/dict-typescript@3.2.0", "", {}, "sha512-Pk3zNePLT8qg51l0M4g1ISowYAEGxTuNfZlgkU5SvHa9Cu7x/BWoyYq9Fvc3kAyoisCjRPyvWF4uRYrPitPDFw=="],
 
-    "@cspell/strong-weak-map": ["@cspell/strong-weak-map@8.14.4", "", {}, "sha512-Uyfck64TfVU24wAP3BLGQ5EsAfzIZiLfN90NhttpEM7GlOBmbGrEJd4hNOwfpYsE/TT80eGWQVPRTLr5SDbXFA=="],
+    "@cspell/dict-vue": ["@cspell/dict-vue@3.0.4", "", {}, "sha512-0dPtI0lwHcAgSiQFx8CzvqjdoXROcH+1LyqgROCpBgppommWpVhbQ0eubnKotFEXgpUCONVkeZJ6Ql8NbTEu+w=="],
 
-    "@cspell/url": ["@cspell/url@8.14.4", "", {}, "sha512-htHhNF8WrM/NfaLSWuTYw0NqVgFRVHYSyHlRT3i/Yv5xvErld8Gw7C6ldm+0TLjoGlUe6X1VV72JSir7+yLp/Q=="],
+    "@cspell/dynamic-import": ["@cspell/dynamic-import@8.17.5", "", { "dependencies": { "@cspell/url": "8.17.5", "import-meta-resolve": "^4.1.0" } }, "sha512-tY+cVkRou+0VKvH+K1NXv8/R7mOlW3BDGSs9fcgvhatj0m00Yf8blFC7tE4VVI9Qh2bkC/KDFqM24IqZbuwXUQ=="],
 
-    "@es-joy/jsdoccomment": ["@es-joy/jsdoccomment@0.48.0", "", { "dependencies": { "comment-parser": "1.4.1", "esquery": "^1.6.0", "jsdoc-type-pratt-parser": "~4.1.0" } }, "sha512-G6QUWIcC+KvSwXNsJyDTHvqUdNoAVJPPgkc3+Uk4WBKqZvoXhlvazOgm9aL0HwihJLQf0l+tOE2UFzXBqCqgDw=="],
+    "@cspell/filetypes": ["@cspell/filetypes@8.17.5", "", {}, "sha512-Fj6py2Rl+FEnMiXhRQUM1A5QmyeCLxi6dY/vQ0qfH6tp6KSaBiaC8wuPUKhr8hKyTd3+8lkUbobDhUf6xtMEXg=="],
+
+    "@cspell/strong-weak-map": ["@cspell/strong-weak-map@8.17.5", "", {}, "sha512-Z4eo+rZJr1086wZWycBiIG/n7gGvVoqn28I7ZicS8xedRYu/4yp2loHgLn4NpxG3e46+dNWs4La6vinod+UydQ=="],
+
+    "@cspell/url": ["@cspell/url@8.17.5", "", {}, "sha512-GNQqST7zI85dAFVyao6oiTeg5rNhO9FH1ZAd397qQhvwfxrrniNfuoewu8gPXyP0R4XBiiaCwhBL7w9S/F5guw=="],
+
+    "@es-joy/jsdoccomment": ["@es-joy/jsdoccomment@0.49.0", "", { "dependencies": { "comment-parser": "1.4.1", "esquery": "^1.6.0", "jsdoc-type-pratt-parser": "~4.1.0" } }, "sha512-xjZTSFgECpb9Ohuk5yMX5RhUEbfeQcuOp8IF60e+wyzWEF0M5xeSgqsfLtvPEX8BIyOX9saZqzuGPmZ8oWc+5Q=="],
 
     "@esbuild/aix-ppc64": ["@esbuild/aix-ppc64@0.21.5", "", { "os": "aix", "cpu": "ppc64" }, "sha512-1SDgH6ZSPTlggy1yI6+Dbkiz8xzpHJEVAlF/AM1tHPLsf5STom9rwtjE4hKAF20FfXXNTFqEYXyJNWh1GiZedQ=="],
 
@@ -273,23 +285,21 @@
 
     "@eslint/plugin-kit": ["@eslint/plugin-kit@0.2.0", "", { "dependencies": { "levn": "^0.4.1" } }, "sha512-vH9PiIMMwvhCx31Af3HiGzsVNULDbyVkHXwlemn/B0TFj/00ho3y55efXrUZTfQipxoHC5u4xq6zblww1zm1Ig=="],
 
-    "@esri/arcgis-html-sanitizer": ["@esri/arcgis-html-sanitizer@4.0.3", "", { "dependencies": { "xss": "1.0.13" } }, "sha512-B06V4Spjhcy2zcKH9SaTrZwRGjUTlsCSGImdCpe7fN/Q3HxLa4QosMgrRJQ+Q8guLhBA177+6Fjwzl/xIrmY7A=="],
+    "@esri/arcgis-html-sanitizer": ["@esri/arcgis-html-sanitizer@4.1.0", "", { "dependencies": { "xss": "1.0.13" } }, "sha512-einEveDJ/k1180NOp78PB/4Hje9eBy3dyOGLLtLn6bSkizpUfCwuYBIXOA7Y3F/k/BsTQXgKqUVwQ0eiscWMdA=="],
 
     "@esri/arcgis-rest-fetch": ["@esri/arcgis-rest-fetch@4.0.0", "", { "dependencies": { "node-fetch": "^3.0.0" } }, "sha512-ybsMO2L4cxx0IaIx0jv6/VbXidZmQIiGD3bvPF1/n1Y1ljHIhCvX+ti54cQSfg/HW2+VAVVnt8EPD/omVhNAyg=="],
 
     "@esri/arcgis-rest-form-data": ["@esri/arcgis-rest-form-data@4.0.0", "", { "dependencies": { "formdata-node": "^4.1.0" } }, "sha512-cAS9HONIJgseCDdgRCIHBR4CE/OQXZIRP3FoNx/w+XyjVqK6yQiwCeXpYLfHeEZ6GEQqrA9XUBxifWG9UaJyXA=="],
 
-    "@esri/arcgis-rest-request": ["@esri/arcgis-rest-request@4.2.3", "", { "dependencies": { "@esri/arcgis-rest-fetch": "^4.0.0", "@esri/arcgis-rest-form-data": "^4.0.0", "mitt": "^3.0.0", "tslib": "^2.3.1" } }, "sha512-5jpgZIN9v8L4q1HRFG1rvn10ay/8UBskvjFMfmvGX+0AsZVVo339ENW1VIwZUoYKv7s06FRWGOcO6EYHq+e+6A=="],
+    "@esri/arcgis-rest-request": ["@esri/arcgis-rest-request@4.3.0", "", { "dependencies": { "@esri/arcgis-rest-fetch": "^4.0.0", "@esri/arcgis-rest-form-data": "^4.0.0", "mitt": "^3.0.0", "tslib": "^2.3.1" } }, "sha512-zuYr4e1x+D7QvtmEj105PlN8lgfKsZ78XKuNNXEbi3+nMYTfCitcyC7Xu16gGAyaUeawdCNjvnAB8ZN8LwINVA=="],
 
-    "@esri/calcite-colors": ["@esri/calcite-colors@6.1.0", "", {}, "sha512-wHQYWFtDa6c328EraXEVZvgOiaQyYr0yuaaZ0G3cB4C3lSkWefW34L/e5TLAhtuG3zJ/wR6pl5X1YYNfBc0/4Q=="],
+    "@esri/calcite-components": ["@esri/calcite-components@2.13.2", "", { "dependencies": { "@esri/calcite-ui-icons": "3.32.0", "@floating-ui/dom": "1.6.11", "@stencil/core": "4.20.0", "@types/color": "3.0.6", "@types/sortablejs": "1.15.8", "color": "4.2.3", "composed-offset-position": "0.0.6", "dayjs": "1.11.13", "focus-trap": "7.6.0", "interactjs": "1.10.27", "lodash-es": "4.17.21", "sortablejs": "1.15.3", "timezone-groups": "0.10.2", "type-fest": "4.18.2" } }, "sha512-90v4H8zs2wEzUXQGmZ+joHhP7ulFUHmQjDlIwXylJiDvoChhnEm38iv7eeG+X8im06biIHEDGRB8LLszlQQ7jw=="],
 
-    "@esri/calcite-components": ["@esri/calcite-components@2.12.2", "", { "dependencies": { "@esri/calcite-ui-icons": "3.31.0", "@floating-ui/dom": "1.6.10", "@stencil/core": "4.20.0", "@types/color": "3.0.6", "@types/sortablejs": "1.15.7", "color": "4.2.3", "composed-offset-position": "0.0.6", "dayjs": "1.11.12", "focus-trap": "7.5.4", "interactjs": "1.10.27", "lodash-es": "4.17.21", "sortablejs": "1.15.1", "timezone-groups": "0.9.1", "type-fest": "4.18.2" } }, "sha512-Fmm7WpG+B7il0mpf7grL0ZsFJ06y6g04fGgcnpjLCjhmqy+kKiv8NFeMX529kVr5uyb43dcVOcbd/bv5RniJxg=="],
-
-    "@esri/calcite-ui-icons": ["@esri/calcite-ui-icons@3.31.0", "", { "bin": { "spriter": "bin/spriter.js" } }, "sha512-Ca3xVXU0LoxljEebuM9r3ss4tyXBfHROcxlFmbNwa2kDTVNSjUKCBgthgXnMD7akgguwwcL7zGnAp645SkJpow=="],
+    "@esri/calcite-ui-icons": ["@esri/calcite-ui-icons@3.32.0", "", { "bin": { "spriter": "bin/spriter.js" } }, "sha512-2UEddEeSnpXVWp/uNrgym3mrb8lZ5+vXFbtmvXv5NiE32nQGw2MFZD52L5Z+FsxqHJ9vVrtl/X6pTIgkd0c8jA=="],
 
     "@floating-ui/core": ["@floating-ui/core@1.6.8", "", { "dependencies": { "@floating-ui/utils": "^0.2.8" } }, "sha512-7XJ9cPU+yI2QeLS+FCSlqNFZJq8arvswefkZrYI1yQBbftw6FyrZOxYSh+9S7z7TpeWlRt9zJ5IhM1WIL334jA=="],
 
-    "@floating-ui/dom": ["@floating-ui/dom@1.6.10", "", { "dependencies": { "@floating-ui/core": "^1.6.0", "@floating-ui/utils": "^0.2.7" } }, "sha512-fskgCFv8J8OamCmyun8MfjB1Olfn+uZKjOKZ0vhYF3gRmEUXcGOjxWL8bBr7i4kIuPZ2KD2S3EUIOxnjC8kl2A=="],
+    "@floating-ui/dom": ["@floating-ui/dom@1.6.11", "", { "dependencies": { "@floating-ui/core": "^1.6.0", "@floating-ui/utils": "^0.2.8" } }, "sha512-qkMCxSR24v2vGkhYDo/UzxfJN3D4syqSjyuTFz6C7XcpU1pASPRieNI0Kj5VP3/503mOfYiGY891ugBX1GlABQ=="],
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.8", "", {}, "sha512-kym7SodPp8/wloecOpcmSnWJsK7M0E5Wg8UcFA+uO4B9s5d0ywXOEro/8HM9x0rW+TljRzul/14UYz3TleT3ig=="],
 
@@ -309,7 +319,13 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.25", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ=="],
 
-    "@lit-labs/ssr-dom-shim": ["@lit-labs/ssr-dom-shim@1.2.1", "", {}, "sha512-wx4aBmgeGvFmOKucFKY+8VFJSYZxs9poN3SDNQFF6lT6NrQUnHiPB2PWz2sc4ieEcAaYYzN+1uWahEeTq2aRIQ=="],
+    "@lit-labs/ssr": ["@lit-labs/ssr@3.3.1", "", { "dependencies": { "@lit-labs/ssr-client": "^1.1.7", "@lit-labs/ssr-dom-shim": "^1.3.0", "@lit/reactive-element": "^2.0.4", "@parse5/tools": "^0.3.0", "@types/node": "^16.0.0", "enhanced-resolve": "^5.10.0", "lit": "^3.1.2", "lit-element": "^4.0.4", "lit-html": "^3.1.2", "node-fetch": "^3.2.8", "parse5": "^7.1.1" } }, "sha512-JlF1PempxvzrGEpRFrF+Ki0MHzR3HA51SK8Zv0cFpW9p0bPW4k0FeCwrElCu371UEpXF7RcaE2wgYaE1az0XKg=="],
+
+    "@lit-labs/ssr-client": ["@lit-labs/ssr-client@1.1.7", "", { "dependencies": { "@lit/reactive-element": "^2.0.4", "lit": "^3.1.2", "lit-html": "^3.1.2" } }, "sha512-VvqhY/iif3FHrlhkzEPsuX/7h/NqnfxLwVf0p8ghNIlKegRyRqgeaJevZ57s/u/LiFyKgqksRP5n+LmNvpxN+A=="],
+
+    "@lit-labs/ssr-dom-shim": ["@lit-labs/ssr-dom-shim@1.3.0", "", {}, "sha512-nQIWonJ6eFAvUUrSlwyHDm/aE8PBDu5kRpL0vHMg6K8fK3Diq1xdPjTnsJSwxABhaZ+5eBi1btQB5ShUTKo4nQ=="],
+
+    "@lit/context": ["@lit/context@1.1.4", "", { "dependencies": { "@lit/reactive-element": "^1.6.2 || ^2.0.0" } }, "sha512-0b8wOWNUPcXjGHFtVP+odwhrZBZw+PpCjKWn8IGO10iHT95Xd6FcUAxe1aE7PUtOBvHZoxvrfdBzweYnDW7VNQ=="],
 
     "@lit/reactive-element": ["@lit/reactive-element@2.0.4", "", { "dependencies": { "@lit-labs/ssr-dom-shim": "^1.2.0" } }, "sha512-GFn91inaUa2oHLak8awSIigYz0cU0Payr1rcFsrkf5OJ5eSPxElyZfKh0f2p9FsTiZWXQdWGJeXZICEfXXYSXQ=="],
 
@@ -320,6 +336,8 @@
     "@nodelib/fs.walk": ["@nodelib/fs.walk@1.2.8", "", { "dependencies": { "@nodelib/fs.scandir": "2.1.5", "fastq": "^1.6.0" } }, "sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg=="],
 
     "@open-wc/dedupe-mixin": ["@open-wc/dedupe-mixin@1.4.0", "", {}, "sha512-Sj7gKl1TLcDbF7B6KUhtvr+1UCxdhMbNY5KxdU5IfMFWqL8oy1ZeAcCANjoB1TL0AJTcPmcCFsCbHf8X2jGDUA=="],
+
+    "@parse5/tools": ["@parse5/tools@0.3.0", "", { "dependencies": { "parse5": "^7.0.0" } }, "sha512-zxRyTHkqb7WQMV8kTNBKWb1BeOFUKXBXTBWuxg9H9hfvQB3IwP6Iw2U75Ia5eyRxPNltmY7E8YAlz6zWwUnjKg=="],
 
     "@pkgr/core": ["@pkgr/core@0.1.1", "", {}, "sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA=="],
 
@@ -357,7 +375,7 @@
 
     "@rollup/rollup-win32-x64-msvc": ["@rollup/rollup-win32-x64-msvc@4.22.5", "", { "os": "win32", "cpu": "x64" }, "sha512-+lvL/4mQxSV8MukpkKyyvfwhH266COcWlXE/1qxwN08ajovta3459zrjLghYMgDerlzNwLAcFpvU+WWE5y6nAQ=="],
 
-    "@stencil/core": ["@stencil/core@4.17.1", "", { "bin": { "stencil": "bin/stencil" } }, "sha512-nlARe1QtK5abnCG8kPQKJMWiELg39vKabvf3ebm6YEhQA35CgrxC1pVYTsYq3yktJKoY+k+VzGRnATLKyaLbvA=="],
+    "@stencil/core": ["@stencil/core@4.20.0", "", { "bin": { "stencil": "bin/stencil" } }, "sha512-WPrTHFngvN081RY+dJPneKQLwnOFD60OMCOQGmmSHfCW0f4ujPMzzhwWU1gcSwXPWXz5O+8cBiiCaxAbJU7kAg=="],
 
     "@trivago/prettier-plugin-sort-imports": ["@trivago/prettier-plugin-sort-imports@4.3.0", "", { "dependencies": { "@babel/generator": "7.17.7", "@babel/parser": "^7.20.5", "@babel/traverse": "7.23.2", "@babel/types": "7.17.0", "javascript-natural-sort": "0.7.1", "lodash": "^4.17.21" }, "peerDependencies": { "@vue/compiler-sfc": "3.x", "prettier": "2.x - 3.x" }, "optionalPeers": ["@vue/compiler-sfc"] }, "sha512-r3n0onD3BTOVUNPhR4lhVK4/pABGpbA7bW3eumZnYdKaHkf1qEC+Mag6DPbGNuuh0eG8AaYj+YqmVHSiGslaTQ=="],
 
@@ -379,59 +397,59 @@
 
     "@types/json-schema": ["@types/json-schema@7.0.15", "", {}, "sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA=="],
 
-    "@types/node": ["@types/node@22.7.4", "", { "dependencies": { "undici-types": "~6.19.2" } }, "sha512-y+NPi1rFzDs1NdQHHToqeiX2TIS79SWEAw9GYhkkx8bD0ChpfqC+n2j5OXOCpzfojBEBt6DnEnnG9MY0zk1XLg=="],
+    "@types/node": ["@types/node@22.13.10", "", { "dependencies": { "undici-types": "~6.20.0" } }, "sha512-I6LPUvlRH+O6VRUqYOcMudhaIdUVWfsjnZavnsraHvpBwaEyMN29ry+0UVJhImYL16xsscu0aske3yA+uPOWfw=="],
 
-    "@types/sortablejs": ["@types/sortablejs@1.15.7", "", {}, "sha512-PvgWCx1Lbgm88FdQ6S7OGvLIjWS66mudKPlfdrWil0TjsO5zmoZmzoKiiwRShs1dwPgrlkr0N4ewuy0/+QUXYQ=="],
+    "@types/sortablejs": ["@types/sortablejs@1.15.8", "", {}, "sha512-b79830lW+RZfwaztgs1aVPgbasJ8e7AXtZYHTELNXZPsERt4ymJdjV4OccDbHQAvHrCcFpbF78jkm0R6h/pZVg=="],
 
     "@types/trusted-types": ["@types/trusted-types@2.0.7", "", {}, "sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw=="],
 
-    "@typescript-eslint/eslint-plugin": ["@typescript-eslint/eslint-plugin@8.8.0", "", { "dependencies": { "@eslint-community/regexpp": "^4.10.0", "@typescript-eslint/scope-manager": "8.8.0", "@typescript-eslint/type-utils": "8.8.0", "@typescript-eslint/utils": "8.8.0", "@typescript-eslint/visitor-keys": "8.8.0", "graphemer": "^1.4.0", "ignore": "^5.3.1", "natural-compare": "^1.4.0", "ts-api-utils": "^1.3.0" }, "peerDependencies": { "@typescript-eslint/parser": "^8.0.0 || ^8.0.0-alpha.0", "eslint": "^8.57.0 || ^9.0.0" } }, "sha512-wORFWjU30B2WJ/aXBfOm1LX9v9nyt9D3jsSOxC3cCaTQGCW5k4jNpmjFv3U7p/7s4yvdjHzwtv2Sd2dOyhjS0A=="],
+    "@typescript-eslint/eslint-plugin": ["@typescript-eslint/eslint-plugin@8.26.1", "", { "dependencies": { "@eslint-community/regexpp": "^4.10.0", "@typescript-eslint/scope-manager": "8.26.1", "@typescript-eslint/type-utils": "8.26.1", "@typescript-eslint/utils": "8.26.1", "@typescript-eslint/visitor-keys": "8.26.1", "graphemer": "^1.4.0", "ignore": "^5.3.1", "natural-compare": "^1.4.0", "ts-api-utils": "^2.0.1" }, "peerDependencies": { "@typescript-eslint/parser": "^8.0.0 || ^8.0.0-alpha.0", "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <5.9.0" } }, "sha512-2X3mwqsj9Bd3Ciz508ZUtoQQYpOhU/kWoUqIf49H8Z0+Vbh6UF/y0OEYp0Q0axOGzaBGs7QxRwq0knSQ8khQNA=="],
 
-    "@typescript-eslint/parser": ["@typescript-eslint/parser@8.8.0", "", { "dependencies": { "@typescript-eslint/scope-manager": "8.8.0", "@typescript-eslint/types": "8.8.0", "@typescript-eslint/typescript-estree": "8.8.0", "@typescript-eslint/visitor-keys": "8.8.0", "debug": "^4.3.4" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0" } }, "sha512-uEFUsgR+tl8GmzmLjRqz+VrDv4eoaMqMXW7ruXfgThaAShO9JTciKpEsB+TvnfFfbg5IpujgMXVV36gOJRLtZg=="],
+    "@typescript-eslint/parser": ["@typescript-eslint/parser@8.26.1", "", { "dependencies": { "@typescript-eslint/scope-manager": "8.26.1", "@typescript-eslint/types": "8.26.1", "@typescript-eslint/typescript-estree": "8.26.1", "@typescript-eslint/visitor-keys": "8.26.1", "debug": "^4.3.4" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <5.9.0" } }, "sha512-w6HZUV4NWxqd8BdeFf81t07d7/YV9s7TCWrQQbG5uhuvGUAW+fq1usZ1Hmz9UPNLniFnD8GLSsDpjP0hm1S4lQ=="],
 
-    "@typescript-eslint/scope-manager": ["@typescript-eslint/scope-manager@8.8.0", "", { "dependencies": { "@typescript-eslint/types": "8.8.0", "@typescript-eslint/visitor-keys": "8.8.0" } }, "sha512-EL8eaGC6gx3jDd8GwEFEV091210U97J0jeEHrAYvIYosmEGet4wJ+g0SYmLu+oRiAwbSA5AVrt6DxLHfdd+bUg=="],
+    "@typescript-eslint/scope-manager": ["@typescript-eslint/scope-manager@8.26.1", "", { "dependencies": { "@typescript-eslint/types": "8.26.1", "@typescript-eslint/visitor-keys": "8.26.1" } }, "sha512-6EIvbE5cNER8sqBu6V7+KeMZIC1664d2Yjt+B9EWUXrsyWpxx4lEZrmvxgSKRC6gX+efDL/UY9OpPZ267io3mg=="],
 
-    "@typescript-eslint/type-utils": ["@typescript-eslint/type-utils@8.8.0", "", { "dependencies": { "@typescript-eslint/typescript-estree": "8.8.0", "@typescript-eslint/utils": "8.8.0", "debug": "^4.3.4", "ts-api-utils": "^1.3.0" } }, "sha512-IKwJSS7bCqyCeG4NVGxnOP6lLT9Okc3Zj8hLO96bpMkJab+10HIfJbMouLrlpyOr3yrQ1cA413YPFiGd1mW9/Q=="],
+    "@typescript-eslint/type-utils": ["@typescript-eslint/type-utils@8.26.1", "", { "dependencies": { "@typescript-eslint/typescript-estree": "8.26.1", "@typescript-eslint/utils": "8.26.1", "debug": "^4.3.4", "ts-api-utils": "^2.0.1" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <5.9.0" } }, "sha512-Kcj/TagJLwoY/5w9JGEFV0dclQdyqw9+VMndxOJKtoFSjfZhLXhYjzsQEeyza03rwHx2vFEGvrJWJBXKleRvZg=="],
 
-    "@typescript-eslint/types": ["@typescript-eslint/types@8.8.0", "", {}, "sha512-QJwc50hRCgBd/k12sTykOJbESe1RrzmX6COk8Y525C9l7oweZ+1lw9JiU56im7Amm8swlz00DRIlxMYLizr2Vw=="],
+    "@typescript-eslint/types": ["@typescript-eslint/types@8.26.1", "", {}, "sha512-n4THUQW27VmQMx+3P+B0Yptl7ydfceUj4ON/AQILAASwgYdZ/2dhfymRMh5egRUrvK5lSmaOm77Ry+lmXPOgBQ=="],
 
-    "@typescript-eslint/typescript-estree": ["@typescript-eslint/typescript-estree@8.8.0", "", { "dependencies": { "@typescript-eslint/types": "8.8.0", "@typescript-eslint/visitor-keys": "8.8.0", "debug": "^4.3.4", "fast-glob": "^3.3.2", "is-glob": "^4.0.3", "minimatch": "^9.0.4", "semver": "^7.6.0", "ts-api-utils": "^1.3.0" } }, "sha512-ZaMJwc/0ckLz5DaAZ+pNLmHv8AMVGtfWxZe/x2JVEkD5LnmhWiQMMcYT7IY7gkdJuzJ9P14fRy28lUrlDSWYdw=="],
+    "@typescript-eslint/typescript-estree": ["@typescript-eslint/typescript-estree@8.26.1", "", { "dependencies": { "@typescript-eslint/types": "8.26.1", "@typescript-eslint/visitor-keys": "8.26.1", "debug": "^4.3.4", "fast-glob": "^3.3.2", "is-glob": "^4.0.3", "minimatch": "^9.0.4", "semver": "^7.6.0", "ts-api-utils": "^2.0.1" }, "peerDependencies": { "typescript": ">=4.8.4 <5.9.0" } }, "sha512-yUwPpUHDgdrv1QJ7YQal3cMVBGWfnuCdKbXw1yyjArax3353rEJP1ZA+4F8nOlQ3RfS2hUN/wze3nlY+ZOhvoA=="],
 
-    "@typescript-eslint/utils": ["@typescript-eslint/utils@8.8.0", "", { "dependencies": { "@eslint-community/eslint-utils": "^4.4.0", "@typescript-eslint/scope-manager": "8.8.0", "@typescript-eslint/types": "8.8.0", "@typescript-eslint/typescript-estree": "8.8.0" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0" } }, "sha512-QE2MgfOTem00qrlPgyByaCHay9yb1+9BjnMFnSFkUKQfu7adBXDTnCAivURnuPPAG/qiB+kzKkZKmKfaMT0zVg=="],
+    "@typescript-eslint/utils": ["@typescript-eslint/utils@8.26.1", "", { "dependencies": { "@eslint-community/eslint-utils": "^4.4.0", "@typescript-eslint/scope-manager": "8.26.1", "@typescript-eslint/types": "8.26.1", "@typescript-eslint/typescript-estree": "8.26.1" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <5.9.0" } }, "sha512-V4Urxa/XtSUroUrnI7q6yUTD3hDtfJ2jzVfeT3VK0ciizfK2q/zGC0iDh1lFMUZR8cImRrep6/q0xd/1ZGPQpg=="],
 
-    "@typescript-eslint/visitor-keys": ["@typescript-eslint/visitor-keys@8.8.0", "", { "dependencies": { "@typescript-eslint/types": "8.8.0", "eslint-visitor-keys": "^3.4.3" } }, "sha512-8mq51Lx6Hpmd7HnA2fcHQo3YgfX1qbccxQOgZcb4tvasu//zXRaA1j5ZRFeCw/VRAdFi4mRM9DnZw0Nu0Q2d1g=="],
+    "@typescript-eslint/visitor-keys": ["@typescript-eslint/visitor-keys@8.26.1", "", { "dependencies": { "@typescript-eslint/types": "8.26.1", "eslint-visitor-keys": "^4.2.0" } }, "sha512-AjOC3zfnxd6S4Eiy3jwktJPclqhFHNyd8L6Gycf9WUPoKZpgM5PjkxY1X7uSy61xVpiJDhhk7XT2NVsN3ALTWg=="],
 
-    "@vaadin/a11y-base": ["@vaadin/a11y-base@24.3.22", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.3.22", "lit": "^3.0.0" } }, "sha512-QrVsB7R+WGHlwEzVyvhwL6HvAGErF6CHTDBEyvKyt3jmjIqRDiCBGjvq6g/SHYUUNQNH1u892ANXGHLAQGGqLQ=="],
+    "@vaadin/a11y-base": ["@vaadin/a11y-base@24.6.7", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.6.7", "lit": "^3.0.0" } }, "sha512-CJYYTWPBEEaVt4AvBE8RzEn3hqUZbGUGLzqs6NGBFTw0c5cfkqoO2ZMkKhz5Z52QF+2mCXpEtyg6s+t0h171Qg=="],
 
-    "@vaadin/checkbox": ["@vaadin/checkbox@24.3.22", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/a11y-base": "~24.3.22", "@vaadin/component-base": "~24.3.22", "@vaadin/field-base": "~24.3.22", "@vaadin/vaadin-lumo-styles": "~24.3.22", "@vaadin/vaadin-material-styles": "~24.3.22", "@vaadin/vaadin-themable-mixin": "~24.3.22", "lit": "^3.0.0" } }, "sha512-x5oHFsvyptS3gmDv60ArHPeziFWUu7w/26NIhKb2UIwK/Xm83Ot2GufX7O15w5v+o4CewZPHV3+HtbCsYXih6Q=="],
+    "@vaadin/checkbox": ["@vaadin/checkbox@24.6.7", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/a11y-base": "~24.6.7", "@vaadin/component-base": "~24.6.7", "@vaadin/field-base": "~24.6.7", "@vaadin/vaadin-lumo-styles": "~24.6.7", "@vaadin/vaadin-material-styles": "~24.6.7", "@vaadin/vaadin-themable-mixin": "~24.6.7", "lit": "^3.0.0" } }, "sha512-/Vl5codokNdN5ku1l/iAkdjUmYTUZGKyAleHjM7V3ZFpwkK2IoWN4HrbWyhPuf1gL3T85bKMLSPuYoOX/ymrFw=="],
 
-    "@vaadin/component-base": ["@vaadin/component-base@24.3.22", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/vaadin-development-mode-detector": "^2.0.0", "@vaadin/vaadin-usage-statistics": "^2.1.0", "lit": "^3.0.0" } }, "sha512-7BPgiDw1icpk9Ngw4uhsfIOqWRc6beeJnDpnyIOKoaLZUtoQOwNx1IQdH7mwwyEevbi86585JP/LS6p5k1dSLw=="],
+    "@vaadin/component-base": ["@vaadin/component-base@24.6.7", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/vaadin-development-mode-detector": "^2.0.0", "@vaadin/vaadin-usage-statistics": "^2.1.0", "lit": "^3.0.0" } }, "sha512-LcZQZEwouPDHBoXfXRREb1mRScsPSPeKTUZdgrXh180Piy57VzpNzslIMrdfVFSye9lLMs2/g2o8HCUDgnY/OQ=="],
 
-    "@vaadin/field-base": ["@vaadin/field-base@24.3.22", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/a11y-base": "~24.3.22", "@vaadin/component-base": "~24.3.22", "lit": "^3.0.0" } }, "sha512-ZY799Clzqt6H7UUsdHuxz0jXhbVP1t5WbxzWest5s5cWBaUw089wBh0H8LBUobFM1LUu5/AYW6II7W3R2Dqi2w=="],
+    "@vaadin/field-base": ["@vaadin/field-base@24.6.7", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/a11y-base": "~24.6.7", "@vaadin/component-base": "~24.6.7", "lit": "^3.0.0" } }, "sha512-5MXpAQGZA15/hRdnZrJK5q5Mv8rgOraSyBpC/gjRJ1W1IQ5DrCcb3ltvPATguv0K3vpJwunXGXrGqm/+SGEk0w=="],
 
-    "@vaadin/grid": ["@vaadin/grid@24.3.22", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/a11y-base": "~24.3.22", "@vaadin/checkbox": "~24.3.22", "@vaadin/component-base": "~24.3.22", "@vaadin/lit-renderer": "~24.3.22", "@vaadin/text-field": "~24.3.22", "@vaadin/vaadin-lumo-styles": "~24.3.22", "@vaadin/vaadin-material-styles": "~24.3.22", "@vaadin/vaadin-themable-mixin": "~24.3.22" } }, "sha512-m+FtzBkD6Fd15XS/31vW5DkONQDV6T966HuhT+cKyZbmJ40/w+zfFk3F/OvTuT4MW6U2lBwpWQucAD1ucPHMdg=="],
+    "@vaadin/grid": ["@vaadin/grid@24.6.7", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/a11y-base": "~24.6.7", "@vaadin/checkbox": "~24.6.7", "@vaadin/component-base": "~24.6.7", "@vaadin/lit-renderer": "~24.6.7", "@vaadin/text-field": "~24.6.7", "@vaadin/vaadin-lumo-styles": "~24.6.7", "@vaadin/vaadin-material-styles": "~24.6.7", "@vaadin/vaadin-themable-mixin": "~24.6.7", "lit": "^3.0.0" } }, "sha512-G3o+T0A995GEqiTbdPvmEYQEVA69pwLq5L8A5qw6q+onbyEFAbJEpRz/r9IcxgnD5yYDmsXVSNFTTVU6NKAYUw=="],
 
-    "@vaadin/icon": ["@vaadin/icon@24.3.22", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.3.22", "@vaadin/vaadin-lumo-styles": "~24.3.22", "@vaadin/vaadin-themable-mixin": "~24.3.22", "lit": "^3.0.0" } }, "sha512-zx6hzSBEtJthl4CS9AmOQIlvGeO+0913KebcmvJ/GV9SAF54nZNSo6KGVE5Njp7W32h1lSzPTw89O5Pre2Cjqg=="],
+    "@vaadin/icon": ["@vaadin/icon@24.6.7", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.6.7", "@vaadin/vaadin-lumo-styles": "~24.6.7", "@vaadin/vaadin-themable-mixin": "~24.6.7", "lit": "^3.0.0" } }, "sha512-+Cv3hLyFSXJAhnuGuPQ+hQcv9/ijZpIprJ6rqWeChvFk+bQOoPgUPx/tj67mOiTcrmV5hYt+dYs4QM7JZ//dGg=="],
 
-    "@vaadin/input-container": ["@vaadin/input-container@24.3.22", "", { "dependencies": { "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.3.22", "@vaadin/vaadin-lumo-styles": "~24.3.22", "@vaadin/vaadin-material-styles": "~24.3.22", "@vaadin/vaadin-themable-mixin": "~24.3.22", "lit": "^3.0.0" } }, "sha512-YUULDjZ96K89ChHsCfta9flWc0ZJTgcDX0HpulnQDkCsZ7EghArZ+fJtjy9jSsDdx69R5R9CnoRQOgMT/cPd7Q=="],
+    "@vaadin/input-container": ["@vaadin/input-container@24.6.7", "", { "dependencies": { "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.6.7", "@vaadin/vaadin-lumo-styles": "~24.6.7", "@vaadin/vaadin-material-styles": "~24.6.7", "@vaadin/vaadin-themable-mixin": "~24.6.7", "lit": "^3.0.0" } }, "sha512-376ZyD74jrKvjiM+gE0xNScyZPU7REMBbGXpmM4DpoLYgw60m01D3fliZaOTVDyXc3gvxWIai3L1vCY0KYpD6w=="],
 
-    "@vaadin/lit-renderer": ["@vaadin/lit-renderer@24.3.22", "", { "dependencies": { "lit": "^3.0.0" } }, "sha512-LmbjpL6dGwbCZBpnpIUIOgknNA6LftcdIwyBqiywOS3i8fuEMwzXNuK+oUYPfbe4DZnJn0/51AJZwB5fSzsCRA=="],
+    "@vaadin/lit-renderer": ["@vaadin/lit-renderer@24.6.7", "", { "dependencies": { "lit": "^3.0.0" } }, "sha512-S9daJnGW/X+HBhOriENRYNf8hCFYABmea756onaLS0QoWLkaU3QVPKrhHjZtzNVf/15UcIeAx4C5JlIas2osFA=="],
 
-    "@vaadin/text-field": ["@vaadin/text-field@24.3.22", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/a11y-base": "~24.3.22", "@vaadin/component-base": "~24.3.22", "@vaadin/field-base": "~24.3.22", "@vaadin/input-container": "~24.3.22", "@vaadin/vaadin-lumo-styles": "~24.3.22", "@vaadin/vaadin-material-styles": "~24.3.22", "@vaadin/vaadin-themable-mixin": "~24.3.22", "lit": "^3.0.0" } }, "sha512-opSjQW4fY4fCfklyPtSclpGuugw6u4HdlQEiFVcxrI9wBObNnMuYt+bKTiuqCDZSECox4dh3VEaM8hJusOcc+w=="],
+    "@vaadin/text-field": ["@vaadin/text-field@24.6.7", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "@polymer/polymer": "^3.0.0", "@vaadin/a11y-base": "~24.6.7", "@vaadin/component-base": "~24.6.7", "@vaadin/field-base": "~24.6.7", "@vaadin/input-container": "~24.6.7", "@vaadin/vaadin-lumo-styles": "~24.6.7", "@vaadin/vaadin-material-styles": "~24.6.7", "@vaadin/vaadin-themable-mixin": "~24.6.7", "lit": "^3.0.0" } }, "sha512-34YmuH6+F0qDyiNTcMtTsU3+xMWiOfPi4630DBJ8+99J+GBHIGt4BZB0QRrEfpiPWVbykVg27MGUP4KVTfH8Uw=="],
 
     "@vaadin/vaadin-development-mode-detector": ["@vaadin/vaadin-development-mode-detector@2.0.7", "", {}, "sha512-9FhVhr0ynSR3X2ao+vaIEttcNU5XfzCbxtmYOV8uIRnUCtNgbvMOIcyGBvntsX9I5kvIP2dV3cFAOG9SILJzEA=="],
 
-    "@vaadin/vaadin-lumo-styles": ["@vaadin/vaadin-lumo-styles@24.3.22", "", { "dependencies": { "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.3.22", "@vaadin/icon": "~24.3.22", "@vaadin/vaadin-themable-mixin": "~24.3.22" } }, "sha512-uHEtzfk8u2k5iTknIaOhbIEHH6VcuiLZeFs7p4V9a01E5KkBcBFlOPY3hMgPua3yPVJKDNCmK1lzG8Qt/IrArg=="],
+    "@vaadin/vaadin-lumo-styles": ["@vaadin/vaadin-lumo-styles@24.6.7", "", { "dependencies": { "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.6.7", "@vaadin/icon": "~24.6.7", "@vaadin/vaadin-themable-mixin": "~24.6.7" } }, "sha512-DNamU8cVxbaVn3HfRm3pN8ul95xvaem92ByVeEQwdvKaHwLI4m7AdSWKEA+13ST9TdBtCeDW6DjmtGcoEqbqiw=="],
 
-    "@vaadin/vaadin-material-styles": ["@vaadin/vaadin-material-styles@24.3.22", "", { "dependencies": { "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.3.22", "@vaadin/vaadin-themable-mixin": "~24.3.22" } }, "sha512-sCoZimM96Rj7i9DWCg3LsJq4EsLkJcj7U8NmbCo+XnRtGykElBb/xc3fJiAC8uuf39Yj6V8BbAahuq3ulwaRig=="],
+    "@vaadin/vaadin-material-styles": ["@vaadin/vaadin-material-styles@24.6.7", "", { "dependencies": { "@polymer/polymer": "^3.0.0", "@vaadin/component-base": "~24.6.7", "@vaadin/vaadin-themable-mixin": "~24.6.7" } }, "sha512-7ecHOEZrFEbUz5UVSGapOt/uC7lSYV05RADCNhG16c+WsuN+oxkGIIaThMMCdBcclg5ej/BeTxZlZha8JoNO3g=="],
 
-    "@vaadin/vaadin-themable-mixin": ["@vaadin/vaadin-themable-mixin@24.3.22", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "lit": "^3.0.0" } }, "sha512-u+r0UXtCzMoZbR1UKQTPWUZEnkXlxwRuxjpNCAdyumqbFMMHd5yw1/LbXertouzj60CN3SUU1FXLtjCgFOeRXQ=="],
+    "@vaadin/vaadin-themable-mixin": ["@vaadin/vaadin-themable-mixin@24.6.7", "", { "dependencies": { "@open-wc/dedupe-mixin": "^1.3.0", "lit": "^3.0.0" } }, "sha512-fiVBvJWInNBq/oXeE0UAQmzadQ7UJE3ns768D1taKOwTMOxiio1UMoUXcVGwni9ASzXrd96S7F6c4aIaVqNx6A=="],
 
     "@vaadin/vaadin-usage-statistics": ["@vaadin/vaadin-usage-statistics@2.1.3", "", { "dependencies": { "@vaadin/vaadin-development-mode-detector": "^2.0.0" } }, "sha512-8r4TNknD7OJQADe3VygeofFR7UNAXZ2/jjBFP5dgI8+2uMfnuGYgbuHivasKr9WSQ64sPej6m8rDoM1uSllXjQ=="],
 
     "@webcomponents/shadycss": ["@webcomponents/shadycss@1.11.2", "", {}, "sha512-vRq+GniJAYSBmTRnhCYPAPq6THYqovJ/gzGThWbgEZUQaBccndGTi1hdiUP15HzEco0I6t4RCtXyX0rsSmwgPw=="],
 
-    "@zip.js/zip.js": ["@zip.js/zip.js@2.7.52", "", {}, "sha512-+5g7FQswvrCHwYKNMd/KFxZSObctLSsQOgqBSi0LzwHo3li9Eh1w5cF5ndjQw9Zbr3ajVnd2+XyiX85gAetx1Q=="],
+    "@zip.js/zip.js": ["@zip.js/zip.js@2.7.57", "", {}, "sha512-BtonQ1/jDnGiMed6OkV6rZYW78gLmLswkHOzyMrMb+CAR7CZO8phOHO6c2qw6qb1g1betN7kwEHhhZk30dv+NA=="],
 
     "acorn": ["acorn@8.12.1", "", { "bin": { "acorn": "bin/acorn" } }, "sha512-tcpGyI9zbizT9JbV6oYE477V6mTlXvvi0T0G3SNIYE2apm/G5huBa1+K89VGeovbg+jycCrfhl3ADxErOuO6Jg=="],
 
@@ -439,7 +457,7 @@
 
     "ajv": ["ajv@6.12.6", "", { "dependencies": { "fast-deep-equal": "^3.1.1", "fast-json-stable-stringify": "^2.0.0", "json-schema-traverse": "^0.4.1", "uri-js": "^4.2.2" } }, "sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g=="],
 
-    "ansi-regex": ["ansi-regex@6.1.0", "", {}, "sha512-7HSX4QQb4CspciLpVFwyRe79O3xsIZDDLER21kERQ71oaPodF8jL725AgJMFAYbooIqolJoRLuM81SpeUkpkvA=="],
+    "ansi-regex": ["ansi-regex@5.0.1", "", {}, "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ=="],
 
     "ansi-styles": ["ansi-styles@4.3.0", "", { "dependencies": { "color-convert": "^2.0.1" } }, "sha512-zbB9rCJAT1rbjiVDb2hqKFHNYLxgtk8NURxZ3IZwD3F6NtxbXZQCnnSi1Lkx+IDohdPlFp222wVALIheZJQSEg=="],
 
@@ -457,7 +475,7 @@
 
     "callsites": ["callsites@3.1.0", "", {}, "sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ=="],
 
-    "chalk": ["chalk@5.3.0", "", {}, "sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w=="],
+    "chalk": ["chalk@5.4.1", "", {}, "sha512-zgVZuo2WcZgfUEmsn6eO3kINexW8RAE4maiQ8QNs8CtpPCSyMiYsULR3HQYkm3w8FIA3SberyMJMSldGsW+U3w=="],
 
     "chalk-template": ["chalk-template@1.1.0", "", { "dependencies": { "chalk": "^5.2.0" } }, "sha512-T2VJbcDuZQ0Tb2EWwSotMPJjgpy1/tGee1BTpUNsGZ/qgNjV2t7Mvu+d4600U564nbLesN1x2dPL+xii174Ekg=="],
 
@@ -471,7 +489,7 @@
 
     "color-string": ["color-string@1.9.1", "", { "dependencies": { "color-name": "^1.0.0", "simple-swizzle": "^0.2.2" } }, "sha512-shrVawQFojnZv6xM40anx4CkoDP+fZsw/ZerEMsW/pyzsRbElpsL/DBVW7q3ExxwusdNXI3lXpuhEZkzs8p5Eg=="],
 
-    "commander": ["commander@12.1.0", "", {}, "sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA=="],
+    "commander": ["commander@13.1.0", "", {}, "sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw=="],
 
     "comment-json": ["comment-json@4.2.5", "", { "dependencies": { "array-timsort": "^1.0.3", "core-util-is": "^1.0.3", "esprima": "^4.0.1", "has-own-prop": "^2.0.0", "repeat-string": "^1.6.1" } }, "sha512-bKw/r35jR3HGt5PEPm1ljsQQGyCrR8sFGNiN5L+ykDHdpO8Smxkrkla9Yi6NkQyUrb8V54PGhfMs6NrIwtxtdw=="],
 
@@ -485,33 +503,39 @@
 
     "cross-spawn": ["cross-spawn@7.0.3", "", { "dependencies": { "path-key": "^3.1.0", "shebang-command": "^2.0.0", "which": "^2.0.1" } }, "sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w=="],
 
-    "cspell": ["cspell@8.14.4", "", { "dependencies": { "@cspell/cspell-json-reporter": "8.14.4", "@cspell/cspell-pipe": "8.14.4", "@cspell/cspell-types": "8.14.4", "@cspell/dynamic-import": "8.14.4", "@cspell/url": "8.14.4", "chalk": "^5.3.0", "chalk-template": "^1.1.0", "commander": "^12.1.0", "cspell-dictionary": "8.14.4", "cspell-gitignore": "8.14.4", "cspell-glob": "8.14.4", "cspell-io": "8.14.4", "cspell-lib": "8.14.4", "fast-glob": "^3.3.2", "fast-json-stable-stringify": "^2.1.0", "file-entry-cache": "^9.1.0", "get-stdin": "^9.0.0", "semver": "^7.6.3", "strip-ansi": "^7.1.0" }, "bin": { "cspell": "bin.mjs", "cspell-esm": "bin.mjs" } }, "sha512-R5Awb3i/RKaVVcZzFt8dkN3M6VnifIEDYBcbzbmYjZ/Eq+ASF+QTmI0E9WPhMEcFM1nd7YOyXnETo560yRdoKw=="],
+    "cspell": ["cspell@8.17.5", "", { "dependencies": { "@cspell/cspell-json-reporter": "8.17.5", "@cspell/cspell-pipe": "8.17.5", "@cspell/cspell-types": "8.17.5", "@cspell/dynamic-import": "8.17.5", "@cspell/url": "8.17.5", "chalk": "^5.4.1", "chalk-template": "^1.1.0", "commander": "^13.1.0", "cspell-dictionary": "8.17.5", "cspell-gitignore": "8.17.5", "cspell-glob": "8.17.5", "cspell-io": "8.17.5", "cspell-lib": "8.17.5", "fast-json-stable-stringify": "^2.1.0", "file-entry-cache": "^9.1.0", "get-stdin": "^9.0.0", "semver": "^7.7.1", "tinyglobby": "^0.2.12" }, "bin": { "cspell": "bin.mjs", "cspell-esm": "bin.mjs" } }, "sha512-l3Cfp87d7Yrodem675irdxV6+7+OsdR+jNwYHe33Dgnd6ePEfooYrvmfGdXF9rlQrNLUQp/HqYgHJzSq19UEsg=="],
 
-    "cspell-config-lib": ["cspell-config-lib@8.14.4", "", { "dependencies": { "@cspell/cspell-types": "8.14.4", "comment-json": "^4.2.5", "yaml": "^2.5.1" } }, "sha512-cnUeJfniTiebqCaQmIUnbSrPrTH7xzKRQjJDHAEV0WYnOG2MhRXI13OzytdFdhkVBdStmgTzTCJKE7x+kmU2NA=="],
+    "cspell-config-lib": ["cspell-config-lib@8.17.5", "", { "dependencies": { "@cspell/cspell-types": "8.17.5", "comment-json": "^4.2.5", "yaml": "^2.7.0" } }, "sha512-XDc+UJO5RZ9S9e2Ajz332XjT7dv6Og2UqCiSnAlvHt7t/MacLHSPARZFIivheObNkWZ7E1iWI681RxKoH4o40w=="],
 
-    "cspell-dictionary": ["cspell-dictionary@8.14.4", "", { "dependencies": { "@cspell/cspell-pipe": "8.14.4", "@cspell/cspell-types": "8.14.4", "cspell-trie-lib": "8.14.4", "fast-equals": "^5.0.1" } }, "sha512-pZvQHxpAW5fZAnt3ZKKy3s7M+3CX2t8tCS3uJrpEHIynlCawpG0fPF78rVE5o+g0dON36Lguc/BUuSN4IWKLmQ=="],
+    "cspell-dictionary": ["cspell-dictionary@8.17.5", "", { "dependencies": { "@cspell/cspell-pipe": "8.17.5", "@cspell/cspell-types": "8.17.5", "cspell-trie-lib": "8.17.5", "fast-equals": "^5.2.2" } }, "sha512-O/Uuhv1RuDu+5WYQml0surudweaTvr+2YJSmPSdlihByUSiogCbpGqwrRow7wQv/C5p1W1FlFjotvUfoR0fxHA=="],
 
-    "cspell-gitignore": ["cspell-gitignore@8.14.4", "", { "dependencies": { "@cspell/url": "8.14.4", "cspell-glob": "8.14.4", "cspell-io": "8.14.4", "find-up-simple": "^1.0.0" }, "bin": { "cspell-gitignore": "bin.mjs" } }, "sha512-RwfQEW5hD7CpYwS7m3b0ONG0nTLKP6bL2tvMdl7qtaYkL7ztGdsBTtLD1pmwqUsCbiN5RuaOxhYOYeRcpFRIkQ=="],
+    "cspell-gitignore": ["cspell-gitignore@8.17.5", "", { "dependencies": { "@cspell/url": "8.17.5", "cspell-glob": "8.17.5", "cspell-io": "8.17.5", "find-up-simple": "^1.0.0" }, "bin": { "cspell-gitignore": "bin.mjs" } }, "sha512-I27fgOUZzH14jeIYo65LooB60fZ42f6OJL1lOR9Mk6IrIlDyUtzherGR+xx5KshK2katYkX42Qu4zsVYM6VFPA=="],
 
-    "cspell-glob": ["cspell-glob@8.14.4", "", { "dependencies": { "@cspell/url": "8.14.4", "micromatch": "^4.0.8" } }, "sha512-C/xTS5nujMRMuguibq92qMVP767mtxrur7DcVolCvpzcivm1RB5NtIN0OctQxTyMbnmKeQv1t4epRKQ9A8vWRg=="],
+    "cspell-glob": ["cspell-glob@8.17.5", "", { "dependencies": { "@cspell/url": "8.17.5", "micromatch": "^4.0.8" } }, "sha512-OXquou7UykInlGV5et5lNKYYrW0dwa28aEF995x1ocANND7o0bbHmFlbgyci/Lp4uFQai8sifmfFJbuIg2IC/A=="],
 
-    "cspell-grammar": ["cspell-grammar@8.14.4", "", { "dependencies": { "@cspell/cspell-pipe": "8.14.4", "@cspell/cspell-types": "8.14.4" }, "bin": { "cspell-grammar": "bin.mjs" } }, "sha512-yaSKAAJDiamsw3FChbw4HXb2RvTQrDsLelh1+T4MavarOIcAxXrqAJ8ysqm++g+S/ooJz2YO8YWIyzJKxcMf8g=="],
+    "cspell-grammar": ["cspell-grammar@8.17.5", "", { "dependencies": { "@cspell/cspell-pipe": "8.17.5", "@cspell/cspell-types": "8.17.5" }, "bin": { "cspell-grammar": "bin.mjs" } }, "sha512-st2n+FVw25MvMbsGb3TeJNRr6Oih4g14rjOd/UJN0qn+ceH360SAShUFqSd4kHHu2ADazI/TESFU6FRtMTPNOg=="],
 
-    "cspell-io": ["cspell-io@8.14.4", "", { "dependencies": { "@cspell/cspell-service-bus": "8.14.4", "@cspell/url": "8.14.4" } }, "sha512-o6OTWRyx/Az+PFhr1B0wMAwqG070hFC9g73Fkxd8+rHX0rfRS69QZH7LgSmZytqbZIMxCTDGdsLl33MFGWCbZQ=="],
+    "cspell-io": ["cspell-io@8.17.5", "", { "dependencies": { "@cspell/cspell-service-bus": "8.17.5", "@cspell/url": "8.17.5" } }, "sha512-oevM/8l0s6nc1NCYPqNFumrW50QSHoa6wqUT8cWs09gtZdE2AWG0U6bIE8ZEVz6e6FxS+6IenGKTdUUwP0+3fg=="],
 
-    "cspell-lib": ["cspell-lib@8.14.4", "", { "dependencies": { "@cspell/cspell-bundled-dicts": "8.14.4", "@cspell/cspell-pipe": "8.14.4", "@cspell/cspell-resolver": "8.14.4", "@cspell/cspell-types": "8.14.4", "@cspell/dynamic-import": "8.14.4", "@cspell/filetypes": "8.14.4", "@cspell/strong-weak-map": "8.14.4", "@cspell/url": "8.14.4", "clear-module": "^4.1.2", "comment-json": "^4.2.5", "cspell-config-lib": "8.14.4", "cspell-dictionary": "8.14.4", "cspell-glob": "8.14.4", "cspell-grammar": "8.14.4", "cspell-io": "8.14.4", "cspell-trie-lib": "8.14.4", "env-paths": "^3.0.0", "fast-equals": "^5.0.1", "gensequence": "^7.0.0", "import-fresh": "^3.3.0", "resolve-from": "^5.0.0", "vscode-languageserver-textdocument": "^1.0.12", "vscode-uri": "^3.0.8", "xdg-basedir": "^5.1.0" } }, "sha512-qdkUkKtm+nmgpA4jQbmQTuepDfjHBDWvs3zDuEwVIVFq/h8gnXrRr75gJ3RYdTy+vOOqHPoLLqgxyqkUUrUGXA=="],
+    "cspell-lib": ["cspell-lib@8.17.5", "", { "dependencies": { "@cspell/cspell-bundled-dicts": "8.17.5", "@cspell/cspell-pipe": "8.17.5", "@cspell/cspell-resolver": "8.17.5", "@cspell/cspell-types": "8.17.5", "@cspell/dynamic-import": "8.17.5", "@cspell/filetypes": "8.17.5", "@cspell/strong-weak-map": "8.17.5", "@cspell/url": "8.17.5", "clear-module": "^4.1.2", "comment-json": "^4.2.5", "cspell-config-lib": "8.17.5", "cspell-dictionary": "8.17.5", "cspell-glob": "8.17.5", "cspell-grammar": "8.17.5", "cspell-io": "8.17.5", "cspell-trie-lib": "8.17.5", "env-paths": "^3.0.0", "fast-equals": "^5.2.2", "gensequence": "^7.0.0", "import-fresh": "^3.3.1", "resolve-from": "^5.0.0", "vscode-languageserver-textdocument": "^1.0.12", "vscode-uri": "^3.1.0", "xdg-basedir": "^5.1.0" } }, "sha512-S3KuOrcST1d2BYmTXA+hnbRdho5n3w5GUvEaCx3QZQBwAPfLpAwJbe2yig1TxBpyEJ5LqP02i/mDg1pUCOP0hQ=="],
 
-    "cspell-trie-lib": ["cspell-trie-lib@8.14.4", "", { "dependencies": { "@cspell/cspell-pipe": "8.14.4", "@cspell/cspell-types": "8.14.4", "gensequence": "^7.0.0" } }, "sha512-zu8EJ33CH+FA5lwTRGqS//Q6phO0qtgEmODMR1KPlD7WlrfTFMb3bWFsLo/tiv5hjpsn7CM6dYDAAgBOSkoyhQ=="],
+    "cspell-trie-lib": ["cspell-trie-lib@8.17.5", "", { "dependencies": { "@cspell/cspell-pipe": "8.17.5", "@cspell/cspell-types": "8.17.5", "gensequence": "^7.0.0" } }, "sha512-9hjI3nRQxtGEua6CgnLbK3sGHLx9dXR/BHwI/csRL4dN5GGRkE5X3CCoy1RJVL7iGFLIzi43+L10xeFRmWniKw=="],
 
     "cssfilter": ["cssfilter@0.0.10", "", {}, "sha512-FAaLDaplstoRsDR8XGYH51znUN0UY7nMc6Z9/fvE8EXGwvJE9hu7W2vHwx1+bd6gCYnln9nLbzxFTrcO9YQDZw=="],
 
+    "csstype": ["csstype@3.1.3", "", {}, "sha512-M1uQkMl8rQK/szD0LNhtqxIPLpimGm8sOBwU7lLnCpSbTyY3yeU1Vc7l4KT5zT4s/yOxHH5O7tIuuLOCnLADRw=="],
+
     "data-uri-to-buffer": ["data-uri-to-buffer@4.0.1", "", {}, "sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A=="],
 
-    "dayjs": ["dayjs@1.11.12", "", {}, "sha512-Rt2g+nTbLlDWZTwwrIXjy9MeiZmSDI375FvZs72ngxx8PDC6YXOeR3q5LAuPzjZQxhiWdRKac7RKV+YyQYfYIg=="],
+    "dayjs": ["dayjs@1.11.13", "", {}, "sha512-oaMBel6gjolK862uaPQOVTA7q3TZhuSvuMQAAglQDOWYO9A91IrAOUJEyKVlqJlHE0vq5p5UXxzdPfMH/x6xNg=="],
 
     "debug": ["debug@4.3.7", "", { "dependencies": { "ms": "^2.1.3" } }, "sha512-Er2nc/H7RrMXZBFCEim6TCmMk02Z8vLC2Rbi1KEBggpo0fS6l0S1nnapwmIi3yW/+GOJap1Krg4w0Hg80oCqgQ=="],
 
     "deep-is": ["deep-is@0.1.4", "", {}, "sha512-oIPzksmTg4/MriiaYGO+okXDT7ztn/w3Eptv/+gSIdMdKsJo0u4CfYNFJPy+4SKMuCqGw2wxnA+URMg3t8a/bQ=="],
+
+    "enhanced-resolve": ["enhanced-resolve@5.18.1", "", { "dependencies": { "graceful-fs": "^4.2.4", "tapable": "^2.2.0" } }, "sha512-ZSW3ma5GkcQBIpwZTSRAI8N71Uuwgs93IezB7mf7R60tC8ZbJideoDNKjHn2O9KIlx6rkGTTEk1xUCK2E1Y2Yg=="],
+
+    "entities": ["entities@4.5.0", "", {}, "sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw=="],
 
     "env-paths": ["env-paths@3.0.0", "", {}, "sha512-dtJUTepzMW3Lm/NPxRf3wP4642UWhjL2sQxc+ym2YMj1m/H2zDNQOlezafzkHwn6sMstjHTwG6iQQsctDW/b1A=="],
 
@@ -525,7 +549,7 @@
 
     "eslint-config-flat-gitignore": ["eslint-config-flat-gitignore@0.3.0", "", { "dependencies": { "@eslint/compat": "^1.1.1", "find-up-simple": "^1.0.0" }, "peerDependencies": { "eslint": "^9.5.0" } }, "sha512-0Ndxo4qGhcewjTzw52TK06Mc00aDtHNTdeeW2JfONgDcLkRO/n/BteMRzNVpLQYxdCC/dFEilfM9fjjpGIJ9Og=="],
 
-    "eslint-plugin-jsdoc": ["eslint-plugin-jsdoc@50.3.0", "", { "dependencies": { "@es-joy/jsdoccomment": "~0.48.0", "are-docs-informative": "^0.0.2", "comment-parser": "1.4.1", "debug": "^4.3.6", "escape-string-regexp": "^4.0.0", "espree": "^10.1.0", "esquery": "^1.6.0", "parse-imports": "^2.1.1", "semver": "^7.6.3", "spdx-expression-parse": "^4.0.0", "synckit": "^0.9.1" }, "peerDependencies": { "eslint": "^7.0.0 || ^8.0.0 || ^9.0.0" } }, "sha512-P7qDB/RckdKETpBM4CtjHRQ5qXByPmFhRi86sN3E+J+tySchq+RSOGGhI2hDIefmmKFuTi/1ACjqsnDJDDDfzg=="],
+    "eslint-plugin-jsdoc": ["eslint-plugin-jsdoc@50.6.6", "", { "dependencies": { "@es-joy/jsdoccomment": "~0.49.0", "are-docs-informative": "^0.0.2", "comment-parser": "1.4.1", "debug": "^4.3.6", "escape-string-regexp": "^4.0.0", "espree": "^10.1.0", "esquery": "^1.6.0", "parse-imports": "^2.1.1", "semver": "^7.6.3", "spdx-expression-parse": "^4.0.0", "synckit": "^0.9.1" }, "peerDependencies": { "eslint": "^7.0.0 || ^8.0.0 || ^9.0.0" } }, "sha512-4jLo9NZqHfyNtiBxAU293eX1xi6oUIBcAxJJL/hHeeNhh26l4l/Apmu0x9SarvSQ/gWNOrnFci4DSPupN4//WA=="],
 
     "eslint-scope": ["eslint-scope@8.1.0", "", { "dependencies": { "esrecurse": "^4.3.0", "estraverse": "^5.2.0" } }, "sha512-14dSvlhaVhKKsa9Fx1l8A17s7ah7Ef7wCakJ10LYk6+GYmP9yDti2oq2SEwcyndt6knfcZyhyxwY3i9yL78EQw=="],
 
@@ -545,7 +569,7 @@
 
     "fast-deep-equal": ["fast-deep-equal@3.1.3", "", {}, "sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q=="],
 
-    "fast-equals": ["fast-equals@5.0.1", "", {}, "sha512-WF1Wi8PwwSY7/6Kx0vKXtw8RwuSGoM1bvDaJbu7MxDlR1vovZjIAKrnzyrThgAjm6JDTu0fVgWXDlMGspodfoQ=="],
+    "fast-equals": ["fast-equals@5.2.2", "", {}, "sha512-V7/RktU11J3I36Nwq2JnZEM7tNm17eBJz+u25qdxBZeCKiX6BkVSZQjwWIr+IobgnZy+ag73tTZgZi7tr0LrBw=="],
 
     "fast-glob": ["fast-glob@3.3.2", "", { "dependencies": { "@nodelib/fs.stat": "^2.0.2", "@nodelib/fs.walk": "^1.2.3", "glob-parent": "^5.1.2", "merge2": "^1.3.0", "micromatch": "^4.0.4" } }, "sha512-oX2ruAFQwf/Orj8m737Y5adxDQO0LAB7/S5MnxCdTNDd4p6BsyIVsv9JQsATbTSq8KHRpLwIHbVlUNatxd+1Ow=="],
 
@@ -554,6 +578,8 @@
     "fast-levenshtein": ["fast-levenshtein@2.0.6", "", {}, "sha512-DCXu6Ifhqcks7TZKY3Hxp3y6qphY5SJZmrWMDrKcERSOXWQdMhU9Ig/PYrzyw/ul9jOIyh0N4M0tbC5hodg8dw=="],
 
     "fastq": ["fastq@1.17.1", "", { "dependencies": { "reusify": "^1.0.4" } }, "sha512-sRVD3lWVIXWg6By68ZN7vho9a1pQcN/WBFaAAsDDFzlJjvoGx0P8z7V1t72grFJfJhu3YPZBuu25f7Kaw2jN1w=="],
+
+    "fdir": ["fdir@6.4.3", "", { "peerDependencies": { "picomatch": "^3 || ^4" }, "optionalPeers": ["picomatch"] }, "sha512-PMXmW2y1hDDfTSRc9gaXIuCCRpuoz3Kaz8cUelp3smouvfT632ozg2vrT6lJsHKKOF59YLbOGfAWGUcKEfRMQw=="],
 
     "fetch-blob": ["fetch-blob@3.2.0", "", { "dependencies": { "node-domexception": "^1.0.0", "web-streams-polyfill": "^3.0.3" } }, "sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ=="],
 
@@ -569,7 +595,7 @@
 
     "flatted": ["flatted@3.3.1", "", {}, "sha512-X8cqMLLie7KsNUDSdzeN8FYK9rEt4Dt67OsG/DNGnYTSDBG4uFAJFBnUeiV+zCVAvwFy56IjM9sH51jVaEhNxw=="],
 
-    "focus-trap": ["focus-trap@7.5.4", "", { "dependencies": { "tabbable": "^6.2.0" } }, "sha512-N7kHdlgsO/v+iD/dMoJKtsSqs5Dz/dXZVebRgJw23LDk+jMi/974zyiOYDziY2JPp8xivq9BmUGwIJMiuSBi7w=="],
+    "focus-trap": ["focus-trap@7.6.0", "", { "dependencies": { "tabbable": "^6.2.0" } }, "sha512-1td0l3pMkWJLFipobUcGaf+5DTY4PLDDrcqoSaKP8ediO/CoWCCYk/fT/Y2A4e6TNB+Sh6clRJCjOPPnKoNHnQ=="],
 
     "formdata-node": ["formdata-node@4.4.1", "", { "dependencies": { "node-domexception": "1.0.0", "web-streams-polyfill": "4.0.0-beta.3" } }, "sha512-0iirZp3uVDjVGt9p49aTaqjk84TrglENEDuqfdlZQ1roC9CWlPk6Avf8EEnZNcAqPonwkG35x4n3ww/1THYAeQ=="],
 
@@ -581,11 +607,13 @@
 
     "get-stdin": ["get-stdin@9.0.0", "", {}, "sha512-dVKBjfWisLAicarI2Sf+JuBE/DghV4UzNAVe9yhEJuzeREd3JhOTE9cUaJTeSa77fsbQUK3pcOpJfM59+VKZaA=="],
 
-    "glob-parent": ["glob-parent@5.1.2", "", { "dependencies": { "is-glob": "^4.0.1" } }, "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow=="],
+    "glob-parent": ["glob-parent@6.0.2", "", { "dependencies": { "is-glob": "^4.0.3" } }, "sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A=="],
 
     "global-directory": ["global-directory@4.0.1", "", { "dependencies": { "ini": "4.1.1" } }, "sha512-wHTUcDUoZ1H5/0iVqEudYW4/kAlN5cZ3j/bXn0Dpbizl9iaUVeWSHqiOjsgk6OW2bkLclbBjzewBz6weQ1zA2Q=="],
 
     "globals": ["globals@11.12.0", "", {}, "sha512-WOBp/EEGUiIsJSp7wcv/y6MO+lV9UoncWqxuFfm8eBwzWNgyfBd6Gz+IeKQ9jCmyhoH99g15M3T+QaVHFjizVA=="],
+
+    "graceful-fs": ["graceful-fs@4.2.11", "", {}, "sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ=="],
 
     "graphemer": ["graphemer@1.4.0", "", {}, "sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag=="],
 
@@ -595,7 +623,7 @@
 
     "ignore": ["ignore@5.3.2", "", {}, "sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g=="],
 
-    "import-fresh": ["import-fresh@3.3.0", "", { "dependencies": { "parent-module": "^1.0.0", "resolve-from": "^4.0.0" } }, "sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw=="],
+    "import-fresh": ["import-fresh@3.3.1", "", { "dependencies": { "parent-module": "^1.0.0", "resolve-from": "^4.0.0" } }, "sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ=="],
 
     "import-meta-resolve": ["import-meta-resolve@4.1.0", "", {}, "sha512-I6fiaX09Xivtk+THaMfAwnA3MVA5Big1WHF1Dfx9hFuvNIWpXnorlkzhcQf6ehrqQiiZECRt1poOAkPmer3ruw=="],
 
@@ -651,11 +679,9 @@
 
     "lodash.merge": ["lodash.merge@4.6.2", "", {}, "sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ=="],
 
-    "luxon": ["luxon@3.4.4", "", {}, "sha512-zobTr7akeGHnv7eBOXcRgMeCP6+uyYsczwmeRCauvpvaAltgNyTbLH/+VaEAPUeWBT+1GuNmz4wC/6jtQzbbVA=="],
+    "luxon": ["luxon@3.5.0", "", {}, "sha512-rh+Zjr6DNfUYR3bPwJEnuwDdqMbxZW7LOQfUN4B54+Cl+0o5zaU9RJ6bcidfDtC1cWCZXQ+nvX8bf6bAji37QQ=="],
 
-    "magic-string": ["magic-string@0.30.11", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0" } }, "sha512-+Wri9p0QHMy+545hKww7YAu5NyzF8iomPL/RQazugQ9+Ez4Ic3mERMd8ZTX5rfK944j+560ZJi8iAwgak1Ac7A=="],
-
-    "marked": ["marked@12.0.2", "", { "bin": { "marked": "bin/marked.js" } }, "sha512-qXUm7e/YKFoqFPYPa3Ukg9xlI5cyAtGmyEIzMfW//m6kXwCy2Ps9DYf5ioijFKQ8qyuscrHoY04iJGctu2Kg0Q=="],
+    "marked": ["marked@15.0.7", "", { "bin": { "marked": "bin/marked.js" } }, "sha512-dgLIeKGLx5FwziAnsk4ONoGwHwGPJzselimvlVskE9XLN4Orv9u2VA3GWw/lYUqjfA0rUT/6fqKwfZJapP9BEg=="],
 
     "merge2": ["merge2@1.4.1", "", {}, "sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg=="],
 
@@ -685,13 +711,15 @@
 
     "parse-imports": ["parse-imports@2.2.1", "", { "dependencies": { "es-module-lexer": "^1.5.3", "slashes": "^3.0.12" } }, "sha512-OL/zLggRp8mFhKL0rNORUTR4yBYujK/uU+xZL+/0Rgm2QE4nLO9v8PzEweSJEbMGKmDRjJE4R3IMJlL2di4JeQ=="],
 
+    "parse5": ["parse5@7.2.1", "", { "dependencies": { "entities": "^4.5.0" } }, "sha512-BuBYQYlv1ckiPdQi/ohiivi9Sagc9JG+Ozs0r7b/0iK3sKmrb0b9FdWdBbOdx6hBCM/F9Ir82ofnBhtZOjCRPQ=="],
+
     "path-exists": ["path-exists@4.0.0", "", {}, "sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w=="],
 
     "path-key": ["path-key@3.1.1", "", {}, "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="],
 
     "picocolors": ["picocolors@1.1.0", "", {}, "sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw=="],
 
-    "picomatch": ["picomatch@2.3.1", "", {}, "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="],
+    "picomatch": ["picomatch@4.0.2", "", {}, "sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg=="],
 
     "postcss": ["postcss@8.4.47", "", { "dependencies": { "nanoid": "^3.3.7", "picocolors": "^1.1.0", "source-map-js": "^1.2.1" } }, "sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ=="],
 
@@ -713,7 +741,7 @@
 
     "run-parallel": ["run-parallel@1.2.0", "", { "dependencies": { "queue-microtask": "^1.2.2" } }, "sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA=="],
 
-    "semver": ["semver@7.6.3", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A=="],
+    "semver": ["semver@7.7.1", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-hlq8tAfn0m/61p4BVRcPzIGr6LKiMwo4VM6dGi6pt4qcRkmNzTcWq6eCEjEh+qXjkMDvPlOFFSGwQjoEa6gyMA=="],
 
     "shebang-command": ["shebang-command@2.0.0", "", { "dependencies": { "shebang-regex": "^3.0.0" } }, "sha512-kHxr2zZpYtdmrN1qDjrrX/Z1rR1kG8Dx+gkpK1G4eXmvXswmcE1hTWBWYUzlraYw1/yZp6YuDY77YtvbN0dmDA=="],
 
@@ -735,7 +763,7 @@
 
     "spdx-license-ids": ["spdx-license-ids@3.0.20", "", {}, "sha512-jg25NiDV/1fLtSgEgyvVyDunvaNHbuwF9lfNV17gSmPFAlYzdfNBlLtLzXTevwkPj7DhGbmN9VnmJIgLnhvaBw=="],
 
-    "strip-ansi": ["strip-ansi@7.1.0", "", { "dependencies": { "ansi-regex": "^6.0.1" } }, "sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ=="],
+    "strip-ansi": ["strip-ansi@6.0.1", "", { "dependencies": { "ansi-regex": "^5.0.1" } }, "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="],
 
     "strip-json-comments": ["strip-json-comments@3.1.1", "", {}, "sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig=="],
 
@@ -745,15 +773,19 @@
 
     "tabbable": ["tabbable@6.2.0", "", {}, "sha512-Cat63mxsVJlzYvN51JmVXIgNoUokrIaT2zLclCXjRd8boZ0004U4KCs/sToJ75C6sdlByWxpYnb5Boif1VSFew=="],
 
+    "tapable": ["tapable@2.2.1", "", {}, "sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ=="],
+
     "text-table": ["text-table@0.2.0", "", {}, "sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw=="],
 
-    "timezone-groups": ["timezone-groups@0.9.1", "", {}, "sha512-1+GERLQpmebtCpkroy+AAfN/PZu8drrp4VAX/KSFBWvoaAT+5ANZIMTSn8CDW2uwfrpo1SaxIJ6MqdlACYbq/g=="],
+    "timezone-groups": ["timezone-groups@0.10.2", "", {}, "sha512-01G9JdlIybA9Njp0wJcGenXKWAw+woWbv6W/oMexWyPs7Nr/S2p2n1NRrMHbHaFzdf+PNNStQp1WILdnAGjYXQ=="],
+
+    "tinyglobby": ["tinyglobby@0.2.12", "", { "dependencies": { "fdir": "^6.4.3", "picomatch": "^4.0.2" } }, "sha512-qkf4trmKSIiMTs/E63cxH+ojC2unam7rJ0WrauAzpT3ECNTxGRMlaXxVbfxMUC/w0LaYk6jQ4y/nGR9uBO3tww=="],
 
     "to-fast-properties": ["to-fast-properties@2.0.0", "", {}, "sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog=="],
 
     "to-regex-range": ["to-regex-range@5.0.1", "", { "dependencies": { "is-number": "^7.0.0" } }, "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ=="],
 
-    "ts-api-utils": ["ts-api-utils@1.3.0", "", { "peerDependencies": { "typescript": ">=4.2.0" } }, "sha512-UQMIo7pb8WRomKR1/+MFVLTroIvDVtMX3K6OUir8ynLyzB8Jeriont2bTAtmNPa1ekAgN7YPDyf6V+ygrdU+eQ=="],
+    "ts-api-utils": ["ts-api-utils@2.0.1", "", { "peerDependencies": { "typescript": ">=4.8.4" } }, "sha512-dnlgjFSVetynI8nzgJ+qF62efpglpWRk8isUEWZGWlJYySCTD6aKvbUDu+zbPeDakk3bg5H4XpitHukgfL1m9w=="],
 
     "tslib": ["tslib@2.7.0", "", {}, "sha512-gLXCKdN1/j47AiHiOkJN69hJmcbGTHI0ImLmbYLHykhgeN0jVGola9yVjFgzCUklsZQMW55o+dW7IXv3RCXDzA=="],
 
@@ -761,19 +793,19 @@
 
     "type-fest": ["type-fest@4.18.2", "", {}, "sha512-+suCYpfJLAe4OXS6+PPXjW3urOS4IoP9waSiLuXfLgqZODKw/aWwASvzqE886wA0kQgGy0mIWyhd87VpqIy6Xg=="],
 
-    "typescript": ["typescript@5.6.2", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-NW8ByodCSNCwZeghjN3o+JX5OFH0Ojg6sadjEKY4huZ52TqbJTJnDo5+Tw98lSy63NZvi4n+ez5m2u5d4PkZyw=="],
+    "typescript": ["typescript@5.8.2", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ=="],
 
-    "typescript-eslint": ["typescript-eslint@8.8.0", "", { "dependencies": { "@typescript-eslint/eslint-plugin": "8.8.0", "@typescript-eslint/parser": "8.8.0", "@typescript-eslint/utils": "8.8.0" } }, "sha512-BjIT/VwJ8+0rVO01ZQ2ZVnjE1svFBiRczcpr1t1Yxt7sT25VSbPfrJtDsQ8uQTy2pilX5nI9gwxhUyLULNentw=="],
+    "typescript-eslint": ["typescript-eslint@8.26.1", "", { "dependencies": { "@typescript-eslint/eslint-plugin": "8.26.1", "@typescript-eslint/parser": "8.26.1", "@typescript-eslint/utils": "8.26.1" }, "peerDependencies": { "eslint": "^8.57.0 || ^9.0.0", "typescript": ">=4.8.4 <5.9.0" } }, "sha512-t/oIs9mYyrwZGRpDv3g+3K6nZ5uhKEMt2oNmAPwaY4/ye0+EH4nXIPYNtkYFS6QHm+1DFg34DbglYBz5P9Xysg=="],
 
-    "undici-types": ["undici-types@6.19.8", "", {}, "sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw=="],
+    "undici-types": ["undici-types@6.20.0", "", {}, "sha512-Ny6QZ2Nju20vw1SRHe3d9jVu6gJ+4e3+MMpqu7pqE5HT6WsTSlce++GQmK5UXS8mzV8DSYHrQH+Xrf2jVcuKNg=="],
 
     "uri-js": ["uri-js@4.4.1", "", { "dependencies": { "punycode": "^2.1.0" } }, "sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg=="],
 
-    "vite": ["vite@5.4.8", "", { "dependencies": { "esbuild": "^0.21.3", "postcss": "^8.4.43", "rollup": "^4.20.0" }, "optionalDependencies": { "fsevents": "~2.3.3" }, "peerDependencies": { "@types/node": "^18.0.0 || >=20.0.0", "less": "*", "lightningcss": "^1.21.0", "sass": "*", "sass-embedded": "*", "stylus": "*", "sugarss": "*", "terser": "^5.4.0" }, "optionalPeers": ["@types/node", "less", "lightningcss", "sass", "sass-embedded", "stylus", "sugarss", "terser"], "bin": { "vite": "bin/vite.js" } }, "sha512-FqrItQ4DT1NC4zCUqMB4c4AZORMKIa0m8/URVCZ77OZ/QSNeJ54bU1vrFADbDsuwfIPcgknRkmqakQcgnL4GiQ=="],
+    "vite": ["vite@5.4.14", "", { "dependencies": { "esbuild": "^0.21.3", "postcss": "^8.4.43", "rollup": "^4.20.0" }, "optionalDependencies": { "fsevents": "~2.3.3" }, "peerDependencies": { "@types/node": "^18.0.0 || >=20.0.0", "less": "*", "lightningcss": "^1.21.0", "sass": "*", "sass-embedded": "*", "stylus": "*", "sugarss": "*", "terser": "^5.4.0" }, "optionalPeers": ["@types/node", "less", "lightningcss", "sass", "sass-embedded", "stylus", "sugarss", "terser"], "bin": { "vite": "bin/vite.js" } }, "sha512-EK5cY7Q1D8JNhSaPKVK4pwBFvaTmZxEnoKXLG/U9gmdDcihQGNzFlgIvaxezFR4glP1LsuiedwMBqCXH3wZccA=="],
 
     "vscode-languageserver-textdocument": ["vscode-languageserver-textdocument@1.0.12", "", {}, "sha512-cxWNPesCnQCcMPeenjKKsOCKQZ/L6Tv19DTRIGuLWe32lyzWhihGVJ/rcckZXJxfdKCFvRLS3fpBIsV/ZGX4zA=="],
 
-    "vscode-uri": ["vscode-uri@3.0.8", "", {}, "sha512-AyFQ0EVmsOZOlAnxoFOGOq1SQDWAB7C6aqMGS23svWAllfOaxbuFvcT8D1i8z3Gyn8fraVeZNNmN6e9bxxXkKw=="],
+    "vscode-uri": ["vscode-uri@3.1.0", "", {}, "sha512-/BpdSx+yCQGnCvecbyXdxHDkuk55/G3xwnC0GqY4gmQ3j+A+g8kzzgB4Nk/SINjqn6+waqw3EgbVF2QKExkRxQ=="],
 
     "web-streams-polyfill": ["web-streams-polyfill@4.0.0-beta.3", "", {}, "sha512-QW95TCTaHmsYfHDybGMwO5IJIM93I/6vTRk+daHTWFPhwh+C8Cg7j7XyKrwrj8Ib6vYXe0ocYNrmzY4xAAN6ug=="],
 
@@ -785,9 +817,11 @@
 
     "xss": ["xss@1.0.13", "", { "dependencies": { "commander": "^2.20.3", "cssfilter": "0.0.10" }, "bin": { "xss": "bin/xss" } }, "sha512-clu7dxTm1e8Mo5fz3n/oW3UCXBfV89xZ72jM8yzo1vR/pIS0w3sgB3XV2H8Vm6zfGnHL0FzvLJPJEBhd86/z4Q=="],
 
-    "yaml": ["yaml@2.5.1", "", { "bin": { "yaml": "bin.mjs" } }, "sha512-bLQOjaX/ADgQ20isPJRvF0iRUHIxVhYvr53Of7wGcWlO2jvtUlH5m87DsmulFVxRpNLOnI4tB6p/oh8D7kpn9Q=="],
+    "yaml": ["yaml@2.7.0", "", { "bin": { "yaml": "bin.mjs" } }, "sha512-+hSoy/QHluxmC9kCIJyL/uyFmLmc+e5CFR5Wa+bpIhIj85LVb9ZH2nVnqrHoSvKogwODv0ClqZkmiSSaIH5LTA=="],
 
     "yocto-queue": ["yocto-queue@0.1.0", "", {}, "sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q=="],
+
+    "@arcgis/core/@esri/calcite-components": ["@esri/calcite-components@3.0.3", "", { "dependencies": { "@arcgis/components-controllers": "^4.32.0-next.129", "@arcgis/components-utils": "^4.32.0-next.129", "@arcgis/lumina": "^4.32.0-next.129", "@esri/calcite-ui-icons": "4.0.0", "@floating-ui/dom": "^1.6.12", "@floating-ui/utils": "^0.2.8", "@types/color": "^4.2.0", "@types/sortablejs": "^1.15.8", "color": "^4.2.3", "composed-offset-position": "^0.0.6", "dayjs": "^1.11.13", "focus-trap": "^7.6.2", "interactjs": "^1.10.27", "lodash-es": "^4.17.21", "sortablejs": "^1.15.6", "timezone-groups": "^0.10.4", "type-fest": "^4.30.1" } }, "sha512-MTaNCQuxFe2VkCUzeQ3CG3i5SND/fH/hr8lmcgemPMcqRZBTx4xHE/PRBZ2nLS1jgjgMJT1Qd+W3MBQpfsB1eQ=="],
 
     "@babel/helper-environment-visitor/@babel/types": ["@babel/types@7.25.6", "", { "dependencies": { "@babel/helper-string-parser": "^7.24.8", "@babel/helper-validator-identifier": "^7.24.7", "to-fast-properties": "^2.0.0" } }, "sha512-/l42B1qxpG6RdfYf343Uw1vmDjeNhneUXtzhojE7pDgfpEypmRhI6j1kr17XCVv4Cgl9HdAiQY2x0GwKm7rWCw=="],
 
@@ -811,21 +845,25 @@
 
     "@eslint/eslintrc/globals": ["globals@14.0.0", "", {}, "sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ=="],
 
-    "@esri/calcite-components/@stencil/core": ["@stencil/core@4.20.0", "", { "bin": { "stencil": "bin/stencil" } }, "sha512-WPrTHFngvN081RY+dJPneKQLwnOFD60OMCOQGmmSHfCW0f4ujPMzzhwWU1gcSwXPWXz5O+8cBiiCaxAbJU7kAg=="],
+    "@eslint/eslintrc/import-fresh": ["import-fresh@3.3.0", "", { "dependencies": { "parent-module": "^1.0.0", "resolve-from": "^4.0.0" } }, "sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw=="],
 
-    "@esri/calcite-components/sortablejs": ["sortablejs@1.15.1", "", {}, "sha512-P5Cjvb0UG1ZVNiDPj/n4V+DinttXG6K8n7vM/HQf0C25K3YKQTQY6fsr/sEGsJGpQ9exmPxluHxKBc0mLKU1lQ=="],
+    "@lit-labs/ssr/@types/node": ["@types/node@16.18.126", "", {}, "sha512-OTcgaiwfGFBKacvfwuHzzn1KLxH/er8mluiy8/uM3sGXHaRe73RrSIj01jow9t4kJEW633Ov+cOexXeiApTyAw=="],
+
+    "@lit/reactive-element/@lit-labs/ssr-dom-shim": ["@lit-labs/ssr-dom-shim@1.2.1", "", {}, "sha512-wx4aBmgeGvFmOKucFKY+8VFJSYZxs9poN3SDNQFF6lT6NrQUnHiPB2PWz2sc4ieEcAaYYzN+1uWahEeTq2aRIQ=="],
 
     "@typescript-eslint/typescript-estree/minimatch": ["minimatch@9.0.5", "", { "dependencies": { "brace-expansion": "^2.0.1" } }, "sha512-G6T0ZX48xgozx7587koeX9Ys2NYy6Gmv//P89sEte9V9whIapMNF4idKxnW2QtCcLiTWlb/wfCabAtAFWhhBow=="],
 
-    "@typescript-eslint/visitor-keys/eslint-visitor-keys": ["eslint-visitor-keys@3.4.3", "", {}, "sha512-wpc+LXeiyiisxPlEkUzU6svyS1frIO3Mgxj1fdy7Pm8Ygzguax2N3Fa/D/ag1WqbOprdI+uY6wMUl8/a2G+iag=="],
+    "@typescript-eslint/visitor-keys/eslint-visitor-keys": ["eslint-visitor-keys@4.2.0", "", {}, "sha512-UyLnSehNt62FFhSwjZlHmeokpRK59rcz29j+F1/aDgbkbRTk7wIc9XzdoasMUbRNKDM0qQt/+BJ4BrpFeABemw=="],
+
+    "chalk-template/chalk": ["chalk@5.3.0", "", {}, "sha512-dLitG79d+GV1Nb/VYcCDFivJeK1hiukt9QjRNVOsUtTy1rR1YJsmpGGTZ3qJos+uw7WmWF4wUwBd9jxjocFC2w=="],
 
     "eslint/chalk": ["chalk@4.1.2", "", { "dependencies": { "ansi-styles": "^4.1.0", "supports-color": "^7.1.0" } }, "sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA=="],
 
     "eslint/file-entry-cache": ["file-entry-cache@8.0.0", "", { "dependencies": { "flat-cache": "^4.0.0" } }, "sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ=="],
 
-    "eslint/glob-parent": ["glob-parent@6.0.2", "", { "dependencies": { "is-glob": "^4.0.3" } }, "sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A=="],
+    "eslint-plugin-jsdoc/semver": ["semver@7.6.3", "", { "bin": { "semver": "bin/semver.js" } }, "sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A=="],
 
-    "eslint/strip-ansi": ["strip-ansi@6.0.1", "", { "dependencies": { "ansi-regex": "^5.0.1" } }, "sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A=="],
+    "fast-glob/glob-parent": ["glob-parent@5.1.2", "", { "dependencies": { "is-glob": "^4.0.1" } }, "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow=="],
 
     "fetch-blob/web-streams-polyfill": ["web-streams-polyfill@3.3.3", "", {}, "sha512-d2JWLCivmZYTSIoge9MsgFCZrt571BikcWGYkjC1khllbTeDlGqZ2D8vD8E/lJa8WGWbb7Plm8/XJYV7IJHZZw=="],
 
@@ -833,7 +871,25 @@
 
     "import-fresh/resolve-from": ["resolve-from@4.0.0", "", {}, "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="],
 
+    "lit-element/@lit-labs/ssr-dom-shim": ["@lit-labs/ssr-dom-shim@1.2.1", "", {}, "sha512-wx4aBmgeGvFmOKucFKY+8VFJSYZxs9poN3SDNQFF6lT6NrQUnHiPB2PWz2sc4ieEcAaYYzN+1uWahEeTq2aRIQ=="],
+
+    "micromatch/picomatch": ["picomatch@2.3.1", "", {}, "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA=="],
+
     "xss/commander": ["commander@2.20.3", "", {}, "sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ=="],
+
+    "@arcgis/core/@esri/calcite-components/@esri/calcite-ui-icons": ["@esri/calcite-ui-icons@4.0.0", "", { "bin": { "spriter": "bin/spriter.js" } }, "sha512-LcL35NydvXI93u/pU6fXXg/kY2LXR5zWEvOytDoqgu1GPL7xgvrYuIutkvuDJpDh3PhcGXsCX4Axw5i6sCEXsA=="],
+
+    "@arcgis/core/@esri/calcite-components/@floating-ui/dom": ["@floating-ui/dom@1.6.13", "", { "dependencies": { "@floating-ui/core": "^1.6.0", "@floating-ui/utils": "^0.2.9" } }, "sha512-umqzocjDgNRGTuO7Q8CU32dkHkECqI8ZdMZ5Swb6QAM0t5rnlrN3lGo1hdpscRd3WS8T6DKYK4ephgIH9iRh3w=="],
+
+    "@arcgis/core/@esri/calcite-components/@types/color": ["@types/color@4.2.0", "", { "dependencies": { "@types/color-convert": "*" } }, "sha512-6+xrIRImMtGAL2X3qYkd02Mgs+gFGs+WsK0b7VVMaO4mYRISwyTjcqNrO0mNSmYEoq++rSLDB2F5HDNmqfOe+A=="],
+
+    "@arcgis/core/@esri/calcite-components/focus-trap": ["focus-trap@7.6.4", "", { "dependencies": { "tabbable": "^6.2.0" } }, "sha512-xx560wGBk7seZ6y933idtjJQc1l+ck+pI3sKvhKozdBV1dRZoKhkW5xoCaFv9tQiX5RH1xfSxjuNu6g+lmN/gw=="],
+
+    "@arcgis/core/@esri/calcite-components/sortablejs": ["sortablejs@1.15.6", "", {}, "sha512-aNfiuwMEpfBM/CN6LY0ibyhxPfPbyFeBTYJKCvzkJ2GkUpazIt3H+QIPAMHwqQ7tMKaHz1Qj+rJJCqljnf4p3A=="],
+
+    "@arcgis/core/@esri/calcite-components/timezone-groups": ["timezone-groups@0.10.4", "", {}, "sha512-AnkJYrbb7uPkDCEqGeVJiawZNiwVlSkkeX4jZg1gTEguClhyX+/Ezn07KB6DT29tG3UN418ldmS/W6KqGOTDjg=="],
+
+    "@arcgis/core/@esri/calcite-components/type-fest": ["type-fest@4.37.0", "", {}, "sha512-S/5/0kFftkq27FPNye0XM1e2NsnoD/3FS+pBmbjmmtLT6I+i344KoOf7pvXreaFsDamWeaJX55nczA1m5PsBDg=="],
 
     "@babel/highlight/chalk/ansi-styles": ["ansi-styles@3.2.1", "", { "dependencies": { "color-convert": "^1.9.0" } }, "sha512-VT0ZI6kZRdTh8YyJw3SMbYm/u+NqfsAxEpWO0Pf9sq8/e94WxxOpPKx9FR1FlyCtOVDNOQ+8ntlqFxiRc+r5qA=="],
 
@@ -841,11 +897,15 @@
 
     "@babel/highlight/chalk/supports-color": ["supports-color@5.5.0", "", { "dependencies": { "has-flag": "^3.0.0" } }, "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow=="],
 
+    "@eslint/eslintrc/import-fresh/parent-module": ["parent-module@1.0.1", "", { "dependencies": { "callsites": "^3.0.0" } }, "sha512-GQ2EWRpQV8/o+Aw8YqtfZZPfNRWZYkbidE9k5rpl/hC3vtHHBfGm2Ifi6qWV+coDGkrUKZAxE3Lot5kcsRlh+g=="],
+
+    "@eslint/eslintrc/import-fresh/resolve-from": ["resolve-from@4.0.0", "", {}, "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="],
+
     "@typescript-eslint/typescript-estree/minimatch/brace-expansion": ["brace-expansion@2.0.1", "", { "dependencies": { "balanced-match": "^1.0.0" } }, "sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA=="],
 
     "eslint/file-entry-cache/flat-cache": ["flat-cache@4.0.1", "", { "dependencies": { "flatted": "^3.2.9", "keyv": "^4.5.4" } }, "sha512-f7ccFPK3SXFHpx15UIGyRJ/FJQctuKZ0zVuN3frBo4HnK3cay9VEW0R6yPYFHC0AgqhukPzKjq22t5DmAyqGyw=="],
 
-    "eslint/strip-ansi/ansi-regex": ["ansi-regex@5.0.1", "", {}, "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ=="],
+    "@arcgis/core/@esri/calcite-components/@floating-ui/dom/@floating-ui/utils": ["@floating-ui/utils@0.2.9", "", {}, "sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg=="],
 
     "@babel/highlight/chalk/ansi-styles/color-convert": ["color-convert@1.9.3", "", { "dependencies": { "color-name": "1.1.3" } }, "sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg=="],
 
