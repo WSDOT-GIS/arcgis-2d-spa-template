@@ -1,21 +1,50 @@
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg" />
-    <title>👷‍♂️Add your title here!👷‍♀️</title>
-  </head>
-  <body class="calcite-mode-auto">
-    <arcgis-map basemap="hybrid">
-      <arcgis-zoom position="top-left"> </arcgis-zoom>
-      <arcgis-expand position="top-right">
-        <arcgis-layer-list></arcgis-layer-list>
-      </arcgis-expand>
-      <arcgis-expand position="top-right">
-        <arcgis-legend />
-      </arcgis-expand>
-    </arcgis-map>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg" />
+  <!-- Load Calcite -->
+  <script type="module" src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"></script>
+  <!-- 
+    Contitionally load either the light or dark theme depending on user's settings.
+    See https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/
+     -->
+  <link media="screen and (prefers-color-scheme: light)" rel="stylesheet"
+    href="https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/light/main.css">
+  <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
+    href="https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/dark/main.css">
+
+  <link rel="stylesheet" href="src/index.css" />
+
+  <script src="https://js.arcgis.com/4.32/"></script>
+
+  <!-- Load map components -->
+  <script type="module" src="https://js.arcgis.com/map-components/4.32/arcgis-map-components.esm.js"></script>
+  <title>👷‍♂️Add your title here!👷‍♀️</title>
+
+
+</head>
+
+<body class="calcite-mode-auto">
+  <arcgis-map basemap="hybrid" center="-120.85,47.295" zoom="7">
+    <arcgis-zoom position="top-leading"> </arcgis-zoom>
+    <arcgis-expand position="top-trailing">
+      <arcgis-search></arcgis-search>
+    </arcgis-expand>
+    <arcgis-expand position="top-leading">
+      <arcgis-home></arcgis-home>
+    </arcgis-expand>
+    <arcgis-expand position="top-trailing">
+      <arcgis-layer-list></arcgis-layer-list>
+    </arcgis-expand>
+    <arcgis-expand position="top-trailing">
+      <arcgis-legend />
+    </arcgis-expand>
+    <arcgis-scale-bar position="bottom-leading" unit="dual"></arcgis-scale-bar>
+  </arcgis-map>
+  <script type="module" src="/src/main.ts"></script>
+</body>
+
 </html>
