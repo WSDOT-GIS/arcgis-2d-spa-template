@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg" />
   <!-- Load Calcite -->
-  <script type="module" src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/3.0.3/calcite.css" />
   <!-- 
     Contitionally load either the light or dark theme depending on user's settings.
     See https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/
@@ -16,13 +16,10 @@
   <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
     href="https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/dark/main.css">
 
-  <link rel="stylesheet" href="src/index.css" />
-
-  <script src="https://js.arcgis.com/4.32/"></script>
+  <link rel="stylesheet" href="https://js.arcgis.com/map-components/4.32/arcgis-map-components.css">
 
   <!-- Load map components -->
-  <script type="module" src="https://js.arcgis.com/map-components/4.32/arcgis-map-components.esm.js"></script>
-  <title>👷‍♂️Add your title here!👷‍♀️</title>
+  <title>👷‍♂️ Add your title here!👷‍♀️</title>
 
 
 </head>
@@ -49,7 +46,7 @@
     </arcgis-expand>
 
     <arcgis-scale-bar position="bottom-leading" unit="dual"></arcgis-scale-bar>
-    
+
   </arcgis-map>
   <script type="module" src="/src/main.ts"></script>
 </body>
