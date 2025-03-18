@@ -8,7 +8,7 @@
   <!-- Load Calcite -->
   <link rel="stylesheet" href="https://js.arcgis.com/calcite-components/3.0.3/calcite.css" />
   <!-- 
-    Contitionally load either the light or dark theme depending on user's settings.
+    Contitionally load either the light or dark ArcGIS Maps SDK theme depending on user's settings.
     See https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/
      -->
   <link media="screen and (prefers-color-scheme: light)" rel="stylesheet"
@@ -16,22 +16,33 @@
   <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
     href="https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/dark/main.css">
 
+  <!-- Load ArcGIS Map Components CSS -->
   <link rel="stylesheet" href="https://js.arcgis.com/map-components/4.32/arcgis-map-components.css">
-
-  <!-- Load map components -->
   <title>👷‍♂️ Add your title here!👷‍♀️</title>
-
-
 </head>
 
+<!-- 
+The "calcite-mode-auto" CSS class makes Calcite automatically 
+ load dark/light theme matching user's preferred settings.
+ -->
 <body class="calcite-mode-auto">
+  <!-- This is the map. It is set to be centered on WA. -->
   <arcgis-map basemap="hybrid" center="-120.85,47.295" zoom="7">
 
+    <!--
+    Add map components.
+    Small components (e.g., ones that are just single buttons) are placed
+    directly on the map.
+    Ones that are more complex are placed in an "arcgis-expand" component.
+    -->
+
+    <!-- Top-leading -->
     <arcgis-zoom position="top-leading"> </arcgis-zoom>
     <arcgis-home position="top-leading"></arcgis-home>
     <arcgis-locate position="top-leading"></arcgis-locate>
 
 
+    <!-- Top-trailing -->
     <arcgis-expand position="top-trailing">
       <arcgis-search></arcgis-search>
     </arcgis-expand>
@@ -45,9 +56,11 @@
       <arcgis-basemap-gallery></arcgis-basemap-gallery>
     </arcgis-expand>
 
+    <!-- Bottom-leading -->
     <arcgis-scale-bar position="bottom-leading" unit="dual"></arcgis-scale-bar>
 
   </arcgis-map>
+  <!-- Load the module with our custom code. -->
   <script type="module" src="/src/main.ts"></script>
 </body>
 

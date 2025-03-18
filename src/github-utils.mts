@@ -1,15 +1,21 @@
+/**
+ * This module is used for getting the git repository name,
+ * for use with vite.config.ts when you building a site that
+ * is hosted on GitHub Pages.
+ */
+
 import { exec } from "node:child_process";
 import { promisify } from "node:util";
 
 interface RemoteMatchGroups {
-  [key: string]: string;
-  remote: string;
-  url: string;
-  direction: string;
+	[key: string]: string;
+	remote: string;
+	url: string;
+	direction: string;
 }
 
 interface RemoteMatch extends RegExpMatchArray {
-  groups: RemoteMatchGroups;
+	groups: RemoteMatchGroups;
 }
 
 /**
@@ -21,23 +27,23 @@ interface RemoteMatch extends RegExpMatchArray {
  * {@link RemoteMatch}, false otherwise.
  */
 function hasExpectedGroups(match: RegExpMatchArray): match is RemoteMatch {
-  const { groups } = match;
-  // If the match doesn't have groups defined then it
-  // is not a RemoteMatch.
-  if (!groups) {
-    return false;
-  }
-  for (const propertyName of ["remote", "url", "direction"]) {
-    if (!Object.hasOwn(groups, propertyName)) {
-      return false;
-    }
-  }
-  return true;
+	const { groups } = match;
+	// If the match doesn't have groups defined then it
+	// is not a RemoteMatch.
+	if (!groups) {
+		return false;
+	}
+	for (const propertyName of ["remote", "url", "direction"]) {
+		if (!Object.hasOwn(groups, propertyName)) {
+			return false;
+		}
+	}
+	return true;
 }
 
 export interface RepoInfo {
-  owner: string;
-  repo: string;
+	owner: string;
+	repo: string;
 }
 
 /**
@@ -46,16 +52,16 @@ export interface RepoInfo {
  * @returns
  */
 function parseGitHubUrl(url: string): RepoInfo {
-  const githubUrlRe = /https:\/\/github\.com/i;
-  if (!githubUrlRe.test(url)) {
-    throw new Error(`Not a GitHub URL: ${url}`);
-  }
-  const parts = url
-    .split(/[/]+/)
-    .slice(-2)
-    .map((s) => s.replace(/\.git/i, ""));
-  const [owner, repo] = parts;
-  return { owner, repo };
+	const githubUrlRe = /https:\/\/github\.com/i;
+	if (!githubUrlRe.test(url)) {
+		throw new Error(`Not a GitHub URL: ${url}`);
+	}
+	const parts = url
+		.split(/[/]+/)
+		.slice(-2)
+		.map((s) => s.replace(/\.git/i, ""));
+	const [owner, repo] = parts;
+	return { owner, repo };
 }
 
 /**
@@ -64,18 +70,18 @@ function parseGitHubUrl(url: string): RepoInfo {
  * @returns Github repo information
  */
 export async function getGithubRepoInfo() {
-  // Execute `git remote --verbose`, then parse
-  const re = /\b(?<remote>\S+)\s+(?<url>\S+)\s+\((?<direction>\S+)\)/gi;
-  const result = await promisify(exec)("git remote --verbose", {
-    encoding: "utf-8",
-  });
-  const matches = result.stdout.matchAll(re);
+	// Execute `git remote --verbose`, then parse
+	const re = /\b(?<remote>\S+)\s+(?<url>\S+)\s+\((?<direction>\S+)\)/gi;
+	const result = await promisify(exec)("git remote --verbose", {
+		encoding: "utf-8",
+	});
+	const matches = result.stdout.matchAll(re);
 
-  const groups = [...matches]
-    .filter(hasExpectedGroups)
-    .map((m) => (m as RemoteMatch).groups);
-  // Remove duplicate URLs.
-  const urls = [...new Set(groups.map((g) => g.url))].map(parseGitHubUrl);
-  console.groupEnd();
-  return urls.length === 1 ? urls[0] : urls;
+	const groups = [...matches]
+		.filter(hasExpectedGroups)
+		.map((m) => (m as RemoteMatch).groups);
+	// Remove duplicate URLs.
+	const urls = [...new Set(groups.map((g) => g.url))].map(parseGitHubUrl);
+	console.groupEnd();
+	return urls.length === 1 ? urls[0] : urls;
 }
