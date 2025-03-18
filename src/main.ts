@@ -27,13 +27,14 @@ top-level await, we need to wrap our code in a self-executing async function.
 	// Dynamically import the components we need.
 	await Promise.all([
 		import("@arcgis/map-components/components/arcgis-map"),
-		import("@arcgis/map-components/components/arcgis-zoom"),
 		import("@arcgis/map-components/components/arcgis-basemap-gallery"),
 		import("@arcgis/map-components/components/arcgis-expand"),
-		import("@arcgis/map-components/components/arcgis-search"),
-		import("@arcgis/map-components/components/arcgis-legend"),
-		import("@arcgis/map-components/components/arcgis-scale-bar"),
 		import("@arcgis/map-components/components/arcgis-layer-list"),
+		import("@arcgis/map-components/components/arcgis-legend"),
+		import("@arcgis/map-components/components/arcgis-locate"),
+		import("@arcgis/map-components/components/arcgis-scale-bar"),
+		import("@arcgis/map-components/components/arcgis-search"),
+		import("@arcgis/map-components/components/arcgis-zoom"),
 	]);
 
 	// Get the map element.
