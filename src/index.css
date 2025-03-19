@@ -1,15 +1,13 @@
-/* Load Calcite */
-@import "https://js.arcgis.com/calcite-components/3.0.3/calcite.css";
-
+@import "@esri/calcite-components/dist/calcite/calcite.css";
 /* 
 Contitionally load either the light or dark ArcGIS Maps SDK theme depending on user's settings.
 See https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/ 
 */
-@import "https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/light/main.css" screen;
-@import "https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/dark/main.css" screen and (prefers-color-scheme: dark);
+@import "@arcgis/core/assets/esri/themes/light/main.css" screen;
+@import "@arcgis/core/assets/esri/themes/dark/main.css" screen and (prefers-color-scheme: dark);
 
 /* Load ArcGIS Map Components CSS */
-@import "https://js.arcgis.com/map-components/4.32/arcgis-map-components.css";
+@import "@arcgis/map-components/dist/arcgis-map-components/arcgis-map-components.css";
 
 #root,
 html,
@@ -19,4 +17,10 @@ arcgis-map {
 	width: 100vw;
 	margin: 0;
 	padding: 0;
+}
+
+calcite-shell-panel[slot='header'] > h1 {
+	margin: 1rem;
+	font-size: var(--calcite-font-size-xl);
+	font-weight: var(--calcite-font-weight-bold);
 }
