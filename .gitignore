@@ -196,3 +196,5 @@ deleteme*
 
 .gitattributes.new
 .qodo
+
+!.env
