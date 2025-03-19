@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "prepreview": "npm run build",
+    "build-and-preview": "tsc && vite build && vite preview",
     "preview": "vite preview",
     "lint:spell": "cspell lint . --relative --no-progress --no-summary --fail-fast",
     "predeploy": "npm run build && tsc --project tools/tsconfig.json",

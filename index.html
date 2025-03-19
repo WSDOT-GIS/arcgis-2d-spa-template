@@ -25,6 +25,7 @@
 The "calcite-mode-auto" CSS class makes Calcite automatically 
  load dark/light theme matching user's preferred settings.
  -->
+
 <body class="calcite-mode-auto">
   <!-- This is the map. It is set to be centered on WA. -->
   <arcgis-map basemap="hybrid" center="-120.85,47.295" zoom="7">
@@ -40,6 +41,9 @@ The "calcite-mode-auto" CSS class makes Calcite automatically
     <arcgis-zoom position="top-leading"> </arcgis-zoom>
     <arcgis-home position="top-leading"></arcgis-home>
     <arcgis-locate position="top-leading"></arcgis-locate>
+    <arcgis-expand position="top-leading">
+      <arcgis-distance-measurement-2d unit="us-feet"></arcgis-distance-measurement-2d>
+    </arcgis-expand>
 
 
     <!-- Top-trailing -->
@@ -47,7 +51,7 @@ The "calcite-mode-auto" CSS class makes Calcite automatically
       <arcgis-search></arcgis-search>
     </arcgis-expand>
     <arcgis-expand position="top-trailing">
-      <arcgis-layer-list></arcgis-layer-list>
+      <arcgis-layer-list visibility-appearance="checkbox" drag-enabled></arcgis-layer-list>
     </arcgis-expand>
     <arcgis-expand position="top-trailing">
       <arcgis-legend />
