@@ -1,4 +1,33 @@
+import type { ArcgisLayerListCustomEvent } from "@arcgis/map-components";
 import "./index.css";
+
+/**
+ * Customize the layer list item.
+ * @param  params - layer list item created event params
+ * @param params.item - newly created layer list item
+ */
+const customizeItem: __esri.ListItemCreatedHandler = ({
+	item,
+}: { item: __esri.ListItem }) => {
+	/* __PURE__ */ console.log("layer list item created", item);
+
+	item.panel = {
+		content: "legend",
+	};
+};
+
+/**
+ * Called when the layer list item is created.
+ * @param ev - event params
+ * @param ev.item - newly created layer list item
+ */
+function customizeLayerListItem(
+	this: HTMLArcgisLayerListElement,
+	ev: ArcgisLayerListCustomEvent<undefined>,
+) {
+	/* __PURE__ */ console.debug("event detail", ev.detail);
+	(this ?? ev.target).listItemCreatedFunction = customizeItem;
+}
 
 /* 
 Since some browsers targeted in the browserslist file don't yet support
@@ -6,7 +35,7 @@ top-level await, we need to wrap our code in a self-executing async function.
 */
 (async () => {
 	// Dynamically import the components we need.
-	const [, , , , , , , , , , , { addLayersToMap }] = await Promise.all([
+	await Promise.all([
 		import("@arcgis/map-components/components/arcgis-map"),
 		import("@arcgis/map-components/components/arcgis-basemap-gallery"),
 		import("@arcgis/map-components/components/arcgis-distance-measurement-2d"),
@@ -18,9 +47,9 @@ top-level await, we need to wrap our code in a self-executing async function.
 		import("@arcgis/map-components/components/arcgis-scale-bar"),
 		import("@arcgis/map-components/components/arcgis-search"),
 		import("@arcgis/map-components/components/arcgis-zoom"),
-		import("./setup-layers"),
 	]);
 
+	const { addLayersToMap } = await import("./setup-layers");
 	// Get the map element.
 	// If your app has multiple maps, you'll need to assign each one an "id" attribute.
 	const mapElement = document.body.querySelector("arcgis-map");
@@ -32,16 +61,5 @@ top-level await, we need to wrap our code in a self-executing async function.
 
 	document.body
 		.querySelector("arcgis-layer-list")
-		?.addEventListener("arcgisReady", function (this) {
-			const customizeItem: __esri.ListItemCreatedHandler = ({
-				item,
-			}: { item: __esri.ListItem }) => {
-				/* __PURE__ */ console.log("layer list item created", item);
-
-				item.panel = {
-					content: "legend",
-				};
-			};
-			this.listItemCreatedFunction = customizeItem;
-		});
+		?.addEventListener("arcgisReady", customizeLayerListItem);
 })();

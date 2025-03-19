@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg" />
-  
+  <script type="module" src="https://js.arcgis.com/calcite-components/3.0.3/calcite.esm.js"></script>
   <title>%VITE_APP_TITLE%</title>
 </head>
 
@@ -15,43 +15,49 @@ The "calcite-mode-auto" CSS class makes Calcite automatically
  -->
 
 <body class="calcite-mode-auto">
-  <!-- This is the map. It is set to be centered on WA. -->
-  <arcgis-map basemap="hybrid" center="-120.85,47.295" zoom="7">
+  <calcite-shell>
+    <calcite-shell-panel slot="header">
+      <h1>%VITE_APP_TITLE%</h1>
+    </calcite-shell-panel>
 
-    <!--
+      <!-- This is the map. It is set to be centered on WA. -->
+      <arcgis-map basemap="hybrid" center="-120.85,47.295" zoom="7">
+
+        <!--
     Add map components.
     Small components (e.g., ones that are just single buttons) are placed
     directly on the map.
     Ones that are more complex are placed in an "arcgis-expand" component.
     -->
 
-    <!-- Top-leading -->
-    <arcgis-zoom position="top-leading"> </arcgis-zoom>
-    <arcgis-home position="top-leading"></arcgis-home>
-    <arcgis-locate position="top-leading"></arcgis-locate>
-    <arcgis-expand position="top-leading">
-      <arcgis-distance-measurement-2d unit="us-feet"></arcgis-distance-measurement-2d>
-    </arcgis-expand>
+        <!-- Top-leading -->
+        <arcgis-zoom position="top-leading"> </arcgis-zoom>
+        <arcgis-home position="top-leading"></arcgis-home>
+        <arcgis-locate position="top-leading"></arcgis-locate>
+        <arcgis-expand position="top-leading">
+          <arcgis-distance-measurement-2d unit="us-feet"></arcgis-distance-measurement-2d>
+        </arcgis-expand>
 
 
-    <!-- Top-trailing -->
-    <arcgis-expand position="top-trailing">
-      <arcgis-search></arcgis-search>
-    </arcgis-expand>
-    <arcgis-expand position="top-trailing">
-      <arcgis-layer-list visibility-appearance="checkbox" drag-enabled></arcgis-layer-list>
-    </arcgis-expand>
-    <arcgis-expand position="top-trailing">
-      <arcgis-legend />
-    </arcgis-expand>
-    <arcgis-expand position="top-trailing">
-      <arcgis-basemap-gallery></arcgis-basemap-gallery>
-    </arcgis-expand>
+        <!-- Top-trailing -->
+        <arcgis-expand position="top-trailing">
+          <arcgis-search></arcgis-search>
+        </arcgis-expand>
+        <arcgis-expand position="top-trailing">
+          <arcgis-layer-list visibility-appearance="checkbox" drag-enabled show-temporary-layer-indicators></arcgis-layer-list>
+        </arcgis-expand>
+        <arcgis-expand position="top-trailing">
+          <arcgis-legend />
+        </arcgis-expand>
+        <arcgis-expand position="top-trailing">
+          <arcgis-basemap-gallery></arcgis-basemap-gallery>
+        </arcgis-expand>
 
-    <!-- Bottom-leading -->
-    <arcgis-scale-bar position="bottom-leading" unit="dual"></arcgis-scale-bar>
+        <!-- Bottom-leading -->
+        <arcgis-scale-bar position="bottom-leading" unit="dual"></arcgis-scale-bar>
 
-  </arcgis-map>
+      </arcgis-map>
+  </calcite-shell>
   <!-- Load the module with our custom code. -->
   <script type="module" src="/src/main.ts"></script>
 </body>
