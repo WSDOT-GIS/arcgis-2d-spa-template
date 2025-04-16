@@ -46,8 +46,6 @@ async function setupLayerList() {
 	document.body
 		.querySelector("arcgis-layer-list")
 		?.addEventListener("arcgisReady", customizeLayerListItem);
-
-	return await import("@arcgis/map-components/components/arcgis-layer-list");
 }
 
 /* 
@@ -65,19 +63,4 @@ top-level await, we need to wrap our code in a self-executing async function.
 		?.addEventListener("arcgisViewReadyChange", addLayersToMap);
 
 	await setupLayerList();
-
-	await Promise.all([
-		import("@esri/calcite-components/components/calcite-shell"),
-		import("@esri/calcite-components/components/calcite-shell-panel"),
-		import("@arcgis/map-components/components/arcgis-map"),
-		import("@arcgis/map-components/components/arcgis-basemap-gallery"),
-		import("@arcgis/map-components/components/arcgis-distance-measurement-2d"),
-		import("@arcgis/map-components/components/arcgis-expand"),
-		import("@arcgis/map-components/components/arcgis-home"),
-		import("@arcgis/map-components/components/arcgis-legend"),
-		import("@arcgis/map-components/components/arcgis-locate"),
-		import("@arcgis/map-components/components/arcgis-scale-bar"),
-		import("@arcgis/map-components/components/arcgis-search"),
-		import("@arcgis/map-components/components/arcgis-zoom"),
-	]);
 })();
