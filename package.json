@@ -3,14 +3,14 @@
   "version": "0.0.2",
   "description": "Template for ArcGIS API single page application",
   "type": "module",
+  "packageManager": "bun@1.2.9",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
     "build-and-preview": "tsc && vite build && vite preview",
     "preview": "vite preview",
     "lint:spell": "cspell lint . --relative --no-progress --no-summary --fail-fast",
-    "predeploy": "npm run build && tsc --project tools/tsconfig.json",
-    "deploy": "node tools/deploy.mjs"
+    "update-cdn-refs": "bun ./tools/upgrade-cdn-refs.ts"
   },
   "author": {
     "name": "Put your name here. If you only want to include your name you can replace this JSON object with just your name as a string.",
@@ -27,10 +27,13 @@
   "license": "Unlicense",
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.2.10",
     "@types/gh-pages": "^6.1.0",
+    "@types/jsdom": "^21.1.7",
     "@types/node": "^22.14.1",
     "@wsdot/types_arcgis-core-extra": "github:wsdot-gis/types_arcgis-core-adapter#v1.0.1",
     "cspell": "^8.18.1",
+    "jsdom": "^26.1.0",
     "typescript": "^5.8.3",
     "vite": "^6.3.0"
   },
