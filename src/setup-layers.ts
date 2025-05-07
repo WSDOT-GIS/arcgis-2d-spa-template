@@ -5,7 +5,7 @@ export async function addLayersToMap(
 	this: ArcgisMap,
 	event: ArcgisMapCustomEvent<void>,
 ) {
-	const FeatureLayer = await window.$arcgis.import("@arcgis/core/layers/FeatureLayer.js");
+	const FeatureLayer = await $arcgis.import("@arcgis/core/layers/FeatureLayer.js");
 
 	const cityLimitsLayer = new FeatureLayer({
 		title: "City Limits",
@@ -14,5 +14,5 @@ export async function addLayersToMap(
 		},
 	});
 	const map = event.target.map;
-	map.add(cityLimitsLayer);
+	map?.add(cityLimitsLayer);
 }

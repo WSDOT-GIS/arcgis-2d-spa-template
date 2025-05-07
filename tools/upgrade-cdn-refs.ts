@@ -46,14 +46,10 @@ async function updateHtml(htmlPath = defaultHtmlPath) {
 		: "";
 
 	// Get the @esri/calcite-components version number, then conver to a major.minor.patch string.
-	const calciteVersion = parse(
-		packageJson.dependencies["@esri/calcite-components"],
-	);
-	const calciteVersionString = calciteVersion
-		? `${calciteVersion.major}.${calciteVersion.minor}.${calciteVersion.patch}`
-		: "";
-
-	// console.table({ ArcGIS: coreVersion, Calcite: calciteVersion });
+	const calciteVersion =
+		packageJson.dependencies["@esri/calcite-components"].replace(/^\D?/, "");
+	
+	console.debug("calcite version", calciteVersion);
 
 	/**
 	 * Regular expression that will match the version number of the calcite-components CDN URL.
@@ -115,7 +111,7 @@ async function updateHtml(htmlPath = defaultHtmlPath) {
 
 		// Update the URL with the new version number.
 		const newUrl = calciteJsUrlRe.test(url)
-			? url.replace(calciteJsUrlRe, calciteVersionString)
+			? url.replace(calciteJsUrlRe, calciteVersion)
 			: arcgisSdkUrlRe.test(url)
 				? url.replace(arcgisSdkUrlRe, coreVersionString)
 				: null;

@@ -38,7 +38,7 @@ async function setupLayerList() {
 	 */
 	function customizeLayerListItem(
 		this: HTMLArcgisLayerListElement,
-		ev: ArcgisLayerListCustomEvent<undefined>,
+		ev: ArcgisLayerListCustomEvent<void>,
 	) {
 		ev.target.listItemCreatedFunction = customizeItem;
 	}
@@ -59,8 +59,10 @@ top-level await, we need to wrap our code in a self-executing async function.
 
 	// Wait for the map to load before adding layers.
 	document.body
-		.querySelector("arcgis-map")
+		.querySelector<HTMLArcgisMapElement>("arcgis-map")
 		?.addEventListener("arcgisViewReadyChange", addLayersToMap);
 
 	await setupLayerList();
 })();
+
+import("./setup-search");

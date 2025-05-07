@@ -1,26 +1,21 @@
-<!doctype html>
-<html lang="en-US">
-
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg" />
+<!DOCTYPE html><html lang="en-US"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg">
   <!-- Load Calcite -->
-  <script type="module" src="https://js.arcgis.com/calcite-components/3.1.0/calcite.esm.js"></script>
+  <script type="module" src="https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js" integrity="sha512-GaU7Nv4nYs6VdhrCWqLV7olCWR3fybzbh+0EOyvifVaw/YRwnvezryuElNXoPBXcePtgJ+2BWVcoviMEEQ4zjA==" crossorigin="anonymous"></script>
 
   <!-- 
     Contitionally load either the light or dark theme depending on user's settings.
     See https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/
      -->
-  <link media="screen and (prefers-color-scheme: light)" rel="stylesheet"
-    href="https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/light/main.css" />
-  <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
-    href="https://js.arcgis.com/4.32/@arcgis/core/assets/esri/themes/dark/main.css" />
+  <link media="screen and (prefers-color-scheme: light)" rel="stylesheet" href="https://js.arcgis.com/4.33/@arcgis/core/assets/esri/themes/light/main.css" integrity="sha512-GvYbrdQFweG5Bla7zecNawG+8FtyN31XfIi6MmVkajVFyIfYX8DJl3J0fc+YhlzNV/fPX9L4bPAUt8BBAeWUag==" crossorigin="anonymous">
+  <link rel="stylesheet" media="screen and (prefers-color-scheme: dark)" href="https://js.arcgis.com/4.33/@arcgis/core/assets/esri/themes/dark/main.css" integrity="sha512-RokwquxbUh97ap04aD6YK8brFxPYPT3JrsYM0zYQSyuZKnQig/ia/JMRwQNSsrNlNjPykXr58y2fBRKnzxHibg==" crossorigin="anonymous">
 
-  <script src="https://js.arcgis.com/4.32/"></script>
+  <script src="https://js.arcgis.com/4.33/" integrity="sha512-MJvMlsFPmr/za5Rau3QfoQDaOQzg3qeRinIUC8O2WpEHietDDW/TSH0rCu/cEGC6HARq1x3yrDMvbCPQirHooA==" crossorigin="anonymous"></script>
 
   <!-- Load map components -->
-  <script type="module" src="https://js.arcgis.com/map-components/4.32/arcgis-map-components.esm.js"></script>
+  <script type="module" src="https://js.arcgis.com/map-components/4.33/arcgis-map-components.esm.js" integrity="sha512-DkV/on199ETHgU719SABBdkwQZ9GitidYOyLrucngpHOh9IzkJ5k8tB+xYGoVg86zPthL9qorB8vmyLQkAaLtA==" crossorigin="anonymous"></script>
   <title>%VITE_APP_TITLE%</title>
 </head>
 
@@ -56,14 +51,14 @@ load dark/light theme matching user's preferred settings.
 
       <!-- Top-trailing -->
       <arcgis-expand position="top-trailing">
-        <arcgis-search></arcgis-search>
+        <arcgis-search include-default-sources-disabled=""></arcgis-search>
       </arcgis-expand>
       <arcgis-expand position="top-trailing">
-        <arcgis-layer-list visibility-appearance="checkbox" drag-enabled></arcgis-layer-list>
+        <arcgis-layer-list visibility-appearance="checkbox" drag-enabled=""></arcgis-layer-list>
       </arcgis-expand>
       <arcgis-expand position="top-trailing">
-        <arcgis-legend />
-      </arcgis-expand>
+        <arcgis-legend>
+        </arcgis-legend></arcgis-expand>
       <arcgis-expand position="top-trailing">
         <arcgis-basemap-gallery></arcgis-basemap-gallery>
       </arcgis-expand>
@@ -75,6 +70,8 @@ load dark/light theme matching user's preferred settings.
   </calcite-shell>
   <!-- Load the module with our custom code. -->
   <script type="module" src="/src/main.ts"></script>
-</body>
 
-</html>
+
+
+
+</body></html>
