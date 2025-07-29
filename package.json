@@ -1,53 +1,54 @@
 {
-  "name": "arcgis-2d-spa-template",
-  "version": "0.0.2",
-  "description": "Template for ArcGIS API single page application",
-  "type": "module",
-  "packageManager": "bun@1.2.9",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "build-and-preview": "tsc && vite build && vite preview",
-    "preview": "vite preview",
-    "lint:spell": "cspell lint . --relative --no-progress --no-summary --fail-fast",
-    "update-cdn-refs": "bun ./tools/upgrade-cdn-refs.ts"
-  },
-  "author": {
-    "name": "Put your name here. If you only want to include your name you can replace this JSON object with just your name as a string.",
-    "email": "YourGithubUserName@users.noreply.github.com",
-    "url": "https://example.com/you/can/omit/the/url/if/you/dont/have/a/website"
-  },
-  "contributors": [
-    {
-      "name": "Jeff Jacobson",
-      "email": "JeffJacobson@users.noreply.github.com"
-    }
-  ],
-  "private": true,
-  "license": "Unlicense",
-  "devDependencies": {
-    "@biomejs/biome": "^2.1.2",
-    "@types/bun": "^1.2.19",
-    "@types/gh-pages": "^6.1.0",
-    "@types/jsdom": "^21.1.7",
-    "@types/node": "^24.1.0",
-    "@wsdot/arcgis-core-helper": "^1.1.2",
-    "cspell": "^9.2.0",
-    "jsdom": "^26.1.0",
-    "typescript": "^5.8.3",
-    "vite": "^7.0.6"
-  },
-  "keywords": [
-    "arcgis",
-    "template",
-    "WSDOT",
-    "map",
-    "spa",
-    "single-page-app"
-  ],
-  "dependencies": {
-    "@arcgis/core": "^4.33.10",
-    "@arcgis/map-components": "^4.33.11",
-    "@esri/calcite-components": "^3.2.1"
-  }
+	"name": "arcgis-2d-spa-template",
+	"version": "0.0.2",
+	"description": "Template for ArcGIS API single page application",
+	"type": "module",
+	"packageManager": "bun@1.2.9",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"build-and-preview": "tsc && vite build && vite preview",
+		"preview": "vite preview",
+		"lint:spell": "cspell lint . --relative --no-progress --no-summary --fail-fast",
+		"update-cdn-refs": "bun ./tools/upgrade-cdn-refs.ts"
+	},
+	"author": {
+		"name": "Put your name here. If you only want to include your name you can replace this JSON object with just your name as a string.",
+		"email": "YourGithubUserName@users.noreply.github.com",
+		"url": "https://example.com/you/can/omit/the/url/if/you/dont/have/a/website"
+	},
+	"contributors": [
+		{
+			"name": "Jeff Jacobson",
+			"email": "JeffJacobson@users.noreply.github.com"
+		}
+	],
+	"private": true,
+	"license": "Unlicense",
+	"devDependencies": {
+		"@biomejs/biome": "^2.1.2",
+		"@types/bun": "^1.2.19",
+		"@types/gh-pages": "^6.1.0",
+		"@types/jsdom": "^21.1.7",
+		"@types/node": "^24.1.0",
+		"@wsdot/arcgis-core-helper": "^1.1.2",
+		"cspell": "^9.2.0",
+		"jsdom": "^26.1.0",
+		"semver-utils": "^1.1.4",
+		"typescript": "^5.8.3",
+		"vite": "^7.0.6"
+	},
+	"keywords": [
+		"arcgis",
+		"template",
+		"WSDOT",
+		"map",
+		"spa",
+		"single-page-app"
+	],
+	"dependencies": {
+		"@arcgis/core": "^4.33.10",
+		"@arcgis/map-components": "^4.33.11",
+		"@esri/calcite-components": "^3.2.1"
+	}
 }

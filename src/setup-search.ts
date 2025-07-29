@@ -16,10 +16,12 @@ if (!searchElement) {
  * as defined by [EPSG:1416](https://epsg.io/1416-area).
  * @returns a promise that resolves to a {@link LocatorSearchSource}.
  */
-async function createLocatorSearchSource(itemId = "a86fa8aeabdd470792022a8ef959afb6"): Promise<__esri.LocatorSearchSource> {
+async function createLocatorSearchSource(
+	itemId = "a86fa8aeabdd470792022a8ef959afb6",
+): Promise<__esri.LocatorSearchSource> {
 	const waExtentLocatorViewUrl = `https://utility.arcgis.com/usrsvcs/servers/${itemId}/rest/services/World/GeocodeServer`;
 
-    const LocatorSearchSource = await $arcgis.import(
+	const LocatorSearchSource = await $arcgis.import(
 		"@arcgis/core/widgets/Search/LocatorSearchSource.js",
 	);
 

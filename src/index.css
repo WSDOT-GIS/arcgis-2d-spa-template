@@ -8,7 +8,7 @@ arcgis-map {
 	padding: 0;
 }
 
-calcite-shell-panel[slot='header'] > h1 {
+calcite-shell-panel[slot="header"] > h1 {
 	margin: 1rem;
 	font-size: var(--calcite-font-size-xl);
 	font-weight: var(--calcite-font-weight-bold);
