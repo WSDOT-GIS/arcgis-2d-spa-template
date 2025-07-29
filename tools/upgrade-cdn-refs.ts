@@ -6,13 +6,13 @@
  * bun .\tools\upgrade-cdn-refs.ts
  */
 
-import { JSDOM } from "jsdom";
 import { createHash } from "node:crypto";
 import { readFile, writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import packageJson from "../package.json" assert { type: "json" };
-import { parse, parseRange } from "semver-utils";
 import { stderr } from "node:process";
+import { JSDOM } from "jsdom";
+import { parseRange } from "semver-utils";
+import packageJson from "../package.json" with { type: "json" };
 
 const defaultHtmlPath = join(import.meta.dirname, "..", "index.html");
 
@@ -46,21 +46,22 @@ async function updateHtml(htmlPath = defaultHtmlPath) {
 		: "";
 
 	// Get the @esri/calcite-components version number, then conver to a major.minor.patch string.
-	const calciteVersion =
-		packageJson.dependencies["@esri/calcite-components"].replace(/^\D?/, "");
-	
+	const calciteVersion = packageJson.dependencies[
+		"@esri/calcite-components"
+	].replace(/^\D?/, "");
+
 	console.debug("calcite version", calciteVersion);
 
 	/**
 	 * Regular expression that will match the version number of the calcite-components CDN URL.
 	 */
 	const calciteJsUrlRe =
-		/(?<=^https:\/\/js.arcgis.com\/calcite-components\/)[\d\.]+(?=\/calcite.esm.js)/i;
+		/(?<=^https:\/\/js.arcgis.com\/calcite-components\/)[\d.]+(?=\/calcite.esm.js)/i;
 	/**
 	 * Regular expression that will match the version number of the CDN URLs for @arcgis/core and @arcgis/map-components.
 	 */
 	const arcgisSdkUrlRe =
-		/(?<=^https:\/\/js.arcgis.com\/(?:map-components\/)?)[\d\.]+\b/i;
+		/(?<=^https:\/\/js.arcgis.com\/(?:map-components\/)?)[\d.]+\b/i;
 
 	/**
 	 * Reads the specified HTML file and creates a JSDOM instance from its contents.
