@@ -1,3 +1,5 @@
+/// <reference types="@wsdot/arcgis-core-helper" />
+
 /**
  * @module setup-search
  * @description Adds search sources to the search map component.

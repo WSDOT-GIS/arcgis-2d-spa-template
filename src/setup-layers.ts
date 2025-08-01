@@ -1,3 +1,5 @@
+/// <reference types="@wsdot/arcgis-core-helper" />
+
 import type { ArcgisMapCustomEvent } from "@arcgis/map-components";
 import type { ArcgisMap } from "@arcgis/map-components/components/arcgis-map";
 
