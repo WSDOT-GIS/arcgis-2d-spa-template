@@ -6,7 +6,7 @@
 	"packageManager": "bun@1.2.9",
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
+		"build": "bun ./tools/build.ts",
 		"build-and-preview": "tsc && vite build && vite preview",
 		"preview": "vite preview",
 		"lint:spell": "cspell lint . --relative --no-progress --no-summary --fail-fast",
@@ -26,17 +26,17 @@
 	"private": true,
 	"license": "Unlicense",
 	"devDependencies": {
-		"@biomejs/biome": "^2.1.2",
-		"@types/bun": "^1.2.19",
+		"@biomejs/biome": "^2.2.0",
+		"@types/bun": "^1.2.20",
 		"@types/gh-pages": "^6.1.0",
 		"@types/jsdom": "^21.1.7",
-		"@types/node": "^24.1.0",
+		"@types/node": "^24.3.0",
 		"@wsdot/arcgis-core-helper": "^1.1.2",
 		"cspell": "^9.2.0",
 		"jsdom": "^26.1.0",
 		"semver-utils": "^1.1.4",
-		"typescript": "^5.8.3",
-		"vite": "^7.0.6"
+		"typescript": "^5.9.2",
+		"vite": "npm:rolldown-vite@latest"
 	},
 	"keywords": [
 		"arcgis",
@@ -47,8 +47,8 @@
 		"single-page-app"
 	],
 	"dependencies": {
-		"@arcgis/core": "^4.33.10",
-		"@arcgis/map-components": "^4.33.11",
+		"@arcgis/core": "^4.33.12",
+		"@arcgis/map-components": "^4.33.14",
 		"@esri/calcite-components": "^3.2.1"
 	}
 }
