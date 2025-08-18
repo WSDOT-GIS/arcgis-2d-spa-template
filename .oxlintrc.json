@@ -1,0 +1,13 @@
+{
+    "plugins": [
+        // Defaults
+        "typescript",
+        "unicorn",
+        "oxc",
+        "import",
+        "jsdoc",
+        "node",
+        "promise",
+        "vitest"
+    ]
+}
