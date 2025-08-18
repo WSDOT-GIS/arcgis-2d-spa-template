@@ -19,7 +19,25 @@
 		{
 			"type": "npm",
 			"script": "dev",
-			"problemMatcher": ["$tsc-watch"],
+			"problemMatcher": [
+				"$tsc-watch",
+				{
+					"owner": "vite",
+					"fileLocation": ["relative", "${workspaceFolder}"],
+					"pattern": {
+						// ::severity file=...,line=...,endLine=...,col=...,endColumn=...,title=...::message
+						"regexp": "^::(\\S+) file=(.*?),line=(\\d+)(?:,endLine=(\\d+))?,col=(\\d+)(?:,endColumn=(\\d+))?,title=([^:]+)::(.+)$",
+						"severity": 1,
+						"file": 2,
+						"line": 3,
+						"endLine": 4,
+						"column": 5,
+						"endColumn": 6,
+						"code": 7,
+						"message": 8
+					}
+				}
+			],
 			"icon": {
 				"id": "eye-watch",
 				"color": "terminal.ansiCyan"
@@ -58,6 +76,32 @@
 			"problemMatcher": ["$tsc"],
 			"label": "Preview production",
 			"detail": "Perform Vite production build and then preview it."
+		},
+		{
+			"label": "oxlint",
+			"detail": "Run oxlint with the type-aware option",
+			"type": "shell",
+			"command": "oxlint --type-aware --format github",
+			"icon": {
+				"id": "check-all",
+				"color": "terminal.ansiYellow"
+			},
+			"problemMatcher": {
+				"owner": "oxlint",
+				"fileLocation": ["relative", "${workspaceFolder}"],
+				"pattern": {
+					// ::severity file=...,line=...,endLine=...,col=...,endColumn=...,title=...::message
+					"regexp": "^::(\\S+) file=(.*?),line=(\\d+)(?:,endLine=(\\d+))?,col=(\\d+)(?:,endColumn=(\\d+))?,title=([^:]+)::(.+)$",
+					"severity": 1,
+					"file": 2,
+					"line": 3,
+					"endLine": 4,
+					"column": 5,
+					"endColumn": 6,
+					"code": 7,
+					"message": 8
+				}
+			}
 		}
 	]
 }

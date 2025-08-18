@@ -58,7 +58,7 @@ async function updateHtml(htmlPath = defaultHtmlPath) {
 	const calciteJsUrlRe =
 		/(?<=^https:\/\/js.arcgis.com\/calcite-components\/)[\d.]+(?=\/calcite.esm.js)/i;
 	/**
-	 * Regular expression that will match the version number of the CDN URLs for @arcgis/core and @arcgis/map-components.
+	 * Regular expression that will match the version number of the CDN URLs for `@arcgis/core` and `@arcgis/map-components`.
 	 */
 	const arcgisSdkUrlRe =
 		/(?<=^https:\/\/js.arcgis.com\/(?:map-components\/)?)[\d.]+\b/i;
