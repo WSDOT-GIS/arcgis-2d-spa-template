@@ -52,17 +52,18 @@ async function setupLayerList() {
 Since some browsers targeted in the browserslist file don't yet support
 top-level await, we need to wrap our code in a self-executing async function.
 */
-(async () => {
-	// Dynamically import the components we need.
 
-	const { addLayersToMap } = await import("./setup-layers");
+// Dynamically import the components we need.
 
-	// Wait for the map to load before adding layers.
-	document.body
-		.querySelector<HTMLArcgisMapElement>("arcgis-map")
-		?.addEventListener("arcgisViewReadyChange", addLayersToMap);
+const { addLayersToMap } = await import("./setup-layers");
 
-	await setupLayerList();
-})();
+// Wait for the map to load before adding layers.
+document.body
+	.querySelector<HTMLArcgisMapElement>("arcgis-map")
+	?.addEventListener("arcgisViewReadyChange", addLayersToMap);
 
-import("./setup-search");
+await setupLayerList();
+
+import("./setup-search").catch((error) => {
+	console.error("Error setting up search:", error);
+});

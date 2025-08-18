@@ -25,7 +25,11 @@ export default defineConfig(async (/*{command, mode, ssrBuild}*/) => {
 	return {
 		// Set the URL base to the name of the repository.
 		base: `/${repo}/`,
-		plugins: [oxlintPlugin()],
+		plugins: [
+			oxlintPlugin({
+				params: "--type-aware --format github",
+			}),
+		],
 		build: {
 			rollupOptions: {
 				external: externalRegex,
