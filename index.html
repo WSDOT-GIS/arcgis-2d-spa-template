@@ -6,8 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg">
 	<!-- Load Calcite -->
-	<script type="module" src="https://js.arcgis.com/calcite-components/3.2.1/calcite.esm.js"
-		integrity="sha512-GaU7Nv4nYs6VdhrCWqLV7olCWR3fybzbh+0EOyvifVaw/YRwnvezryuElNXoPBXcePtgJ+2BWVcoviMEEQ4zjA=="
+	<script type="module" src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js"
+		integrity="sha512-X3bf+sWbgJeCC0DLiYxtY+n+fPt6V3d4X4cdxKSCzawhFXuUqJ6aXEocLGYOFSX6LlYTBVdfMebXKhmWOSdcxw=="
 		crossorigin="anonymous"></script>
 
 	<!--
@@ -15,14 +15,14 @@
 		See https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/
 		-->
 	<link media="screen and (prefers-color-scheme: light)" rel="stylesheet"
-		href="https://js.arcgis.com/4.33/@arcgis/core/assets/esri/themes/light/main.css">
+		href="https://js.arcgis.com/4.34/@arcgis/core/assets/esri/themes/light/main.css">
 	<link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
-		href="https://js.arcgis.com/4.33/@arcgis/core/assets/esri/themes/dark/main.css">
+		href="https://js.arcgis.com/4.34/@arcgis/core/assets/esri/themes/dark/main.css">
 
-	<script src="https://js.arcgis.com/4.33/"></script>
+	<script src="https://js.arcgis.com/4.34/"></script>
 
 	<!-- Load map components -->
-	<script type="module" src="https://js.arcgis.com/4.33/map-components/index.js"></script>
+	<script type="module" src="https://js.arcgis.com/4.34/map-components/index.js"></script>
 	<title>%VITE_APP_TITLE%</title>
 </head>
 
@@ -74,6 +74,8 @@ load dark/light theme matching user's preferred settings.
 	</calcite-shell>
 	<!-- Load the module with our custom code. -->
 	<script type="module" src="/src/main.ts"></script>
+
+
 </body>
 
 </html>
