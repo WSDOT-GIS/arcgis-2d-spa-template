@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /**
  * Updates the CDN references in the HTML to match what is in packages.json.
  * @example
