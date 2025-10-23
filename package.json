@@ -5,11 +5,12 @@
 	"type": "module",
 	"packageManager": "bun@1.2.9",
 	"scripts": {
-		"dev": "vite",
 		"build": "bun ./tools/build.ts",
-		"build-and-preview": "tsc && vite build && vite preview",
-		"preview": "vite preview",
+		"build-and-preview": "bun ./tools/build.ts && vite preview",
+		"dev": "vite",
+		"lint": "oxlint --fix",
 		"lint:spell": "cspell lint . --relative --no-progress --no-summary --fail-fast",
+		"preview": "vite preview",
 		"update-cdn-refs": "bun ./tools/upgrade-cdn-refs.ts"
 	},
 	"author": {
