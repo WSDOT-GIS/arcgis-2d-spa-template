@@ -48,11 +48,6 @@ async function setupLayerList() {
 		?.addEventListener("arcgisReady", customizeLayerListItem);
 }
 
-/* 
-Since some browsers targeted in the browserslist file don't yet support
-top-level await, we need to wrap our code in a self-executing async function.
-*/
-
 // Dynamically import the components we need.
 
 const { addLayersToMap } = await import("./setup-layers");
