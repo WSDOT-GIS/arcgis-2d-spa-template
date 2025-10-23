@@ -40,31 +40,33 @@ load dark/light theme matching user's preferred settings.
 		<!-- This is the map. It is set to be centered on WA. -->
 		<arcgis-map basemap="hybrid" center="-120.85,47.295" zoom="7">
 			<!--
-    Add map components.
-    Small components (e.g., ones that are just single buttons) are placed
-    directly on the map.
-    Ones that are more complex are placed in an "arcgis-expand" component.
-    -->
+			Add map components.
+			Small components (e.g., ones that are just single buttons) are placed
+			directly on the map.
+			Ones that are more complex are placed in an "arcgis-expand" component.
+			-->
 
 			<!-- Top-leading -->
 			<arcgis-zoom position="top-leading"></arcgis-zoom>
 			<arcgis-home position="top-leading"></arcgis-home>
 			<arcgis-locate position="top-leading"></arcgis-locate>
-			<arcgis-expand position="top-leading">
+			<arcgis-expand position="top-leading" group="top-leading">
 				<arcgis-distance-measurement-2d unit="us-feet"></arcgis-distance-measurement-2d>
 			</arcgis-expand>
 
 			<!-- Top-trailing -->
-			<arcgis-expand position="top-trailing">
+			<arcgis-expand position="top-trailing" group="top-trailing">
 				<arcgis-search include-default-sources-disabled=""></arcgis-search>
 			</arcgis-expand>
-			<arcgis-expand position="top-trailing">
-				<arcgis-layer-list visibility-appearance="checkbox" drag-enabled=""></arcgis-layer-list>
+			<arcgis-expand position="top-trailing" group="top-trailing">
+				<arcgis-layer-list visibility-appearance="checkbox" drag-enabled
+					show-temporary-layer-indicators></arcgis-layer-list>
 			</arcgis-expand>
-			<arcgis-expand position="top-trailing">
-				<arcgis-legend></arcgis-legend>
+			<arcgis-expand position="top-trailing" group="top-trailing">
+				<arcgis-legend legend-style="card" card-style-layout="auto" hide-layers-not-in-current-view
+					respect-layer-definition-expression basemap-legend-visible></arcgis-legend>
 			</arcgis-expand>
-			<arcgis-expand position="top-trailing">
+			<arcgis-expand position="top-trailing" group="top-trailing">
 				<arcgis-basemap-gallery></arcgis-basemap-gallery>
 			</arcgis-expand>
 
