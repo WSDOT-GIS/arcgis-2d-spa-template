@@ -14,8 +14,6 @@
 	"oxc.requireConfig": true,
 	"oxc.typeAware": true,
 	"yaml.schemas": {
-		"https://www.schemastore.org/prettierrc.json": [
-			".prettierrc"
-		]
+		"https://www.schemastore.org/prettierrc.json": [".prettierrc"]
 	}
 }
