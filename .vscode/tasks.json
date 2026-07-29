@@ -12,7 +12,9 @@
 				"id": "tools",
 				"color": "terminal.ansiGreen"
 			},
-			"problemMatcher": ["$tsc"],
+			"problemMatcher": [
+				"$tsc"
+			],
 			"label": "Build",
 			"detail": "Builds the project for production"
 		},
@@ -23,9 +25,11 @@
 				"$tsc-watch",
 				{
 					"owner": "vite",
-					"fileLocation": ["relative", "${workspaceFolder}"],
+					"fileLocation": [
+						"relative",
+						"${workspaceFolder}"
+					],
 					"pattern": {
-						// ::severity file=...,line=...,endLine=...,col=...,endColumn=...,title=...::message
 						"regexp": "^::(\\S+) file=(.*?),line=(\\d+)(?:,endLine=(\\d+))?,col=(\\d+)(?:,endColumn=(\\d+))?,title=([^:]+)::(.+)$",
 						"severity": 1,
 						"file": 2,
@@ -73,7 +77,9 @@
 				"id": "preview",
 				"color": "terminal.ansiGreen"
 			},
-			"problemMatcher": ["$tsc"],
+			"problemMatcher": [
+				"$tsc"
+			],
 			"label": "Preview production",
 			"detail": "Perform Vite production build and then preview it."
 		},
@@ -88,9 +94,11 @@
 			},
 			"problemMatcher": {
 				"owner": "oxlint",
-				"fileLocation": ["relative", "${workspaceFolder}"],
+				"fileLocation": [
+					"relative",
+					"${workspaceFolder}"
+				],
 				"pattern": {
-					// ::severity file=...,line=...,endLine=...,col=...,endColumn=...,title=...::message
 					"regexp": "^::(\\S+) file=(.*?),line=(\\d+)(?:,endLine=(\\d+))?,col=(\\d+)(?:,endColumn=(\\d+))?,title=([^:]+)::(.+)$",
 					"severity": 1,
 					"file": 2,

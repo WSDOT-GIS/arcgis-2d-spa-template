@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 
 /**
  * Updates the CDN references in the HTML to match what is in packages.json.
@@ -8,147 +8,94 @@
  * bun .\tools\upgrade-cdn-refs.ts
  */
 
-import { createHash } from "node:crypto";
-import { readFile, writeFile } from "node:fs/promises";
-import { join } from "node:path";
-import { stderr } from "node:process";
+import { CryptoHasher, file, stderr } from "bun";
 import { JSDOM } from "jsdom";
-import { parseRange } from "semver-utils";
-import packageJson from "../package.json" with { type: "json" };
+import { join } from "node:path";
+import { parseRange, SemVer } from "semver-utils";
+import packageConfig from "../package.json" with { type: "json" };
 
-const defaultHtmlPath = join(import.meta.dirname, "..", "index.html");
+const rootPath = join(import.meta.dirname, "..");
 
-/**
- * Updates the CDN references in the given HTML file to match what is in packages.json.
- * @param htmlPath The path to the HTML file. Defaults to the path of the current file.
- * @returns A promise that resolves when the HTML file has been updated.
- */
-async function updateHtml(htmlPath = defaultHtmlPath) {
-	async function generateSriHash(
-		url: string,
-		algorithm: Parameters<typeof createHash>[0] = "sha512",
-	): Promise<string> {
-		stderr.write(`\nGenerating SRI hash for ${url}...\n`);
-		const contentResponse = await fetch(url);
-		const buffer = await contentResponse.bytes();
-		const hash = createHash(algorithm);
-		hash.update(buffer);
-		const integrity = hash.digest("base64");
-		const sriHash = `${algorithm}-${integrity}`;
-		stderr.write(`SRI hash for ${url}: ${sriHash}\n`);
-		return sriHash;
-	}
+const ArcgisCorePackageName = "@arcgis/core";
 
-	// Get the @arcgis/core version number, then conver to a major.minor string.
-	const coreVersion = parseRange(packageJson.dependencies["@arcgis/core"]).at(
-		0,
-	);
-	const coreVersionString = coreVersion
-		? `${coreVersion.major}.${coreVersion.minor}`
-		: "";
+type PackageNameAndVersion = `${typeof ArcgisCorePackageName}@${number}.${number}.${number}`;
 
-	// Get the @esri/calcite-components version number, then conver to a major.minor.patch string.
-	const calciteVersion = packageJson.dependencies[
-		"@esri/calcite-components"
-	].replace(/^\D?/, "");
-
-	console.debug("calcite version", calciteVersion);
-
-	/**
-	 * Regular expression that will match the version number of the calcite-components CDN URL.
-	 */
-	const calciteJsUrlRe =
-		/(?<=^https:\/\/js.arcgis.com\/calcite-components\/)[\d.]+(?=\/calcite.esm.js)/i;
-	/**
-	 * Regular expression that will match the version number of the CDN URLs for `@arcgis/core` and `@arcgis/map-components`.
-	 */
-	const arcgisSdkUrlRe =
-		/(?<=^https:\/\/js.arcgis.com\/(?:map-components\/)?)[\d.]+\b/i;
-
-	/**
-	 * Reads the specified HTML file and creates a JSDOM instance from its contents.
-	 * @returns A promise that resolves to a JSDOM instance representing the HTML document.
-	 */
-	async function getJsDom() {
-		stderr.write(`\nReading ${htmlPath}...\n`);
-		const textBuffer = await readFile(htmlPath);
-		const jsdom = new JSDOM(textBuffer);
-		return jsdom;
-	}
-
-	const jsDom = await getJsDom();
-	const head = jsDom.window.document.head;
-
-	const links = head.querySelectorAll<HTMLLinkElement | HTMLScriptElement>(
-		"link[rel=stylesheet],script[src]",
-	);
-
-	async function updateElementUrlVersion<
-		T extends HTMLLinkElement | HTMLScriptElement =
-			| HTMLLinkElement
-			| HTMLScriptElement,
-	>(
-		element: T,
-	): Promise<{
-		element: T;
-		oldUrl: string;
-		newUrl: string;
-		sriHash: string;
-	} | null> {
-		// Get the name of the attribute of the element that contains the URL.
-		const tagName = element.tagName.toUpperCase();
-		const urlAttributeName =
-			tagName === "SCRIPT" ? "src" : tagName === "LINK" ? "href" : null;
-		// Exit if the element is not one of the expected types.
-		if (!urlAttributeName) {
-			return null;
-		}
-		// Get the URL from the element.
-		const url = element.getAttribute(urlAttributeName);
-		// Exit if the URL couldn't be found.
-		if (!url) {
-			return null;
-		}
-
-		stderr.write(`\n${tagName}[${urlAttributeName}]="${url}"]\n`);
-
-		// Update the URL with the new version number.
-		const newUrl = calciteJsUrlRe.test(url)
-			? url.replace(calciteJsUrlRe, calciteVersion)
-			: arcgisSdkUrlRe.test(url)
-				? url.replace(arcgisSdkUrlRe, coreVersionString)
-				: null;
-
-		// Exit if the URL couldn't be updated.
-		if (!newUrl) {
-			return null;
-		}
-		stderr.write(`\nChanging URL to "${newUrl}" from "${url}"\n`);
-
-		const sriHash = await generateSriHash(newUrl);
-
-		stderr.write(`SRI hash of ${newUrl}: ${sriHash}\n`);
-
-		element.setAttribute(urlAttributeName, newUrl);
-		element.setAttribute("integrity", sriHash);
-		element.crossOrigin = "anonymous";
-
-		stderr.write(element.outerHTML);
-
-		return { element, oldUrl: url, newUrl, sriHash };
-	}
-
-	const updateElementPromises = [...links].map(updateElementUrlVersion);
-	const updatedElements = (await Promise.all(updateElementPromises)).filter(
-		(e) => e != null,
-	);
-
-	if (updatedElements.length) {
-		const outputHtml = jsDom.serialize();
-		await writeFile(htmlPath, outputHtml);
-	} else {
-		console.error("Could not locate any elements to update.");
+interface BunLockFile {
+	packages: {
+		[ArcgisCorePackageName]: [PackageNameAndVersion, ...unknown[]];
 	}
 }
 
-await updateHtml();
+// async function getArcGisCoreVersionFromBunLockFile(returnSemver = false) {
+// 	const bunLockFilePath = join(rootPath, "bun.lock");
+// 	void stderr.write(`Reading ${bunLockFilePath} file to get the version of ${ArcgisCorePackageName}...`);
+// 	const bunLockFile = file(bunLockFilePath);
+// 	const { packages }: BunLockFile = await bunLockFile.json();
+// 	const versionNumberString = packages["@arcgis/core"][0].split("@")[1];
+// 	void stderr.write(`Found ${ArcgisCorePackageName} version: ${versionNumberString}\n`);
+// 	if (!returnSemver) {
+// 		return versionNumberString;
+// 	}
+// 	const version = parse(versionNumberString);
+// 	return version;
+// }
+
+
+
+const defaultHtmlPath = join(import.meta.dirname, "..", "index.html");
+
+const htmlFile = file(defaultHtmlPath);
+
+const jsdom = new JSDOM(await htmlFile.arrayBuffer(), {
+	contentType: "text/html"
+})
+
+const { window: { document } } = jsdom
+
+async function createScriptTag(version: string | SemVer) {
+	/*
+	<script type="module" src="https://js.arcgis.com/5.1.14/index.js"
+			integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw=="
+			crossorigin="anonymous"></script>
+	*/
+	const versionString = typeof version === "string" ? version : `${version.major}.${version.minor}.${version.patch}`;
+	const scriptElement = document.createElement("script");
+	scriptElement.type = "module";
+	const url = `https://js.arcgis.com/${versionString}/index.js`;
+	scriptElement.src = url;
+	const hashAlgorithm: Bun.SupportedCryptoAlgorithms = "sha512";
+	const hash = `${hashAlgorithm}-${CryptoHasher.hash(hashAlgorithm, await fetch(url).then((response) => response.text()), "base64")}`;
+	void stderr.write(`Hash for ${url}: ${hash}\n`);
+	// scriptElement.integrity = hash;
+	scriptElement.setAttribute("integrity", hash);
+	scriptElement.crossOrigin = "anonymous";
+	void stderr.write(scriptElement.outerHTML + "\n");
+	return scriptElement;
+}
+
+const semVer = parseRange(packageConfig.dependencies["@arcgis/core"]).slice(-1).at(0);
+
+if (!semVer) {
+	throw new Error(`Could not find a valid semver for ${ArcgisCorePackageName} in package.json`);
+}
+
+void stderr.write(`Found ${ArcgisCorePackageName} versions: ${semVer.major}.${semVer.minor}.${semVer.patch}\n`);
+
+const scriptElement = document.head.querySelector('script[src^="https://js.arcgis.com/"]')
+const newScriptElement = await createScriptTag(semVer);
+
+if (!scriptElement) {
+	document.head.append(newScriptElement);
+} else {
+	scriptElement.replaceWith(newScriptElement);
+}
+
+const serializedHtml = jsdom.serialize();
+
+void stderr.write(serializedHtml);
+
+await htmlFile.write(serializedHtml);
+
+void stderr.write(`Writing updated HTML to ${defaultHtmlPath}...\n`);
+
+

@@ -1,28 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
 
 <head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg">
 	<!-- Load Calcite -->
-	<script type="module" src="https://js.arcgis.com/calcite-components/3.3.3/calcite.esm.js"
-		integrity="sha512-X3bf+sWbgJeCC0DLiYxtY+n+fPt6V3d4X4cdxKSCzawhFXuUqJ6aXEocLGYOFSX6LlYTBVdfMebXKhmWOSdcxw=="
+	<!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
+	<script type="module" src="https://js.arcgis.com/5.1.14/index.js"
+		integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw=="
 		crossorigin="anonymous"></script>
-
-	<!--
-		Contitionally load either the light or dark theme depending on user's settings.
-		See https://blog.jim-nielsen.com/2019/conditional-syntax-highlighting-in-dark-mode-with-css-imports/
-		-->
-	<link media="screen and (prefers-color-scheme: light)" rel="stylesheet"
-		href="https://js.arcgis.com/4.34/@arcgis/core/assets/esri/themes/light/main.css" />
-	<link rel="stylesheet" media="screen and (prefers-color-scheme: dark)"
-		href="https://js.arcgis.com/4.34/@arcgis/core/assets/esri/themes/dark/main.css" />
-
-	<script src="https://js.arcgis.com/4.34/"></script>
-
-	<!-- Load map components -->
-	<script type="module" src="https://js.arcgis.com/4.34/map-components/index.js"></script>
 	<title>%VITE_APP_TITLE%</title>
 </head>
 
@@ -59,12 +46,12 @@ load dark/light theme matching user's preferred settings.
 				<arcgis-search include-default-sources-disabled=""></arcgis-search>
 			</arcgis-expand>
 			<arcgis-expand slot="top-right" group="top-right">
-				<arcgis-layer-list visibility-appearance="checkbox" drag-enabled
-					show-temporary-layer-indicators></arcgis-layer-list>
+				<arcgis-layer-list visibility-appearance="checkbox" drag-enabled=""
+					show-temporary-layer-indicators=""></arcgis-layer-list>
 			</arcgis-expand>
 			<arcgis-expand slot="top-right" group="top-right">
-				<arcgis-legend legend-style="card" card-style-layout="auto" hide-layers-not-in-current-view
-					respect-layer-definition-expression basemap-legend-visible></arcgis-legend>
+				<arcgis-legend legend-style="card" card-style-layout="auto" hide-layers-not-in-current-view=""
+					respect-layer-definition-expression="" basemap-legend-visible=""></arcgis-legend>
 			</arcgis-expand>
 			<arcgis-expand slot="top-right" group="top-right">
 				<arcgis-basemap-gallery></arcgis-basemap-gallery>
@@ -76,6 +63,8 @@ load dark/light theme matching user's preferred settings.
 	</calcite-shell>
 	<!-- Load the module with our custom code. -->
 	<script type="module" src="/src/main.ts"></script>
+
+
 </body>
 
 </html>

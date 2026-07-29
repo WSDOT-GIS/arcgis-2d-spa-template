@@ -1,0 +1,7 @@
+{
+    "recommendations": [
+        "voidzero.vite-plus-extension-pack",
+        "deshorsley.generatesrihash",
+        "tamasfe.even-better-toml"
+    ]
+}

@@ -8,5 +8,9 @@
 		"node",
 		"promise",
 		"vitest"
-	]
+	],
+	"options": {
+		"typeAware": true,
+		"typeCheck": true
+	}
 }
