@@ -1,3 +1,7 @@
+import type { ArcgisAreaMeasurement2d } from "@arcgis/map-components/components/arcgis-area-measurement-2d";
+import type { ArcgisDistanceMeasurement2d } from "@arcgis/map-components/components/arcgis-distance-measurement-2d";
+import { drainableProtocol } from "node:stream/iter";
+
 const toolsActionBar = document.querySelector<HTMLCalciteActionBarElement>("#tools-action-bar");
 
 if (!toolsActionBar) {
@@ -28,13 +32,16 @@ const findRelatedPanel = <T extends HTMLElement>(action: HTMLCalciteActionElemen
 };
 
 /**
- * Iterate over the actions and their associated panel elements.
- * Only actions that have associated panels will be yielded.
- * @param actionBar - action bar
+ * Iterate over the actions and their associated panel elements. Only actions that have associated
+ * panels will be yielded.
+ *
+ * @param actionBar - Action bar
  * @yields - Action and its associated panel.
  */
 function* iterateActionsAndPanels(actionBar: HTMLCalciteActionBarElement) {
-  const activeActions = actionBar.querySelectorAll<HTMLCalciteActionElement>("calcite-action");
+  const activeActions = actionBar.querySelectorAll<HTMLCalciteActionElement>(
+    "calcite-action[data-toggles]",
+  );
   if (activeActions) {
     for (const action of activeActions) {
       const panel = findRelatedPanel(action);
@@ -96,9 +103,33 @@ const togglePanel = (event: PointerEvent) => {
  * @param actionBar
  */
 export function setupActionBar(actionBar: HTMLCalciteActionBarElement) {
-  const selector = "calcite-action[data-toggles]";
+  let selector = "calcite-action[data-toggles]";
   const actions = actionBar.querySelectorAll<HTMLCalciteActionElement>(selector);
   for (const action of actions) {
     action.addEventListener("click", togglePanel);
+  }
+
+  selector = "calcite-action[data-measure-element]";
+  const measureActions = document.querySelectorAll<HTMLCalciteActionElement>(selector);
+  for (const currentMeasureAction of measureActions) {
+    const selector = `[id=${currentMeasureAction.dataset.measureElement}]`;
+    const measureElement = document.querySelector<
+      ArcgisDistanceMeasurement2d | ArcgisAreaMeasurement2d
+    >(selector);
+    if (!measureElement) {
+      console.error(`Element not found: "${selector}"`, { "current action": currentMeasureAction });
+      currentMeasureAction.disabled = true;
+      continue;
+    }
+    /* __PURE__ */ console.debug("measure element", measureElement);
+
+    currentMeasureAction.addEventListener("click", () => {
+      measureElement.clear().catch((reason) =>
+        console.error(`Failed to call clear function on ${measureElement.id}`, {
+          measureElement,
+          reason,
+        }),
+      );
+    });
   }
 }

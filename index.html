@@ -50,6 +50,18 @@ load dark/light theme matching user's preferred settings.
             ></calcite-action>
             <!-- <calcite-action icon="bookmarks" text="Bookmarks" data-toggles="bookmarks-block"></calcite-action> -->
           </calcite-action-group>
+          <calcite-action-group title="Measurement actions">
+            <calcite-action
+              icon="measure-line"
+              text="Measure Line"
+              data-toggles="measure-line-panel"
+            ></calcite-action>
+            <calcite-action
+              icon="measure-area"
+              text="Measure Area"
+              data-toggles="measure-area-panel"
+            ></calcite-action>
+          </calcite-action-group>
         </calcite-action-bar>
         <!-- TODO: Move measure tools to panel -->
         <!-- <calcite-panel title="Measure">
@@ -60,7 +72,13 @@ load dark/light theme matching user's preferred settings.
             </calcite-accordion>
         </calcite-panel> -->
 
-        <calcite-panel description="Toggle layers in the map" heading="Layers" icon="layers" id="layers-block" hidden>
+        <calcite-panel
+          description="Toggle layers in the map"
+          heading="Layers"
+          icon="layers"
+          id="layers-block"
+          hidden
+        >
           <arcgis-layer-list
             visibility-appearance="checkbox"
             drag-enabled=""
@@ -68,15 +86,67 @@ load dark/light theme matching user's preferred settings.
             reference-element="map"
           ></arcgis-layer-list>
         </calcite-panel>
-        <calcite-panel icon="basemap" id="basemaps-block" heading="Basemaps" description="Change the basemap" hidden>
+        <calcite-panel
+          icon="basemap"
+          id="basemaps-block"
+          heading="Basemaps"
+          description="Change the basemap"
+          hidden
+        >
           <arcgis-basemap-gallery reference-element="map"></arcgis-basemap-gallery>
         </calcite-panel>
-        <calcite-panel icon="legend" id="legend-block" heading="Legend" description="View the legend" hidden>
+        <calcite-panel
+          icon="legend"
+          id="legend-block"
+          heading="Legend"
+          description="View the legend"
+          hidden
+        >
           <arcgis-legend reference-element="map"></arcgis-legend>
         </calcite-panel>
         <!-- <calcite-block id="bookmarks-block" heading="Bookmarks" description="Navigate to a bookmark" expanded collapsible>
 					<arcgis-bookmarks reference-element="map"></arcgis-bookmarks>
 				</calcite-block> -->
+        <calcite-panel
+          heading="Measure Line"
+          description="Measure linear distance"
+          id="measure-line-panel"
+          icon="measure-line"
+          hidden
+        >
+          <calcite-action
+            slot="header-actions-end"
+            icon="erase"
+            text="Clear"
+            data-measure-element="measure-line"
+          ></calcite-action>
+          <calcite-block expanded label="measure line">
+            <arcgis-distance-measurement-2d
+              id="measure-line"
+              reference-element="map"
+            ></arcgis-distance-measurement-2d>
+          </calcite-block>
+        </calcite-panel>
+        <calcite-panel
+          heading="Measure Area"
+          description="Measure area"
+          id="measure-area-panel"
+          icon="measure-area"
+          hidden
+        >
+          <calcite-action
+            slot="header-actions-end"
+            icon="erase"
+            text="Clear"
+            data-measure-element="measure-area"
+          ></calcite-action>
+          <calcite-block label="measure area" expanded>
+            <arcgis-area-measurement-2d
+              id="measure-area"
+              reference-element="map"
+            ></arcgis-area-measurement-2d>
+          </calcite-block>
+        </calcite-panel>
       </calcite-shell-panel>
       <!-- This is the map. It is set to be centered on WA. -->
       <arcgis-map id="map" basemap="hybrid" center="-120.85,47.295" zoom="7">
@@ -93,12 +163,6 @@ load dark/light theme matching user's preferred settings.
         <arcgis-zoom slot="top-left"></arcgis-zoom>
         <arcgis-home slot="top-left"></arcgis-home>
         <arcgis-locate slot="top-left"></arcgis-locate>
-        <arcgis-expand slot="top-left" group="top-left">
-          <arcgis-distance-measurement-2d
-            unit="us-feet"
-            reference-element="map"
-          ></arcgis-distance-measurement-2d>
-        </arcgis-expand>
 
         <!-- Top-right -->
         <arcgis-expand slot="top-right" group="top-right">
