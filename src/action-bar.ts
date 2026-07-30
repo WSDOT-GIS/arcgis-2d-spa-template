@@ -121,7 +121,6 @@ export function setupActionBar(actionBar: HTMLCalciteActionBarElement) {
       currentMeasureAction.disabled = true;
       continue;
     }
-    /* __PURE__ */ console.debug("measure element", measureElement);
 
     currentMeasureAction.addEventListener("click", () => {
       measureElement.clear().catch((reason) =>
