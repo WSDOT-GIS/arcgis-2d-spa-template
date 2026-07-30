@@ -82,6 +82,5 @@ export async function getGithubRepoInfo() {
 		.map((m) => (m as RemoteMatch).groups);
 	// Remove duplicate URLs.
 	const urls = [...new Set(groups.map((g) => g.url))].map(parseGitHubUrl);
-	console.groupEnd();
 	return urls.length === 1 ? urls[0] : urls;
 }

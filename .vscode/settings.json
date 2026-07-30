@@ -15,5 +15,6 @@
 	"oxc.typeAware": true,
 	"yaml.schemas": {
 		"https://www.schemastore.org/prettierrc.json": [".prettierrc"]
-	}
+	},
+	"js/ts.preferences.preferTypeOnlyAutoImports": true
 }

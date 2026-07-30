@@ -1,70 +1,124 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg" />
+    <!-- Load Calcite -->
+    <!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
+    <script
+      type="module"
+      src="https://js.arcgis.com/5.1.14/index.js"
+      integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw=="
+      crossorigin="anonymous"
+    ></script>
+    <title>%VITE_APP_TITLE%</title>
+  </head>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg">
-	<!-- Load Calcite -->
-	<!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
-	<script type="module" src="https://js.arcgis.com/5.1.14/index.js"
-		integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw=="
-		crossorigin="anonymous"></script>
-	<title>%VITE_APP_TITLE%</title>
-</head>
-
-<!-- 
+  <!-- 
 The "calcite-mode-auto" CSS class makes Calcite automatically
 load dark/light theme matching user's preferred settings.
  -->
 
-<body class="calcite-mode-auto">
-	<calcite-shell>
-		<calcite-shell-panel slot="header">
-			<h1>%VITE_APP_TITLE%</h1>
-		</calcite-shell-panel>
+  <body class="calcite-mode-auto">
+    <calcite-shell>
+      <calcite-navigation slot="header">
+        <calcite-navigation-logo
+          slot="logo"
+          heading="%VITE_APP_TITLE%"
+          heading-level="1"
+          thumbnail="favicon.svg"
+        ></calcite-navigation-logo>
+      </calcite-navigation>
+      <calcite-shell-panel id="tools-panel" slot="panel-start" collapsed>
+        <calcite-action-bar slot="action-bar" id="tools-action-bar">
+          <calcite-action-group>
+            <calcite-action
+              icon="layers"
+              text="Layers"
+              data-toggles="layers-block"
+            ></calcite-action>
+            <calcite-action
+              icon="basemap"
+              text="Basemaps"
+              data-toggles="basemaps-block"
+            ></calcite-action>
+            <calcite-action
+              icon="legend"
+              text="Legend"
+              data-toggles="legend-block"
+            ></calcite-action>
+            <!-- <calcite-action icon="bookmarks" text="Bookmarks" data-toggles="bookmarks-block"></calcite-action> -->
+          </calcite-action-group>
+        </calcite-action-bar>
+        <!-- TODO: Move measure tools to panel -->
+        <!-- <calcite-panel title="Measure">
+          <calcite-action-bar layout="horizontal" slot="action-bar">
+              <calcite-action icon="measure" text="Measure Area"></calcite-action>
+            </calcite-action-bar>
+                <arcgis-area-measurement-2d reference-element="map"></arcgis-area-measurement-2d>
+            </calcite-accordion>
+        </calcite-panel> -->
 
-		<!-- This is the map. It is set to be centered on WA. -->
-		<arcgis-map basemap="hybrid" center="-120.85,47.295" zoom="7">
-			<!--
+        <calcite-panel description="Toggle layers in the map" heading="Layers" icon="layers" id="layers-block" hidden>
+          <arcgis-layer-list
+            visibility-appearance="checkbox"
+            drag-enabled=""
+            show-temporary-layer-indicators=""
+            reference-element="map"
+          ></arcgis-layer-list>
+        </calcite-panel>
+        <calcite-panel icon="basemap" id="basemaps-block" heading="Basemaps" description="Change the basemap" hidden>
+          <arcgis-basemap-gallery reference-element="map"></arcgis-basemap-gallery>
+        </calcite-panel>
+        <calcite-panel icon="legend" id="legend-block" heading="Legend" description="View the legend" hidden>
+          <arcgis-legend reference-element="map"></arcgis-legend>
+        </calcite-panel>
+        <!-- <calcite-block id="bookmarks-block" heading="Bookmarks" description="Navigate to a bookmark" expanded collapsible>
+					<arcgis-bookmarks reference-element="map"></arcgis-bookmarks>
+				</calcite-block> -->
+      </calcite-shell-panel>
+      <!-- This is the map. It is set to be centered on WA. -->
+      <arcgis-map id="map" basemap="hybrid" center="-120.85,47.295" zoom="7">
+        <!--
 			Add map components.
 			Small components (e.g., ones that are just single buttons) are placed
 			directly on the map.
 			Ones that are more complex are placed in an "arcgis-expand" component.
 			-->
 
-			<!-- Top-left -->
-			<arcgis-zoom slot="top-left"></arcgis-zoom>
-			<arcgis-home slot="top-left"></arcgis-home>
-			<arcgis-locate slot="top-left"></arcgis-locate>
-			<arcgis-expand slot="top-left" group="top-left">
-				<arcgis-distance-measurement-2d unit="us-feet"></arcgis-distance-measurement-2d>
-			</arcgis-expand>
+        <arcgis-search slot="top-left" include-default-sources-disabled=""></arcgis-search>
 
-			<!-- Top-right -->
-			<arcgis-expand slot="top-right" group="top-right">
-				<arcgis-search include-default-sources-disabled=""></arcgis-search>
-			</arcgis-expand>
-			<arcgis-expand slot="top-right" group="top-right">
-				<arcgis-layer-list visibility-appearance="checkbox" drag-enabled=""
-					show-temporary-layer-indicators=""></arcgis-layer-list>
-			</arcgis-expand>
-			<arcgis-expand slot="top-right" group="top-right">
-				<arcgis-legend legend-style="card" card-style-layout="auto" hide-layers-not-in-current-view=""
-					respect-layer-definition-expression="" basemap-legend-visible=""></arcgis-legend>
-			</arcgis-expand>
-			<arcgis-expand slot="top-right" group="top-right">
-				<arcgis-basemap-gallery></arcgis-basemap-gallery>
-			</arcgis-expand>
+        <!-- Top-left -->
+        <arcgis-zoom slot="top-left"></arcgis-zoom>
+        <arcgis-home slot="top-left"></arcgis-home>
+        <arcgis-locate slot="top-left"></arcgis-locate>
+        <arcgis-expand slot="top-left" group="top-left">
+          <arcgis-distance-measurement-2d
+            unit="us-feet"
+            reference-element="map"
+          ></arcgis-distance-measurement-2d>
+        </arcgis-expand>
 
-			<!-- Bottom-left -->
-			<arcgis-scale-bar slot="bottom-left" unit="dual"></arcgis-scale-bar>
-		</arcgis-map>
-	</calcite-shell>
-	<!-- Load the module with our custom code. -->
-	<script type="module" src="/src/main.ts"></script>
+        <!-- Top-right -->
+        <arcgis-expand slot="top-right" group="top-right">
+          <arcgis-search include-default-sources-disabled=""></arcgis-search>
+        </arcgis-expand>
+        <arcgis-expand slot="top-right" group="top-right">
+          <arcgis-legend
+            legend-style="card"
+            card-style-layout="auto"
+            hide-layers-not-in-current-view=""
+            respect-layer-definition-expression=""
+            basemap-legend-visible=""
+          ></arcgis-legend>
+        </arcgis-expand>
 
-
-</body>
-
+        <!-- Bottom-left -->
+        <arcgis-scale-bar slot="bottom-left" unit="dual"></arcgis-scale-bar>
+      </arcgis-map>
+    </calcite-shell>
+    <!-- Load the module with our custom code. -->
+    <script type="module" src="/src/main.ts"></script>
+  </body>
 </html>

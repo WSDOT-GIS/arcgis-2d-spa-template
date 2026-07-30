@@ -14,33 +14,7 @@ import { join } from "node:path";
 import { parseRange, SemVer } from "semver-utils";
 import packageConfig from "../package.json" with { type: "json" };
 
-const rootPath = join(import.meta.dirname, "..");
-
 const ArcgisCorePackageName = "@arcgis/core";
-
-type PackageNameAndVersion = `${typeof ArcgisCorePackageName}@${number}.${number}.${number}`;
-
-interface BunLockFile {
-	packages: {
-		[ArcgisCorePackageName]: [PackageNameAndVersion, ...unknown[]];
-	}
-}
-
-// async function getArcGisCoreVersionFromBunLockFile(returnSemver = false) {
-// 	const bunLockFilePath = join(rootPath, "bun.lock");
-// 	void stderr.write(`Reading ${bunLockFilePath} file to get the version of ${ArcgisCorePackageName}...`);
-// 	const bunLockFile = file(bunLockFilePath);
-// 	const { packages }: BunLockFile = await bunLockFile.json();
-// 	const versionNumberString = packages["@arcgis/core"][0].split("@")[1];
-// 	void stderr.write(`Found ${ArcgisCorePackageName} version: ${versionNumberString}\n`);
-// 	if (!returnSemver) {
-// 		return versionNumberString;
-// 	}
-// 	const version = parse(versionNumberString);
-// 	return version;
-// }
-
-
 
 const defaultHtmlPath = join(import.meta.dirname, "..", "index.html");
 
