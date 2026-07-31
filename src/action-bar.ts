@@ -1,6 +1,13 @@
+/**
+ * This module sets things up so that a calcite-action can toggle a calcite-panel
+ * or other element by merely adding a "data-toggles" element with the other
+ * element's "id".
+ * 
+ * Call the {@link setupActionBar} function to set this all up.
+ */
+
 import type { ArcgisAreaMeasurement2d } from "@arcgis/map-components/components/arcgis-area-measurement-2d";
 import type { ArcgisDistanceMeasurement2d } from "@arcgis/map-components/components/arcgis-distance-measurement-2d";
-import { drainableProtocol } from "node:stream/iter";
 
 const toolsActionBar = document.querySelector<HTMLCalciteActionBarElement>("#tools-action-bar");
 

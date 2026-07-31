@@ -31,6 +31,11 @@ load dark/light theme matching user's preferred settings.
         ></calcite-navigation-logo>
       </calcite-navigation>
       <calcite-shell-panel id="tools-panel" slot="panel-start" collapsed>
+        <!-- 
+        Adding the "data-toggles" attribute, set to the id of another component,
+        will make it so that clicking that action will toggle the visibility of
+        the component with that "id".
+        -->
         <calcite-action-bar slot="action-bar" id="tools-action-bar">
           <calcite-action-group>
             <calcite-action
@@ -48,7 +53,11 @@ load dark/light theme matching user's preferred settings.
               text="Legend"
               data-toggles="legend-block"
             ></calcite-action>
-            <!-- <calcite-action icon="bookmarks" text="Bookmarks" data-toggles="bookmarks-block"></calcite-action> -->
+            <calcite-action
+              icon="bookmark"
+              text="Bookmarks"
+              data-toggles="bookmarks-panel"
+            ></calcite-action>
           </calcite-action-group>
           <calcite-action-group title="Measurement actions">
             <calcite-action
@@ -63,14 +72,6 @@ load dark/light theme matching user's preferred settings.
             ></calcite-action>
           </calcite-action-group>
         </calcite-action-bar>
-        <!-- TODO: Move measure tools to panel -->
-        <!-- <calcite-panel title="Measure">
-          <calcite-action-bar layout="horizontal" slot="action-bar">
-              <calcite-action icon="measure" text="Measure Area"></calcite-action>
-            </calcite-action-bar>
-                <arcgis-area-measurement-2d reference-element="map"></arcgis-area-measurement-2d>
-            </calcite-accordion>
-        </calcite-panel> -->
 
         <calcite-panel
           description="Toggle layers in the map"
@@ -104,9 +105,14 @@ load dark/light theme matching user's preferred settings.
         >
           <arcgis-legend reference-element="map"></arcgis-legend>
         </calcite-panel>
-        <!-- <calcite-block id="bookmarks-block" heading="Bookmarks" description="Navigate to a bookmark" expanded collapsible>
-					<arcgis-bookmarks reference-element="map"></arcgis-bookmarks>
-				</calcite-block> -->
+        <calcite-panel id="bookmarks-panel" heading="Bookmarks" icon="bookmark" hidden>
+          <arcgis-bookmarks
+            reference-element="map"
+            show-add-bookmark-button
+            show-filter
+            show-edit-bookmark-button
+          ></arcgis-bookmarks>
+        </calcite-panel>
         <calcite-panel
           heading="Measure Line"
           description="Measure linear distance"
@@ -149,7 +155,7 @@ load dark/light theme matching user's preferred settings.
         </calcite-panel>
       </calcite-shell-panel>
       <!-- This is the map. It is set to be centered on WA. -->
-      <arcgis-map id="map" basemap="hybrid" center="-120.85,47.295" zoom="7">
+      <arcgis-map id="map" center="-120.85,47.295" zoom="7">
         <!--
 			Add map components.
 			Small components (e.g., ones that are just single buttons) are placed
@@ -163,20 +169,6 @@ load dark/light theme matching user's preferred settings.
         <arcgis-zoom slot="top-left"></arcgis-zoom>
         <arcgis-home slot="top-left"></arcgis-home>
         <arcgis-locate slot="top-left"></arcgis-locate>
-
-        <!-- Top-right -->
-        <arcgis-expand slot="top-right" group="top-right">
-          <arcgis-search include-default-sources-disabled=""></arcgis-search>
-        </arcgis-expand>
-        <arcgis-expand slot="top-right" group="top-right">
-          <arcgis-legend
-            legend-style="card"
-            card-style-layout="auto"
-            hide-layers-not-in-current-view=""
-            respect-layer-definition-expression=""
-            basemap-legend-visible=""
-          ></arcgis-legend>
-        </arcgis-expand>
 
         <!-- Bottom-left -->
         <arcgis-scale-bar slot="bottom-left" unit="dual"></arcgis-scale-bar>
