@@ -2,5 +2,6 @@
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "sortPackageJson": true,
   "jsdoc": true,
+  "useTabs": true,
   "ignorePatterns": []
 }
