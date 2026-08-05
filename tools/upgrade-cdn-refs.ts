@@ -2,10 +2,12 @@
 
 /**
  * Updates the CDN references in the HTML to match what is in packages.json.
+ *
  * @example
- * node --experimental-transform-types  .\tools\upgrade-cdn-refs.ts
+ * 	node --experimental-transform-types  .\tools\upgrade-cdn-refs.ts
+ *
  * @example
- * bun .\tools\upgrade-cdn-refs.ts
+ * 	bun .\tools\upgrade-cdn-refs.ts
  */
 
 import { CryptoHasher, file, stderr } from "bun";
@@ -21,10 +23,12 @@ const defaultHtmlPath = join(import.meta.dirname, "..", "index.html");
 const htmlFile = file(defaultHtmlPath);
 
 const jsdom = new JSDOM(await htmlFile.arrayBuffer(), {
-	contentType: "text/html"
-})
+	contentType: "text/html",
+});
 
-const { window: { document } } = jsdom
+const {
+	window: { document },
+} = jsdom;
 
 async function createScriptTag(version: string | SemVer) {
 	/*
@@ -32,7 +36,10 @@ async function createScriptTag(version: string | SemVer) {
 			integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw=="
 			crossorigin="anonymous"></script>
 	*/
-	const versionString = typeof version === "string" ? version : `${version.major}.${version.minor}.${version.patch}`;
+	const versionString =
+		typeof version === "string"
+			? version
+			: `${version.major}.${version.minor}.${version.patch}`;
 	const scriptElement = document.createElement("script");
 	scriptElement.type = "module";
 	const url = `https://js.arcgis.com/${versionString}/index.js`;
@@ -47,15 +54,23 @@ async function createScriptTag(version: string | SemVer) {
 	return scriptElement;
 }
 
-const semVer = parseRange(packageConfig.dependencies["@arcgis/core"]).slice(-1).at(0);
+const semVer = parseRange(packageConfig.dependencies["@arcgis/core"])
+	.slice(-1)
+	.at(0);
 
 if (!semVer) {
-	throw new Error(`Could not find a valid semver for ${ArcgisCorePackageName} in package.json`);
+	throw new Error(
+		`Could not find a valid semver for ${ArcgisCorePackageName} in package.json`,
+	);
 }
 
-void stderr.write(`Found ${ArcgisCorePackageName} versions: ${semVer.major}.${semVer.minor}.${semVer.patch}\n`);
+void stderr.write(
+	`Found ${ArcgisCorePackageName} versions: ${semVer.major}.${semVer.minor}.${semVer.patch}\n`,
+);
 
-const scriptElement = document.head.querySelector('script[src^="https://js.arcgis.com/"]')
+const scriptElement = document.head.querySelector(
+	'script[src^="https://js.arcgis.com/"]',
+);
 const newScriptElement = await createScriptTag(semVer);
 
 if (!scriptElement) {
@@ -71,5 +86,3 @@ void stderr.write(serializedHtml);
 await htmlFile.write(serializedHtml);
 
 void stderr.write(`Writing updated HTML to ${defaultHtmlPath}...\n`);
-
-

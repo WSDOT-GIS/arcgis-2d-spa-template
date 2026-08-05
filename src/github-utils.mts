@@ -1,7 +1,6 @@
 /**
- * This module is used for getting the git repository name,
- * for use with vite.config.ts when you building a site that
- * is hosted on GitHub Pages.
+ * This module is used for getting the git repository name, for use with
+ * vite.config.ts when you building a site that is hosted on GitHub Pages.
  */
 
 import { exec } from "node:child_process";
@@ -20,11 +19,12 @@ interface RemoteMatch extends RegExpMatchArray {
 
 /**
  * Detects if a {@link RegExpMatchArray}'s
- * {@link RegExpMatchArray.groups|groups property}
- * has the properties defined by {@link RemoteMatchGroups}
+ * {@link RegExpMatchArray.groups|groups property} has the properties defined by
+ * {@link RemoteMatchGroups}
+ *
  * @param match
- * @returns Returns true if {@link match} is a
- * {@link RemoteMatch}, false otherwise.
+ * @returns Returns true if {@link match} is a {@link RemoteMatch}, false
+ *   otherwise.
  */
 function hasExpectedGroups(match: RegExpMatchArray): match is RemoteMatch {
 	const { groups } = match;
@@ -48,6 +48,7 @@ export interface RepoInfo {
 
 /**
  * Parses the owner and repo name from a GitHub URL.
+ *
  * @param url
  * @returns
  */
@@ -65,8 +66,9 @@ function parseGitHubUrl(url: string): RepoInfo {
 }
 
 /**
- * Retrieves GitHub repo information by executing
- * `git remote --verbose` and parsing the response.
+ * Retrieves GitHub repo information by executing `git remote --verbose` and
+ * parsing the response.
+ *
  * @returns Github repo information
  */
 export async function getGithubRepoInfo() {

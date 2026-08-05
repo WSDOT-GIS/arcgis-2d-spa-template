@@ -94,7 +94,9 @@ load dark/light theme matching user's preferred settings.
 					description="Change the basemap"
 					hidden=""
 				>
-					<arcgis-basemap-gallery reference-element="map"></arcgis-basemap-gallery>
+					<arcgis-basemap-gallery
+						reference-element="map"
+					></arcgis-basemap-gallery>
 				</calcite-panel>
 				<calcite-panel
 					icon="legend"
@@ -105,7 +107,12 @@ load dark/light theme matching user's preferred settings.
 				>
 					<arcgis-legend reference-element="map"></arcgis-legend>
 				</calcite-panel>
-				<calcite-panel id="bookmarks-panel" heading="Bookmarks" icon="bookmark" hidden="">
+				<calcite-panel
+					id="bookmarks-panel"
+					heading="Bookmarks"
+					icon="bookmark"
+					hidden=""
+				>
 					<arcgis-bookmarks
 						reference-element="map"
 						show-add-bookmark-button=""
@@ -165,7 +172,10 @@ load dark/light theme matching user's preferred settings.
 			Ones that are more complex are placed in an "arcgis-expand" component.
 			-->
 
-				<arcgis-search slot="top-left" include-default-sources-disabled=""></arcgis-search>
+				<arcgis-search
+					slot="top-left"
+					include-default-sources-disabled=""
+				></arcgis-search>
 
 				<!-- Top-left -->
 				<arcgis-zoom slot="top-left"></arcgis-zoom>

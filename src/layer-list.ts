@@ -4,12 +4,13 @@ import type { ArcgisLayerListCustomEvent } from "@arcgis/map-components";
 export async function setupLayerList() {
 	/**
 	 * Customize the layer list item.
-	 * @param params - layer list item created event params
-	 * @param params.item - newly created layer list item
+	 *
+	 * @param params - Layer list item created event params
+	 * @param params.item - Newly created layer list item
 	 */
-	const customizeItem: ListItemModifier  = (ev) => {
+	const customizeItem: ListItemModifier = (ev) => {
 		ev.item.panel = {
-            /* TODO: Create legend rather than using the string "legend" for
+			/* TODO: Create legend rather than using the string "legend" for
             the "content" property.
             
             Specifying "legend" for "content" results in an old-style
@@ -32,8 +33,9 @@ export async function setupLayerList() {
 
 	/**
 	 * Called when the layer list item is created.
-	 * @param ev - event params
-	 * @param ev.item - newly created layer list item
+	 *
+	 * @param ev - Event params
+	 * @param ev.item - Newly created layer list item
 	 */
 	function customizeLayerListItem(
 		this: HTMLArcgisLayerListElement,

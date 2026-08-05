@@ -1,7 +1,9 @@
 {
-  "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "sortPackageJson": true,
-  "jsdoc": true,
-  "useTabs": true,
-  "ignorePatterns": []
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"sortPackageJson": true,
+	"jsdoc": true,
+	"useTabs": true,
+	"printWidth": 80,
+	"proseWrap": "preserve",
+	"ignorePatterns": []
 }
