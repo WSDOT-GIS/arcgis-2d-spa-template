@@ -1,6 +1,6 @@
 import { defineConfig } from "vite";
 // import oxlintPlugin from "vite-plugin-oxlint";
-import { getGithubRepoInfo } from "./src/github-utils.mjs";
+import { getGithubRepoInfo } from "./src/github-utils.mts";
 
 /** Gets the name of the repository. */
 async function getRepoName(): Promise<string> {

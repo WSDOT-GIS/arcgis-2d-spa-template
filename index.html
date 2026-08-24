@@ -12,6 +12,7 @@
 			integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw=="
 			crossorigin="anonymous"
 		></script>
+		<link rel="stylesheet" href="src/index.css">
 		<title>%VITE_APP_TITLE%</title>
 	</head>
 
@@ -29,13 +30,22 @@ load dark/light theme matching user's preferred settings.
 					heading-level="1"
 					thumbnail="favicon.svg"
 				></calcite-navigation-logo>
+				<calcite-menu slot="content-end" label="additional information">
+				<calcite-menu-item
+					id="skip-to-main-link"
+					class="skip-to-main-link"
+					href="#map"
+					text="Skip to main content"
+				></calcite-menu-item>
+			</calcite-menu>
 			</calcite-navigation>
+			
 			<calcite-shell-panel id="tools-panel" slot="panel-start" collapsed="">
 				<!-- 
-        Adding the "data-toggles" attribute, set to the id of another component,
-        will make it so that clicking that action will toggle the visibility of
-        the component with that "id".
-        -->
+				Adding the "data-toggles" attribute, set to the id of another component,
+				will make it so that clicking that action will toggle the visibility of
+				the component with that "id".
+				-->
 				<calcite-action-bar slot="action-bar" id="tools-action-bar">
 					<calcite-action-group>
 						<calcite-action
