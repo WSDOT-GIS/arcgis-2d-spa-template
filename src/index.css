@@ -10,5 +10,5 @@
 .skip-to-main-link:focus {
 	position: unset; /* static; */
 	width: unset; /* auto; */
-	height:unset; /*  auto; */
+	height: unset; /*  auto; */
 }

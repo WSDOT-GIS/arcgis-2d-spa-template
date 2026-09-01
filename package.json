@@ -37,8 +37,8 @@
 		"update-cdn-refs": "bun ./tools/upgrade-cdn-refs.ts"
 	},
 	"dependencies": {
-		"@arcgis/core": "^5.1.20",
-		"@arcgis/map-components": "^5.1.20",
+		"@arcgis/core": "^5.1.21",
+		"@arcgis/map-components": "^5.1.21",
 		"@esri/calcite-components": "^5.1.2"
 	},
 	"devDependencies": {
@@ -46,17 +46,17 @@
 		"@types/bun": "1.4.0",
 		"@types/gh-pages": "^6.1.0",
 		"@types/jsdom": "^30.0.0",
-		"@types/node": "^26.2.0",
+		"@types/node": "^26.4.1",
 		"@wsdot/arcgis-core-helper": "^1.1.2",
-		"cspell": "^10.1.0",
+		"cspell": "^10.2.0",
 		"jsdom": "^30.0.1",
-		"oxfmt": "^0.65.0",
-		"oxlint": "^1.80.0",
+		"oxfmt": "^0.66.0",
+		"oxlint": "^1.81.0",
 		"oxlint-tsgolint": "^7.0.2001",
 		"semver-utils": "^1.1.4",
 		"typescript": "^7.0.2",
 		"vite": "^8.2.2",
-		"vite-plugin-oxlint": "^2.1.2"
+		"vite-plugin-oxlint": "^2.2.0"
 	},
 	"packageManager": "bun"
 }
