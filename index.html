@@ -10,9 +10,9 @@
 	</head>
 
 	<!-- 
-The "calcite-mode-auto" CSS class makes Calcite automatically
-load dark/light theme matching user's preferred settings.
- -->
+	The "calcite-mode-auto" CSS class makes Calcite automatically
+	load dark/light theme matching user's preferred settings.
+	-->
 
 	<body class="calcite-mode-auto">
 		<calcite-shell>
@@ -31,10 +31,31 @@ load dark/light theme matching user's preferred settings.
 				-->
 				<calcite-action-bar slot="action-bar" id="tools-action-bar">
 					<calcite-action-group>
-						<calcite-action icon="layers" text="Layers" data-toggles="layers-block"></calcite-action>
-						<calcite-action icon="basemap" text="Basemaps" data-toggles="basemaps-block"></calcite-action>
-						<calcite-action icon="legend" text="Legend" data-toggles="legend-block"></calcite-action>
-						<calcite-action icon="bookmark" text="Bookmarks" data-toggles="bookmarks-panel"></calcite-action>
+						<calcite-action
+							icon="pin"
+							text="Locate Milepost"
+							data-toggles="mp-panel"
+						></calcite-action>
+						<calcite-action
+							icon="layers"
+							text="Layers"
+							data-toggles="layers-block"
+						></calcite-action>
+						<calcite-action
+							icon="basemap"
+							text="Basemaps"
+							data-toggles="basemaps-block"
+						></calcite-action>
+						<calcite-action
+							icon="legend"
+							text="Legend"
+							data-toggles="legend-block"
+						></calcite-action>
+						<calcite-action
+							icon="bookmark"
+							text="Bookmarks"
+							data-toggles="bookmarks-panel"
+						></calcite-action>
 					</calcite-action-group>
 					<calcite-action-group title="Measurement actions">
 						<calcite-action icon="measure-line" text="Measure Line" data-toggles="measure-line-panel"></calcite-action>
@@ -42,8 +63,126 @@ load dark/light theme matching user's preferred settings.
 					</calcite-action-group>
 				</calcite-action-bar>
 
-				<calcite-panel description="Toggle layers in the map" heading="Layers" icon="layers" id="layers-block" hidden="">
-					<arcgis-layer-list visibility-appearance="checkbox" drag-enabled="" show-temporary-layer-indicators="" reference-element="map"></arcgis-layer-list>
+				<calcite-panel
+					heading="Locate Mileposts"
+					description="Locate Mileposts"
+					icon="pin"
+					id="mp-panel"
+					hidden=""
+				>
+					<form id="route-input-form" class="route-input-form">
+						<calcite-label for="routeInput"
+							>State Route
+							<calcite-combobox
+								id="routeInput"
+								name="route"
+								label="route select"
+								selection-mode="single"
+								selection-display="single"
+								overlay-positioning="fixed"
+								required
+								title="Select a route from the list. Type to filter the list."
+								placeholder="Select a route from the list. Type to filter the list."
+								allow-custom-values
+								data-url="https://data.wsdot.wa.gov/arcgis/rest/services/Shared/ElcRestSOE/MapServer/exts/ElcRestSoe/routes/"
+							>
+							</calcite-combobox>
+						</calcite-label>
+
+						<calcite-label layout="inline" for="decreaseInput"
+							>Increase<calcite-switch
+								name="decrease"
+								id="decreaseInput"
+								title="Check this box if you want the decreasing route rather than increasing."
+							></calcite-switch
+							>Decrease</calcite-label
+						>
+
+						<calcite-label for="mpInput"
+							>Milepost<calcite-input-number
+								title="Enter the milepost value here."
+								id="mpInput"
+								name="mp"
+								type="number"
+								min="0"
+								step="0.01"
+								required
+						/></calcite-label>
+
+						<calcite-label for="backInput" layout="inline"
+							>Ahead<calcite-switch
+								name="back"
+								id="backInput"
+								title="Check this box if the SRMP is back mileage."
+								label="Back"
+							></calcite-switch
+							>Back</calcite-label
+						>
+
+						<calcite-block
+							heading="End Milepost"
+							description="End milepost (optional)"
+							collapsible="true"
+						>
+							<calcite-label for="endMPInput"
+								>End Milepost<calcite-input-number
+									title="Enter the end milepost value here if you want to search for a route segment."
+									id="endMPInput"
+									name="endMP"
+									type="number"
+									min="0"
+									step="0.01"
+							/></calcite-label>
+							<calcite-label layout="inline"
+								>Ahead
+								<calcite-switch
+									name="endBack"
+									id="endBackInput"
+									title="Check this box if the SRMP is back mileage."
+									label="Back"
+								></calcite-switch>
+								Back</calcite-label
+							>
+						</calcite-block>
+
+						<div class="btn-container">
+							<calcite-button
+								type="submit"
+								title="Click this button to find this route + milepost and add a point to the map."
+								alignment="center"
+								width="full"
+								>Submit</calcite-button
+							>
+						</div>
+					</form>
+					<calcite-action
+						id="resetFormAction"
+						slot="actions-end"
+						icon="reset"
+						text="Reset form"
+						label="Reset form"
+					></calcite-action>
+
+					<calcite-tooltip
+						id="resetFormTooltip"
+						reference-element="resetFormAction"
+						>Click this button to clear the form input
+						controls.</calcite-tooltip
+					>
+				</calcite-panel>
+				<calcite-panel
+					description="Toggle layers in the map"
+					heading="Layers"
+					icon="layers"
+					id="layers-block"
+					hidden=""
+				>
+					<arcgis-layer-list
+						visibility-appearance="checkbox"
+						drag-enabled=""
+						show-temporary-layer-indicators=""
+						reference-element="map"
+					></arcgis-layer-list>
 				</calcite-panel>
 				<calcite-panel icon="basemap" id="basemaps-block" heading="Basemaps" description="Change the basemap" hidden="">
 					<arcgis-basemap-gallery reference-element="map"></arcgis-basemap-gallery>
