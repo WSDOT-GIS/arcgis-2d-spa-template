@@ -1,4 +1,5 @@
 await import("./setup-map");
+await import("./components/wsdot-mp-form");
 
 import("./setup-search").catch((error) => {
 	console.error("Error setting up search:", error);

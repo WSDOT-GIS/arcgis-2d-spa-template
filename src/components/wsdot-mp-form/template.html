@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<template>
+			<form>
+				<calcite-label for="routeInput"
+					>State Route
+					<calcite-combobox
+						id="routeInput"
+						name="route"
+						label="route select"
+						selection-mode="single"
+						selection-display="single"
+						overlay-positioning="fixed"
+						required
+						title="Select a route from the list. Type to filter the list."
+						placeholder="Select a route from the list. Type to filter the list."
+						allow-custom-values
+						data-url="https://data.wsdot.wa.gov/arcgis/rest/services/Shared/ElcRestSOE/MapServer/exts/ElcRestSoe/routes/"
+					>
+					</calcite-combobox>
+				</calcite-label>
+
+				<calcite-label layout="inline" for="decreaseInput"
+					>Increase<calcite-switch
+						name="decrease"
+						id="decreaseInput"
+						title="Check this box if you want the decreasing route rather than increasing."
+					></calcite-switch
+					>Decrease</calcite-label
+				>
+
+				<calcite-label for="mpInput"
+					>Milepost<calcite-input-number
+						title="Enter the milepost value here."
+						id="mpInput"
+						name="mp"
+						type="number"
+						min="0"
+						step="0.01"
+						required
+				/></calcite-label>
+
+				<calcite-label for="backInput" layout="inline"
+					>Ahead<calcite-switch
+						name="back"
+						id="backInput"
+						title="Check this box if the SRMP is back mileage."
+						label="Back"
+					></calcite-switch
+					>Back</calcite-label
+				>
+
+				<calcite-block
+					heading="End Milepost"
+					description="End milepost (optional)"
+					collapsible="true"
+				>
+					<calcite-label for="endMPInput"
+						>End Milepost<calcite-input-number
+							title="Enter the end milepost value here if you want to search for a route segment."
+							id="endMPInput"
+							name="endMP"
+							type="number"
+							min="0"
+							step="0.01"
+					/></calcite-label>
+					<calcite-label layout="inline"
+						>Ahead
+						<calcite-switch
+							name="endBack"
+							id="endBackInput"
+							title="Check this box if the SRMP is back mileage."
+							label="Back"
+						></calcite-switch>
+						Back</calcite-label
+					>
+				</calcite-block>
+
+				<div class="btn-container">
+					<calcite-button
+						type="submit"
+						title="Click this button to find this route + milepost and add a point to the map."
+						alignment="center"
+						width="full"
+						>Submit</calcite-button
+					>
+				</div>
+			</form>
+		</template>
+	</body>
+</html>
