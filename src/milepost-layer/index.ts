@@ -39,21 +39,36 @@ export function isMPAttributes(o: unknown): o is MPAttributes {
 	].every((fn) => fn in o);
 }
 
+const fromFormFilterId = "from-form";
 /**
  * Creates the mileposts feature layer
  *
  * @returns The mileposts feature layer
  */
-export const createMPFeatureLayer = () =>
-	new FeatureLayer({
-		id: mpLayerId,
+export function createMPFeatureLayer() {
+	const mpLayerAgolId = "22324eb30f6949eabc180bfbe0de6fcb";
+	return new FeatureLayer({
 		portalItem: {
-			id: "22324eb30f6949eabc180bfbe0de6fc",
+			portal: {
+				url: "https://wsdot.maps.arcgis.com",
+			},
+			id: mpLayerAgolId,
+		},
+		displayFilterInfo: {
+			filters: [
+				{
+					id: fromFormFilterId,
+					where: "1 = 0",
+					title: "Show only features selected by the form",
+				},
+			],
+			activeFilterId: fromFormFilterId,
 		},
 	});
+}
 
 export async function getRouteList(
-	layer: ReturnType<typeof createMPFeatureLayer>,
+	layer: Awaited<ReturnType<typeof createMPFeatureLayer>>,
 ) {
 	const query: QueryProperties = {
 		where: `${FieldName.routeId} IS NOT NULL`,

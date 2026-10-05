@@ -1,18 +1,11 @@
-<!doctype html>
-<html lang="en-US">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg" />
+<!DOCTYPE html><html lang="en-US"><head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg">
 		<!-- Load Calcite -->
 		<!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
-		<script
-			type="module"
-			src="https://js.arcgis.com/5.1.26/index.js"
-			integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw=="
-			crossorigin="anonymous"
-		></script>
-		<link rel="stylesheet" href="src/index.css" />
+		<script type="module" src="https://js.arcgis.com/5.1.26/index.js" integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw==" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="src/index.css">
 		<title>%VITE_APP_TITLE%</title>
 	</head>
 
@@ -24,19 +17,9 @@
 	<body class="calcite-mode-auto">
 		<calcite-shell>
 			<calcite-navigation slot="header">
-				<calcite-navigation-logo
-					slot="logo"
-					heading="%VITE_APP_TITLE%"
-					heading-level="1"
-					thumbnail="favicon.svg"
-				></calcite-navigation-logo>
+				<calcite-navigation-logo slot="logo" heading="%VITE_APP_TITLE%" heading-level="1" thumbnail="favicon.svg"></calcite-navigation-logo>
 				<calcite-menu slot="content-end" label="additional information">
-					<calcite-menu-item
-						id="skip-to-main-link"
-						class="skip-to-main-link"
-						href="#map"
-						text="Skip to main content"
-					></calcite-menu-item>
+					<calcite-menu-item id="skip-to-main-link" class="skip-to-main-link" href="#map" text="Skip to main content"></calcite-menu-item>
 				</calcite-menu>
 			</calcite-navigation>
 
@@ -75,16 +58,8 @@
 						></calcite-action>
 					</calcite-action-group>
 					<calcite-action-group title="Measurement actions">
-						<calcite-action
-							icon="measure-line"
-							text="Measure Line"
-							data-toggles="measure-line-panel"
-						></calcite-action>
-						<calcite-action
-							icon="measure-area"
-							text="Measure Area"
-							data-toggles="measure-area-panel"
-						></calcite-action>
+						<calcite-action icon="measure-line" text="Measure Line" data-toggles="measure-line-panel"></calcite-action>
+						<calcite-action icon="measure-area" text="Measure Area" data-toggles="measure-area-panel"></calcite-action>
 					</calcite-action-group>
 				</calcite-action-bar>
 
@@ -96,10 +71,7 @@
 					hidden=""
 				>
 					<calcite-block expanded="" label="locate mileposts">
-						<wsdot-mp-form
-							reference-element="map"
-							mp-layer-id="mileposts"
-						></wsdot-mp-form>
+						<wsdot-mp-form reference-element="map" mp-layer-id="mileposts"></wsdot-mp-form>
 					</calcite-block>
 
 					<calcite-action
@@ -131,79 +103,25 @@
 						reference-element="map"
 					></arcgis-layer-list>
 				</calcite-panel>
-				<calcite-panel
-					icon="basemap"
-					id="basemaps-block"
-					heading="Basemaps"
-					description="Change the basemap"
-					hidden=""
-				>
-					<arcgis-basemap-gallery
-						reference-element="map"
-					></arcgis-basemap-gallery>
+				<calcite-panel icon="basemap" id="basemaps-block" heading="Basemaps" description="Change the basemap" hidden="">
+					<arcgis-basemap-gallery reference-element="map"></arcgis-basemap-gallery>
 				</calcite-panel>
-				<calcite-panel
-					icon="legend"
-					id="legend-block"
-					heading="Legend"
-					description="View the legend"
-					hidden=""
-				>
+				<calcite-panel icon="legend" id="legend-block" heading="Legend" description="View the legend" hidden="">
 					<arcgis-legend reference-element="map"></arcgis-legend>
 				</calcite-panel>
-				<calcite-panel
-					id="bookmarks-panel"
-					heading="Bookmarks"
-					icon="bookmark"
-					hidden=""
-				>
-					<arcgis-bookmarks
-						reference-element="map"
-						show-add-bookmark-button=""
-						show-filter=""
-						show-edit-bookmark-button=""
-					></arcgis-bookmarks>
+				<calcite-panel id="bookmarks-panel" heading="Bookmarks" icon="bookmark" hidden="">
+					<arcgis-bookmarks reference-element="map" show-add-bookmark-button="" show-filter="" show-edit-bookmark-button=""></arcgis-bookmarks>
 				</calcite-panel>
-				<calcite-panel
-					heading="Measure Line"
-					description="Measure linear distance"
-					id="measure-line-panel"
-					icon="measure-line"
-					hidden=""
-				>
-					<calcite-action
-						slot="header-actions-end"
-						icon="erase"
-						text="Clear"
-						title="Clear line measurement graphics"
-						data-measure-element="measure-line"
-					></calcite-action>
+				<calcite-panel heading="Measure Line" description="Measure linear distance" id="measure-line-panel" icon="measure-line" hidden="">
+					<calcite-action slot="header-actions-end" icon="erase" text="Clear" title="Clear line measurement graphics" data-measure-element="measure-line"></calcite-action>
 					<calcite-block expanded="" label="measure line">
-						<arcgis-distance-measurement-2d
-							id="measure-line"
-							reference-element="map"
-						></arcgis-distance-measurement-2d>
+						<arcgis-distance-measurement-2d id="measure-line" reference-element="map"></arcgis-distance-measurement-2d>
 					</calcite-block>
 				</calcite-panel>
-				<calcite-panel
-					heading="Measure Area"
-					description="Measure area"
-					id="measure-area-panel"
-					icon="measure-area"
-					hidden=""
-				>
-					<calcite-action
-						slot="header-actions-end"
-						icon="erase"
-						text="Clear"
-						title="Clear area measurement graphics"
-						data-measure-element="measure-area"
-					></calcite-action>
+				<calcite-panel heading="Measure Area" description="Measure area" id="measure-area-panel" icon="measure-area" hidden="">
+					<calcite-action slot="header-actions-end" icon="erase" text="Clear" title="Clear area measurement graphics" data-measure-element="measure-area"></calcite-action>
 					<calcite-block label="measure area" expanded="">
-						<arcgis-area-measurement-2d
-							id="measure-area"
-							reference-element="map"
-						></arcgis-area-measurement-2d>
+						<arcgis-area-measurement-2d id="measure-area" reference-element="map"></arcgis-area-measurement-2d>
 					</calcite-block>
 				</calcite-panel>
 			</calcite-shell-panel>
@@ -216,10 +134,7 @@
 			Ones that are more complex are placed in an "arcgis-expand" component.
 			-->
 
-				<arcgis-search
-					slot="top-left"
-					include-default-sources-disabled=""
-				></arcgis-search>
+				<arcgis-search slot="top-left" include-default-sources-disabled=""></arcgis-search>
 
 				<!-- Top-left -->
 				<arcgis-zoom slot="top-left"></arcgis-zoom>
@@ -232,5 +147,6 @@
 		</calcite-shell>
 		<!-- Load the module with our custom code. -->
 		<script type="module" src="/src/main.ts"></script>
-	</body>
-</html>
+	
+
+</body></html>
