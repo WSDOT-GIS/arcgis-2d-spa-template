@@ -1,12 +1,16 @@
 import { ArcgisMap } from "@arcgis/map-components/components/arcgis-map";
 import templateHtml from "./template.html?raw";
-import type FeatureLayer from "@arcgis/core/layers/FeatureLayer";
-import type FeatureLayerView from "@arcgis/core/views/layers/FeatureLayerView";
 
 export class WsdotMilepostForm extends HTMLElement {
-	static observedAttributes = ["reference-element", "mp-layer-id"] as const;
+	private static readonly referenceElementAttributeName = "reference-element";
+	private static readonly layerIdAttributeName = "mp-layer-id";
 
-	public get referenceElement(): ArcgisMap | null {
+	static observedAttributes = [
+		WsdotMilepostForm.referenceElementAttributeName,
+		WsdotMilepostForm.layerIdAttributeName,
+	] as const;
+
+	public get map(): ArcgisMap | null {
 		const mapId = this.getAttribute("reference-element");
 		if (!mapId) {
 			return null;
@@ -15,23 +19,8 @@ export class WsdotMilepostForm extends HTMLElement {
 		return map;
 	}
 
-	public get layer(): FeatureLayer | null {
-		const layerId = this.getAttribute("mp-layer-id");
-		if (!layerId) {
-			return null;
-		}
-		const map = this.referenceElement;
-		if (!map) {
-			return null;
-		}
-		const layer =
-			(
-				map.layerViews.find(
-					(l) => l.layer.id === layerId && l.layer.type === "feature",
-				) as FeatureLayerView
-			)?.layer ?? null;
-
-		return layer;
+	public get layerId(): string | null {
+		return this.getAttribute("mp-layer-id");
 	}
 
 	constructor() {
@@ -59,25 +48,34 @@ export class WsdotMilepostForm extends HTMLElement {
 	}
 
 	connectedCallback() {
-		/* __PURE__ */ console.debug("element added to page");
-		const arcgisMaps = document.body.querySelectorAll("arcgis-map");
-		let parentMap: ArcgisMap | null = null;
+		/* __PURE__ */ console.group("element added to page");
 
-		for (const map of arcgisMaps) {
-			if (map.contains(this)) {
-				parentMap = map;
-				break;
+		let parentMap: ArcgisMap | null = null;
+		const refElementId = this.getAttribute("reference-element");
+		if (refElementId) {
+			/* __PURE__ */ console.debug(
+				`Reference element explicitly defined: ${refElementId}`,
+			);
+		} else {
+			const arcgisMaps = document.body.querySelectorAll("arcgis-map");
+
+			for (const map of arcgisMaps) {
+				if (map.contains(this)) {
+					parentMap = map;
+					break;
+				}
+			}
+
+			if (parentMap) {
+				/* __PURE__ */ console.debug(`${parentMap.id} contains this element`);
+				this.setAttribute("reference-element", parentMap.id);
+			} else {
+				/* __PURE__ */ console.debug(
+					'This element is not contained by an "arcgis-map"',
+				);
 			}
 		}
-
-		if (parentMap) {
-			/* __PURE__ */ console.debug(`${parentMap.id} contains this element`);
-			this.setAttribute("reference-element", parentMap.id);
-		} else {
-			/* __PURE__ */ console.debug(
-				'This element is not contained by an "arcgis-map"',
-			);
-		}
+		/* __PURE__ */ console.groupEnd();
 	}
 
 	populateRouteList() {}
@@ -87,18 +85,26 @@ export class WsdotMilepostForm extends HTMLElement {
 		oldValue: string | null,
 		newValue: string | null,
 	) {
-		/* __PURE__ */ console.debug(
-			`Attribute ${name} changed from ${oldValue} to ${newValue}`,
+		/* __PURE__ */ console.group(
+			`Attribute ${name} changed from ${JSON.stringify(oldValue)} to ${JSON.stringify(newValue)}`,
 		);
-		if (!WsdotMilepostForm.observedAttributes.includes(name)) {
-			/* __PURE__ */ console.debug(
-				`"${name} is not one of the observed attributes, so we will exit now.`,
-			);
-			return;
+		if (
+			name === WsdotMilepostForm.referenceElementAttributeName ||
+			WsdotMilepostForm.layerIdAttributeName
+		) {
+			const arcgisMap = this.map;
+
+			if (!arcgisMap) {
+				/* __PURE__ */ console.debug("No reference-element has been defined.");
+			} else if (!this.layerId) {
+				/* __PURE__ */ console.debug("No layer ID has been defined.");
+			} else {
+				const layer = arcgisMap.map?.findLayerById(this.layerId);
+				/* __PURE__ */ console.debug("layer", layer);
+			}
 		}
 
-		const layer = this.layer;
-		/* __PURE__ */ console.debug(layer ? `layer found: ${layer.id}` : "no layer found.")
+		/* __PURE__ */ console.groupEnd();
 	}
 }
 
