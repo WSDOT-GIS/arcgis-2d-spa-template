@@ -1,7 +1,8 @@
 {
 	"html.customData": [
 		"node_modules/@arcgis/map-components/dist/docs/vscode.html-custom-data.json",
-		"node_modules/@esri/calcite-components/dist/docs/vscode.html-custom-data.json"
+		"node_modules/@esri/calcite-components/dist/docs/vscode.html-custom-data.json",
+		"./custom-elements.json"
 	],
 	"css.customData": [
 		"node_modules/@arcgis/map-components/dist/docs/vscode.css-custom-data.json",
@@ -13,8 +14,5 @@
 	},
 	"oxc.requireConfig": true,
 	"oxc.typeAware": true,
-	"yaml.schemas": {
-		"https://www.schemastore.org/prettierrc.json": [".prettierrc"]
-	},
 	"js/ts.preferences.preferTypeOnlyAutoImports": true
 }
