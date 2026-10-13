@@ -1,25 +1,25 @@
 {
-    "$schema": "https://raw.githubusercontent.com/microsoft/vscode-html-languageservice/master/docs/customData.schema.json",
-    "version": 1.1,
-    "tags": [
-        {
-            "name": "wsdot-mp-form",
-            "attributes": [
-                {
-                    "name": "reference-element",
-                    "description": {
-                        "kind": "markdown",
-                        "value": "The `id` attribute of an `<arcgis-map>` element containing the feature layers used by this element. Can be omitted if the control is placed inside of a `<arcgis-map>` element."
-                    }
-                },
-                {
-                    "name": "mp-layer-id",
-                    "description": {
-                        "kind": "markdown",
-                        "value": "The milepost feature layer's `id` property."
-                    }
-                }
-            ]
-        }
-    ]
+	"$schema": "https://raw.githubusercontent.com/microsoft/vscode-html-languageservice/master/docs/customData.schema.json",
+	"version": 1.1,
+	"tags": [
+		{
+			"name": "wsdot-mp-form",
+			"attributes": [
+				{
+					"name": "reference-element",
+					"description": {
+						"kind": "markdown",
+						"value": "The `id` attribute of an `<arcgis-map>` element containing the feature layers used by this element. Can be omitted if the control is placed inside of a `<arcgis-map>` element."
+					}
+				},
+				{
+					"name": "mp-layer-id",
+					"description": {
+						"kind": "markdown",
+						"value": "The milepost feature layer's `id` property."
+					}
+				}
+			]
+		}
+	]
 }

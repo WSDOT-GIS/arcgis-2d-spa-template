@@ -3,11 +3,10 @@ const SpatialReference = await $arcgis.import(
 	"@arcgis/core/geometry/SpatialReference.js",
 );
 const { imageryWithWsdotRoutesBasemap } = await import("./basemaps");
-const {createMPFeatureLayer} = await import("./milepost-layer")
+const { createMPFeatureLayer } = await import("./milepost-layer");
 
 const config = await $arcgis.import("@arcgis/core/config.js");
-config.portalUrl = "https://wsdot.maps.arcgis.com"
-
+config.portalUrl = "https://wsdot.maps.arcgis.com";
 
 export const arcgisMap =
 	document.body.querySelector<HTMLArcgisMapElement>("arcgis-map");
@@ -26,7 +25,7 @@ const esriMap = new EsriMap({
 });
 
 // Add the mileposts layer.
-esriMap.add(createMPFeatureLayer())
+esriMap.add(createMPFeatureLayer());
 
 // Set the esriMap as the map of the arcgis-map element.
 arcgisMap.map = esriMap;
