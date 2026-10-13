@@ -4,6 +4,7 @@
 		"deshorsley.generatesrihash",
 		"tamasfe.even-better-toml",
 		"oven.bun-vscode",
-		"oxc.oxc-vscode"
+		"oxc.oxc-vscode",
+		"typescriptteam.native-preview"
 	]
 }

@@ -39,7 +39,8 @@
 	"dependencies": {
 		"@arcgis/core": "^5.1.27",
 		"@arcgis/map-components": "^5.1.27",
-		"@esri/calcite-components": "^5.1.2"
+		"@esri/calcite-components": "^5.1.2",
+		"temporal-polyfill": "^1.0.5"
 	},
 	"devDependencies": {
 		"@prettier/plugin-oxc": "^0.2.3",
