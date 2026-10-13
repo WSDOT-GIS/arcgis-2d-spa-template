@@ -4,7 +4,7 @@
 		<link rel="shortcut icon" href="/favicon.svg" type="text/xml+svg">
 		<!-- Load Calcite -->
 		<!-- Load the ArcGIS Maps SDK for JavaScript from CDN -->
-		<script type="module" src="https://js.arcgis.com/5.1.26/index.js" integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw==" crossorigin="anonymous"></script>
+		<script type="module" src="https://js.arcgis.com/5.1.27/index.js" integrity="sha512-cv9brVi45T4lA8EDI/xqpYg+40ubgWSwEroseij6XJ4Ndm5B61WZgEr1FeMDxXpzm5LGlY1KSDCoKgPUZEXsFw==" crossorigin="anonymous"></script>
 		<link rel="stylesheet" href="src/index.css">
 		<title>%VITE_APP_TITLE%</title>
 	</head>
@@ -31,31 +31,11 @@
 				-->
 				<calcite-action-bar slot="action-bar" id="tools-action-bar">
 					<calcite-action-group>
-						<calcite-action
-							icon="pin"
-							text="Locate Milepost"
-							data-toggles="mp-panel"
-						></calcite-action>
-						<calcite-action
-							icon="layers"
-							text="Layers"
-							data-toggles="layers-block"
-						></calcite-action>
-						<calcite-action
-							icon="basemap"
-							text="Basemaps"
-							data-toggles="basemaps-block"
-						></calcite-action>
-						<calcite-action
-							icon="legend"
-							text="Legend"
-							data-toggles="legend-block"
-						></calcite-action>
-						<calcite-action
-							icon="bookmark"
-							text="Bookmarks"
-							data-toggles="bookmarks-panel"
-						></calcite-action>
+						<calcite-action icon="pin" text="Locate Milepost" data-toggles="mp-panel"></calcite-action>
+						<calcite-action icon="layers" text="Layers" data-toggles="layers-block"></calcite-action>
+						<calcite-action icon="basemap" text="Basemaps" data-toggles="basemaps-block"></calcite-action>
+						<calcite-action icon="legend" text="Legend" data-toggles="legend-block"></calcite-action>
+						<calcite-action icon="bookmark" text="Bookmarks" data-toggles="bookmarks-panel"></calcite-action>
 					</calcite-action-group>
 					<calcite-action-group title="Measurement actions">
 						<calcite-action icon="measure-line" text="Measure Line" data-toggles="measure-line-panel"></calcite-action>
@@ -63,45 +43,18 @@
 					</calcite-action-group>
 				</calcite-action-bar>
 
-				<calcite-panel
-					heading="Locate Mileposts"
-					description="Locate Mileposts"
-					icon="pin"
-					id="mp-panel"
-					hidden=""
-				>
+				<calcite-panel heading="Locate Mileposts" description="Locate Mileposts" icon="pin" id="mp-panel" hidden="">
 					<calcite-block expanded="" label="locate mileposts">
 						<wsdot-mp-form reference-element="map" mp-layer-id="mileposts"></wsdot-mp-form>
 					</calcite-block>
 
-					<calcite-action
-						id="resetFormAction"
-						slot="actions-end"
-						icon="reset"
-						text="Reset form"
-						label="Reset form"
-					></calcite-action>
+					<calcite-action id="resetFormAction" slot="actions-end" icon="reset" text="Reset form" label="Reset form"></calcite-action>
 
-					<calcite-tooltip
-						id="resetFormTooltip"
-						reference-element="resetFormAction"
-						>Click this button to clear the form input
-						controls.</calcite-tooltip
-					>
+					<calcite-tooltip id="resetFormTooltip" reference-element="resetFormAction">Click this button to clear the form input
+						controls.</calcite-tooltip>
 				</calcite-panel>
-				<calcite-panel
-					description="Toggle layers in the map"
-					heading="Layers"
-					icon="layers"
-					id="layers-block"
-					hidden=""
-				>
-					<arcgis-layer-list
-						visibility-appearance="checkbox"
-						drag-enabled=""
-						show-temporary-layer-indicators=""
-						reference-element="map"
-					></arcgis-layer-list>
+				<calcite-panel description="Toggle layers in the map" heading="Layers" icon="layers" id="layers-block" hidden="">
+					<arcgis-layer-list visibility-appearance="checkbox" drag-enabled="" show-temporary-layer-indicators="" reference-element="map"></arcgis-layer-list>
 				</calcite-panel>
 				<calcite-panel icon="basemap" id="basemaps-block" heading="Basemaps" description="Change the basemap" hidden="">
 					<arcgis-basemap-gallery reference-element="map"></arcgis-basemap-gallery>
